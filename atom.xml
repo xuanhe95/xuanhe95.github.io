@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xuanhe95.github.io</id>
     <title>Xander&apos;s blog</title>
-    <updated>2021-08-15T13:58:13.629Z</updated>
+    <updated>2021-08-15T14:02:50.203Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xuanhe95.github.io"/>
     <link rel="self" href="https://xuanhe95.github.io/atom.xml"/>
@@ -16,26 +16,68 @@
         <link href="https://xuanhe95.github.io/post/er-fen-cha-zhao/">
         </link>
         <updated>2021-08-15T10:00:28.000Z</updated>
-        <content type="html"><![CDATA[<p>class Solution:<br>
-def search(self, nums: List[int], target: int) -&gt; int:</p>
-<pre><code>    left=0
-    right=len(nums)-1
-    #搜索区间
-    
-    
-    while left&lt;=right:
-        mid=left+(right-left)//2 #防止right+left过大溢出
-        if nums[mid]==target:
-            return mid
-        elif nums[mid]&lt;target:
-            left=mid+1
-        else:
-            right=mid-1
-            
-    return -1
-</code></pre>
-<p>有一天阿东到图书馆借了 N 本书，出图书馆的时候，警报响了，于是保安把阿东拦下，要检查一下哪本书没有登记出借。阿东正准备把每一本书在报警器下过一下，以找出引发警报的书，但是保安露出不屑的眼神：你连二分查找都不会吗？于是保安把书分成两堆，让第一堆过一下报警器，报警器响；于是再把这堆书分成两堆…… 最终，检测了 logN 次之后，保安成功的找到了那本引起警报的书，露出了得意和嘲讽的笑容。于是阿东背着剩下的书走了。</p>
+        <content type="html"><![CDATA[<p>有一天阿东到图书馆借了 N 本书，出图书馆的时候，警报响了，于是保安把阿东拦下，要检查一下哪本书没有登记出借。阿东正准备把每一本书在报警器下过一下，以找出引发警报的书，但是保安露出不屑的眼神：你连二分查找都不会吗？于是保安把书分成两堆，让第一堆过一下报警器，报警器响；于是再把这堆书分成两堆…… 最终，检测了 logN 次之后，保安成功的找到了那本引起警报的书，露出了得意和嘲讽的笑容。于是阿东背着剩下的书走了。</p>
 <p>从此，图书馆丢了 N - 1 本书。</p>
+<p>#二分法</p>
+<pre><code class="language-python">class Solution:
+    def search(self, nums: List[int], target: int) -&gt; int:
+        
+        left=0
+        right=len(nums)-1
+        #搜索区间
+        
+        
+        while left&lt;=right:
+            mid=left+(right-left)//2 #防止right+left过大溢出
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]&lt;target:
+                left=mid+1
+            else:
+                right=mid-1
+                
+        return -1
+</code></pre>
+<p>#搜索插入位置</p>
+<pre><code class="language-python">class Solution:
+    def searchInsert(self, nums: List[int], target: int) -&gt; int:
+        left=0
+        right=len(nums)-1
+        
+
+        while left&lt;=right:
+            mid=left+(right-left)//2
+            if nums[mid]==target:
+                return mid
+            elif nums[mid]&lt;target:
+                left=mid+1
+            else:
+                right=mid-1
+        return left
+</code></pre>
+<p>#第一个错误的版本</p>
+<pre><code class="language-python"># The isBadVersion API is already defined for you.
+# @param version, an integer
+# @return an integer
+# def isBadVersion(version):
+
+class Solution:
+    def firstBadVersion(self, n):
+        &quot;&quot;&quot;
+        :type n: int
+        :rtype: int
+        &quot;&quot;&quot;
+        left=0
+        right=n-1
+        while left&lt;=right:
+            mid=left+(right-left)//2
+
+            if isBadVersion(mid)==True:
+                right=mid-1
+            else:
+                left=mid+1
+        return left
+</code></pre>
 ]]></content>
     </entry>
     <entry>
