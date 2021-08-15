@@ -2,20 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>移动指针 | Xander&#39;s blog</title>
+<title>双指针 | Xander&#39;s blog</title>
 <link rel="shortcut icon" href="https://xuanhe95.github.io/favicon.ico?v=1629047282623">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://xuanhe95.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="移动指针 | Xander&#39;s blog - Atom Feed" href="https://xuanhe95.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="双指针 | Xander&#39;s blog - Atom Feed" href="https://xuanhe95.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="# Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         sel..." />
-    <meta name="keywords" content="" />
+    <meta name="description" content="直接排序
+class Solution:
+    def sortedSquares(self, nums: List[int]) -&gt; List[int]:
+        for i,num in enumerate(nums):..." />
+    <meta name="keywords" content="Algorithm,Coding" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -85,86 +85,79 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              移动指针
+              双指针
             </h2>
             <div class="post-info">
               <span>
-                2021-08-15
+                2021-08-16
               </span>
               <span>
-                2 min read
+                1 min read
               </span>
+              
+                <a href="https://xuanhe95.github.io/tag/algorithm/" class="post-tag">
+                  # Algorithm
+                </a>
+              
+                <a href="https://xuanhe95.github.io/tag/coding/" class="post-tag">
+                  # Coding
+                </a>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <pre><code class="language-python"># Definition for singly-linked list.
-# class ListNode(object):
-#     def __init__(self, val=0, next=None):
-#         self.val = val
-#         self.next = next
-class Solution(object):
-    def addTwoNumbers(self, l1, l2):
-        &quot;&quot;&quot;
-        :type l1: ListNode
-        :type l2: ListNode
-        :rtype: ListNode
-        &quot;&quot;&quot;
-        link=pointer=ListNode()
-        #link与pointer指向同一个ListNode()
-        carry,flag,value=0,0,0
+                <h1 id="直接排序">直接排序</h1>
+<pre><code class="language-python">class Solution:
+    def sortedSquares(self, nums: List[int]) -&gt; List[int]:
+        for i,num in enumerate(nums):
+            nums[i]=num**2
         
-        while l1!=None and l2!=None:
-            if flag==0:
-                accum=l1.val+l2.val+carry
-                carry,value=divmod(accum,10)
-                link.val=value
-                flag+=1
+        l=sorted(nums)
+
+        return l```
+
+# 双指针
+
+```python
+class Solution:
+    def sortedSquares(self, nums: List[int]) -&gt; List[int]:
+        neg=-1
+        #分界线指针
+
+        for i,num in enumerate(nums):
+            if num&lt;0:
+                neg=i
             else:
-                accum=l1.val+l2.val+carry
-                carry,value=divmod(accum,10)
-                
-                pointer.next=ListNode(value)
-                pointer=pointer.next
-                #移动pointer
-                
-                
-            l1=l1.next
-            l2=l2.next
-                
-                
-        while l1!=None:
+                break
 
-            accum=l1.val+carry
-            carry,value=divmod(accum,10)
-            
-            pointer.next=ListNode(value)
-            pointer=pointer.next
-            #移动pointer
+        i,j=neg,neg+1
 
-            l1=l1.next
-                
-        while l2!=None:
-            
-            accum=l2.val+carry
-            carry,value=divmod(accum,10)
-                
-            pointer.next=ListNode(value)
-            pointer=pointer.next
-            #移动pointer
-                
-                
-            l2=l2.next
-        if carry!=0:
-            pointer.next=ListNode(1)
-                
-        return link
+        l=[]
+        while i&gt;=0 or j&lt;len(nums): #判断是否越界
+            #归并排序
+            if i&lt;0:
+                l.append(nums[j]**2)
+                j+=1
+            elif j==len(nums):
+                l.append(nums[i]**2)
+                i-=1
+            elif nums[i]**2&lt;nums[j]**2:
+                l.append(nums[i]**2)
+                i-=1
+            else:
+                l.append(nums[j]**2)
+                j+=1
+
+        return l
         ```</code></pre>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#%E7%9B%B4%E6%8E%A5%E6%8E%92%E5%BA%8F">直接排序</a></li>
+</ul>
+
               </div>
             </div>
           </article>
@@ -173,9 +166,9 @@ class Solution(object):
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://xuanhe95.github.io/post/test/">
+            <a href="https://xuanhe95.github.io/post/er-fen-cha-zhao/">
               <h3 class="post-title">
-                Two sum
+                Binary Research
               </h3>
             </a>
           </div>
