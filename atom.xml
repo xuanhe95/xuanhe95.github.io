@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xuanhe95.github.io</id>
     <title>Xander&apos;s blog</title>
-    <updated>2021-08-15T17:08:45.550Z</updated>
+    <updated>2021-08-15T18:40:37.940Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xuanhe95.github.io"/>
     <link rel="self" href="https://xuanhe95.github.io/atom.xml"/>
@@ -59,7 +59,22 @@ class Solution:
                 j+=1
 
         return l
-        ```</code></pre>
+        ```
+
+        #
+        ```python
+        class Solution:
+    def rotate(self, nums: List[int], k: int) -&gt; None:
+        &quot;&quot;&quot;
+        Do not return anything, modify nums in-place instead.
+        &quot;&quot;&quot;
+        copynums=nums[:]
+        for i in range(len(nums)):
+            if i+k&lt;len(nums):
+                nums[i+k]=copynums[i]
+            else:
+                nums[(i+k)%len(nums)]=copynums[i] #取余数防止越界
+                ```</code></pre>
 ]]></content>
     </entry>
     <entry>
