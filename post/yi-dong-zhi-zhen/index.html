@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>移动指针 | Xander&#39;s blog</title>
-<link rel="shortcut icon" href="https://xuanhe95.github.io/favicon.ico?v=1629035458861">
+<link rel="shortcut icon" href="https://xuanhe95.github.io/favicon.ico?v=1629035720335">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://xuanhe95.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="移动指针 | Xander&#39;s blog - Atom Feed" href="https://xuanhe95.github.io/atom.xml">
@@ -11,11 +11,10 @@
 
 
 
-    <meta name="description" content="Definition for singly-linked list.
-class ListNode(object):
-def init(self, val=0, next=None):
-self.val = val
-self.next = ..." />
+    <meta name="description" content="# Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         sel..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -25,7 +24,7 @@ self.next = ..." />
       <div class="main-content">
         <div class="site-header">
   <a href="https://xuanhe95.github.io">
-  <img class="avatar" src="https://xuanhe95.github.io/images/avatar.png?v=1629035458861" alt="">
+  <img class="avatar" src="https://xuanhe95.github.io/images/avatar.png?v=1629035720335" alt="">
   </a>
   <h1 class="site-title">
     Xander&#39;s blog
@@ -100,77 +99,72 @@ self.next = ..." />
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <h1 id="definition-for-singly-linked-list">Definition for singly-linked list.</h1>
-<h1 id="class-listnodeobject">class ListNode(object):</h1>
-<h1 id="def-initself-val0-nextnone">def <strong>init</strong>(self, val=0, next=None):</h1>
-<h1 id="selfval-val">self.val = val</h1>
-<h1 id="selfnext-next">self.next = next</h1>
-<p>class Solution(object):<br>
-def addTwoNumbers(self, l1, l2):<br>
-&quot;&quot;&quot;<br>
-:type l1: ListNode<br>
-:type l2: ListNode<br>
-:rtype: ListNode<br>
-&quot;&quot;&quot;<br>
-link=pointer=ListNode()<br>
-#link与pointer指向同一个ListNode()<br>
-carry,flag,value=0,0,0</p>
-<pre><code>    while l1!=None and l2!=None:
-        if flag==0:
-            accum=l1.val+l2.val+carry
-            carry,value=divmod(accum,10)
-            link.val=value
-            flag+=1
-        else:
-            accum=l1.val+l2.val+carry
+                <pre><code class="language-python"># Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        &quot;&quot;&quot;
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        &quot;&quot;&quot;
+        link=pointer=ListNode()
+        #link与pointer指向同一个ListNode()
+        carry,flag,value=0,0,0
+        
+        while l1!=None and l2!=None:
+            if flag==0:
+                accum=l1.val+l2.val+carry
+                carry,value=divmod(accum,10)
+                link.val=value
+                flag+=1
+            else:
+                accum=l1.val+l2.val+carry
+                carry,value=divmod(accum,10)
+                
+                pointer.next=ListNode(value)
+                pointer=pointer.next
+                #移动pointer
+                
+                
+            l1=l1.next
+            l2=l2.next
+                
+                
+        while l1!=None:
+
+            accum=l1.val+carry
             carry,value=divmod(accum,10)
             
             pointer.next=ListNode(value)
             pointer=pointer.next
             #移动pointer
-            
-            
-        l1=l1.next
-        l2=l2.next
-            
-            
-    while l1!=None:
 
-        accum=l1.val+carry
-        carry,value=divmod(accum,10)
-        
-        pointer.next=ListNode(value)
-        pointer=pointer.next
-        #移动pointer
-
-        l1=l1.next
+            l1=l1.next
+                
+        while l2!=None:
             
-    while l2!=None:
-        
-        accum=l2.val+carry
-        carry,value=divmod(accum,10)
-            
-        pointer.next=ListNode(value)
-        pointer=pointer.next
-        #移动pointer
-            
-            
-        l2=l2.next
-    if carry!=0:
-        pointer.next=ListNode(1)
-            
-    return link</code></pre>
+            accum=l2.val+carry
+            carry,value=divmod(accum,10)
+                
+            pointer.next=ListNode(value)
+            pointer=pointer.next
+            #移动pointer
+                
+                
+            l2=l2.next
+        if carry!=0:
+            pointer.next=ListNode(1)
+                
+        return link
+        ```</code></pre>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li><a href="#definition-for-singly-linked-list">Definition for singly-linked list.</a></li>
-<li><a href="#class-listnodeobject">class ListNode(object):</a></li>
-<li><a href="#def-initself-val0-nextnone">def <strong>init</strong>(self, val=0, next=None):</a></li>
-<li><a href="#selfval-val">self.val = val</a></li>
-<li><a href="#selfnext-next">self.next = next</a></li>
-</ul>
-
+                
               </div>
             </div>
           </article>

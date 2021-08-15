@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xuanhe95.github.io</id>
     <title>Xander&apos;s blog</title>
-    <updated>2021-08-15T13:51:13.573Z</updated>
+    <updated>2021-08-15T13:55:25.804Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xuanhe95.github.io"/>
     <link rel="self" href="https://xuanhe95.github.io/atom.xml"/>
@@ -44,66 +44,68 @@ def search(self, nums: List[int], target: int) -&gt; int:</p>
         <link href="https://xuanhe95.github.io/post/yi-dong-zhi-zhen/">
         </link>
         <updated>2021-08-15T08:06:26.000Z</updated>
-        <content type="html"><![CDATA[<h1 id="definition-for-singly-linked-list">Definition for singly-linked list.</h1>
-<h1 id="class-listnodeobject">class ListNode(object):</h1>
-<h1 id="def-initself-val0-nextnone">def <strong>init</strong>(self, val=0, next=None):</h1>
-<h1 id="selfval-val">self.val = val</h1>
-<h1 id="selfnext-next">self.next = next</h1>
-<p>class Solution(object):<br>
-def addTwoNumbers(self, l1, l2):<br>
-&quot;&quot;&quot;<br>
-:type l1: ListNode<br>
-:type l2: ListNode<br>
-:rtype: ListNode<br>
-&quot;&quot;&quot;<br>
-link=pointer=ListNode()<br>
-#link与pointer指向同一个ListNode()<br>
-carry,flag,value=0,0,0</p>
-<pre><code>    while l1!=None and l2!=None:
-        if flag==0:
-            accum=l1.val+l2.val+carry
-            carry,value=divmod(accum,10)
-            link.val=value
-            flag+=1
-        else:
-            accum=l1.val+l2.val+carry
+        <content type="html"><![CDATA[<pre><code class="language-python"># Definition for singly-linked list.
+# class ListNode(object):
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
+class Solution(object):
+    def addTwoNumbers(self, l1, l2):
+        &quot;&quot;&quot;
+        :type l1: ListNode
+        :type l2: ListNode
+        :rtype: ListNode
+        &quot;&quot;&quot;
+        link=pointer=ListNode()
+        #link与pointer指向同一个ListNode()
+        carry,flag,value=0,0,0
+        
+        while l1!=None and l2!=None:
+            if flag==0:
+                accum=l1.val+l2.val+carry
+                carry,value=divmod(accum,10)
+                link.val=value
+                flag+=1
+            else:
+                accum=l1.val+l2.val+carry
+                carry,value=divmod(accum,10)
+                
+                pointer.next=ListNode(value)
+                pointer=pointer.next
+                #移动pointer
+                
+                
+            l1=l1.next
+            l2=l2.next
+                
+                
+        while l1!=None:
+
+            accum=l1.val+carry
             carry,value=divmod(accum,10)
             
             pointer.next=ListNode(value)
             pointer=pointer.next
             #移动pointer
-            
-            
-        l1=l1.next
-        l2=l2.next
-            
-            
-    while l1!=None:
 
-        accum=l1.val+carry
-        carry,value=divmod(accum,10)
-        
-        pointer.next=ListNode(value)
-        pointer=pointer.next
-        #移动pointer
-
-        l1=l1.next
+            l1=l1.next
+                
+        while l2!=None:
             
-    while l2!=None:
-        
-        accum=l2.val+carry
-        carry,value=divmod(accum,10)
-            
-        pointer.next=ListNode(value)
-        pointer=pointer.next
-        #移动pointer
-            
-            
-        l2=l2.next
-    if carry!=0:
-        pointer.next=ListNode(1)
-            
-    return link</code></pre>
+            accum=l2.val+carry
+            carry,value=divmod(accum,10)
+                
+            pointer.next=ListNode(value)
+            pointer=pointer.next
+            #移动pointer
+                
+                
+            l2=l2.next
+        if carry!=0:
+            pointer.next=ListNode(1)
+                
+        return link
+        ```</code></pre>
 ]]></content>
     </entry>
     <entry>
@@ -112,11 +114,12 @@ carry,flag,value=0,0,0</p>
         <link href="https://xuanhe95.github.io/post/test/">
         </link>
         <updated>2021-08-15T04:19:13.000Z</updated>
-        <content type="html"><![CDATA[<p>dic={}<br>
-for i,num in enumerate(nums):<br>
-if target-num in dic:<br>
-return [dic[target-num],i]<br>
-dic[num]=i</p>
+        <content type="html"><![CDATA[<pre><code class="language-python">dic={}
+        for i,num in enumerate(nums):
+            if target-num in dic:
+                return [dic[target-num],i]
+            dic[num]=i
+</code></pre>
 ]]></content>
     </entry>
     <entry>
