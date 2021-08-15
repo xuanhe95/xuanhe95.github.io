@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xuanhe95.github.io</id>
     <title>Xander&apos;s blog</title>
-    <updated>2021-08-15T14:07:44.321Z</updated>
+    <updated>2021-08-15T14:08:57.713Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xuanhe95.github.io"/>
     <link rel="self" href="https://xuanhe95.github.io/atom.xml"/>
@@ -18,7 +18,7 @@
         <updated>2021-08-15T10:00:28.000Z</updated>
         <content type="html"><![CDATA[<p>有一天阿东到图书馆借了 N 本书，出图书馆的时候，警报响了，于是保安把阿东拦下，要检查一下哪本书没有登记出借。阿东正准备把每一本书在报警器下过一下，以找出引发警报的书，但是保安露出不屑的眼神：你连二分查找都不会吗？于是保安把书分成两堆，让第一堆过一下报警器，报警器响；于是再把这堆书分成两堆…… 最终，检测了 logN 次之后，保安成功的找到了那本引起警报的书，露出了得意和嘲讽的笑容。于是阿东背着剩下的书走了。</p>
 <p>从此，图书馆丢了 N - 1 本书。</p>
-<p>#二分法</p>
+<h1 id="二分法">二分法</h1>
 <pre><code class="language-python">class Solution:
     def search(self, nums: List[int], target: int) -&gt; int:
         
@@ -38,7 +38,7 @@
                 
         return -1
 </code></pre>
-<p>#搜索插入位置</p>
+<h1 id="搜索插入位置">搜索插入位置</h1>
 <pre><code class="language-python">class Solution:
     def searchInsert(self, nums: List[int], target: int) -&gt; int:
         left=0
@@ -55,7 +55,7 @@
                 right=mid-1
         return left
 </code></pre>
-<p>#第一个错误的版本</p>
+<h1 id="第一个错误的版本">第一个错误的版本</h1>
 <pre><code class="language-python"># The isBadVersion API is already defined for you.
 # @param version, an integer
 # @return an integer
