@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://xuanhe95.github.io/blog/</id>
+    <title>Gridea</title>
+    <updated>2021-08-15T13:28:42.540Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://xuanhe95.github.io/blog/"/>
+    <link rel="self" href="https://xuanhe95.github.io/blog/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://xuanhe95.github.io/blog/images/avatar.png</logo>
+    <icon>https://xuanhe95.github.io/blog/favicon.ico</icon>
+    <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[二分查找]]></title>
+        <id>https://xuanhe95.github.io/blog/post/er-fen-cha-zhao/</id>
+        <link href="https://xuanhe95.github.io/blog/post/er-fen-cha-zhao/">
+        </link>
+        <updated>2021-08-15T10:00:28.000Z</updated>
+        <content type="html"><![CDATA[<p>class Solution:<br>
+def search(self, nums: List[int], target: int) -&gt; int:</p>
+<pre><code>    left=0
+    right=len(nums)-1
+    #搜索区间
+    
+    
+    while left&lt;=right:
+        mid=left+(right-left)//2 #防止right+left过大溢出
+        if nums[mid]==target:
+            return mid
+        elif nums[mid]&lt;target:
+            left=mid+1
+        else:
+            right=mid-1
+            
+    return -1
+</code></pre>
+<p>有一天阿东到图书馆借了 N 本书，出图书馆的时候，警报响了，于是保安把阿东拦下，要检查一下哪本书没有登记出借。阿东正准备把每一本书在报警器下过一下，以找出引发警报的书，但是保安露出不屑的眼神：你连二分查找都不会吗？于是保安把书分成两堆，让第一堆过一下报警器，报警器响；于是再把这堆书分成两堆…… 最终，检测了 logN 次之后，保安成功的找到了那本引起警报的书，露出了得意和嘲讽的笑容。于是阿东背着剩下的书走了。</p>
+<p>从此，图书馆丢了 N - 1 本书。</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[移动指针]]></title>
+        <id>https://xuanhe95.github.io/blog/post/yi-dong-zhi-zhen/</id>
+        <link href="https://xuanhe95.github.io/blog/post/yi-dong-zhi-zhen/">
+        </link>
+        <updated>2021-08-15T08:06:26.000Z</updated>
+        <content type="html"><![CDATA[<h1 id="definition-for-singly-linked-list">Definition for singly-linked list.</h1>
+<h1 id="class-listnodeobject">class ListNode(object):</h1>
+<h1 id="def-initself-val0-nextnone">def <strong>init</strong>(self, val=0, next=None):</h1>
+<h1 id="selfval-val">self.val = val</h1>
+<h1 id="selfnext-next">self.next = next</h1>
+<p>class Solution(object):<br>
+def addTwoNumbers(self, l1, l2):<br>
+&quot;&quot;&quot;<br>
+:type l1: ListNode<br>
+:type l2: ListNode<br>
+:rtype: ListNode<br>
+&quot;&quot;&quot;<br>
+link=pointer=ListNode()<br>
+#link与pointer指向同一个ListNode()<br>
+carry,flag,value=0,0,0</p>
+<pre><code>    while l1!=None and l2!=None:
+        if flag==0:
+            accum=l1.val+l2.val+carry
+            carry,value=divmod(accum,10)
+            link.val=value
+            flag+=1
+        else:
+            accum=l1.val+l2.val+carry
+            carry,value=divmod(accum,10)
+            
+            pointer.next=ListNode(value)
+            pointer=pointer.next
+            #移动pointer
+            
+            
+        l1=l1.next
+        l2=l2.next
+            
+            
+    while l1!=None:
+
+        accum=l1.val+carry
+        carry,value=divmod(accum,10)
+        
+        pointer.next=ListNode(value)
+        pointer=pointer.next
+        #移动pointer
+
+        l1=l1.next
+            
+    while l2!=None:
+        
+        accum=l2.val+carry
+        carry,value=divmod(accum,10)
+            
+        pointer.next=ListNode(value)
+        pointer=pointer.next
+        #移动pointer
+            
+            
+        l2=l2.next
+    if carry!=0:
+        pointer.next=ListNode(1)
+            
+    return link</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Two sum]]></title>
+        <id>https://xuanhe95.github.io/blog/post/test/</id>
+        <link href="https://xuanhe95.github.io/blog/post/test/">
+        </link>
+        <updated>2021-08-15T04:19:13.000Z</updated>
+        <content type="html"><![CDATA[<p>dic={}<br>
+for i,num in enumerate(nums):<br>
+if target-num in dic:<br>
+return [dic[target-num],i]<br>
+dic[num]=i</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://xuanhe95.github.io/blog/post/hello-gridea/</id>
+        <link href="https://xuanhe95.github.io/blog/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
