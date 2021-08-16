@@ -2,20 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Two sum | Xander&#39;s blog</title>
+<title>双指针2 | Xander&#39;s blog</title>
 <link rel="shortcut icon" href="https://xuanhe95.github.io/favicon.ico?v=1629134864015">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://xuanhe95.github.io/styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Two sum | Xander&#39;s blog - Atom Feed" href="https://xuanhe95.github.io/atom.xml">
+<link rel="alternate" type="application/atom+xml" title="双指针2 | Xander&#39;s blog - Atom Feed" href="https://xuanhe95.github.io/atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="dic={}
-        for i,num in enumerate(nums):
-            if target-num in dic:
-                return [dic[target-num],i..." />
-    <meta name="keywords" content="Algorithm,Coding" />
+    <meta name="description" content="class Solution:
+    def moveZeroes(self, nums: List[int]) -&gt; None:
+        &quot;&quot;&quot;
+        Do not return a..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -85,33 +85,35 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Two sum
+              双指针2
             </h2>
             <div class="post-info">
               <span>
-                2021-08-15
+                2021-08-17
               </span>
               <span>
                 1 min read
               </span>
               
-                <a href="https://xuanhe95.github.io/tag/algorithm/" class="post-tag">
-                  # Algorithm
-                </a>
-              
-                <a href="https://xuanhe95.github.io/tag/coding/" class="post-tag">
-                  # Coding
-                </a>
-              
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <pre><code class="language-python">dic={}
-        for i,num in enumerate(nums):
-            if target-num in dic:
-                return [dic[target-num],i]
-            dic[num]=i
+                <pre><code class="language-python">class Solution:
+    def moveZeroes(self, nums: List[int]) -&gt; None:
+        &quot;&quot;&quot;
+        Do not return anything, modify nums in-place instead.
+        &quot;&quot;&quot;
+        n=len(nums)
+        i,j=0,0
+        while i&lt;n and j&lt;n:
+            
+            if nums[j]!=0:
+                nums[i],nums[j]=nums[j],nums[i]
+                i+=1
+            j+=1
+        return nums
+        ```
 </code></pre>
 
               </div>
@@ -125,9 +127,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://xuanhe95.github.io/post/hello-gridea/">
+            <a href="https://xuanhe95.github.io/post/7A47rJxbh/">
               <h3 class="post-title">
-                Hello Gridea
+                双指针
               </h3>
             </a>
           </div>
