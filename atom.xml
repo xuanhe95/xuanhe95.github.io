@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://xuanhe95.github.io</id>
     <title>Xander&apos;s blog</title>
-    <updated>2021-08-16T17:27:49.049Z</updated>
+    <updated>2021-08-16T18:00:26.697Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://xuanhe95.github.io"/>
     <link rel="self" href="https://xuanhe95.github.io/atom.xml"/>
@@ -16,7 +16,8 @@
         <link href="https://xuanhe95.github.io/post/xjWwyWvJs/">
         </link>
         <updated>2021-08-16T17:27:21.000Z</updated>
-        <content type="html"><![CDATA[<pre><code class="language-python">class Solution:
+        <content type="html"><![CDATA[<h1 id="移动零">移动零</h1>
+<pre><code class="language-python">class Solution:
     def moveZeroes(self, nums: List[int]) -&gt; None:
         &quot;&quot;&quot;
         Do not return anything, modify nums in-place instead.
@@ -31,6 +32,21 @@
             j+=1
         return nums
         ```
+# 两数之和2-输入有序数组
+        ```python
+        class Solution:
+    def twoSum(self, numbers: List[int], target: int) -&gt; List[int]:
+        
+        n=len(numbers)
+        i,j=0,n-1 #双指针放置在左右两侧,因为数组是排列好的,逼近时可以遍历到每个和.
+        while i&lt;n:
+            if numbers[i]+numbers[j]&gt;target:
+                j-=1
+            elif numbers[i]+numbers[j]&lt;target:
+                i+=1
+            else:
+                return [i+1,j+1]
+                ```
 </code></pre>
 ]]></content>
     </entry>

@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>双指针2 | Xander&#39;s blog</title>
-<link rel="shortcut icon" href="https://xuanhe95.github.io/favicon.ico?v=1629134864015">
+<link rel="shortcut icon" href="https://xuanhe95.github.io/favicon.ico?v=1629136823135">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://xuanhe95.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="双指针2 | Xander&#39;s blog - Atom Feed" href="https://xuanhe95.github.io/atom.xml">
@@ -11,10 +11,11 @@
 
 
 
-    <meta name="description" content="class Solution:
+    <meta name="description" content="移动零
+class Solution:
     def moveZeroes(self, nums: List[int]) -&gt; None:
         &quot;&quot;&quot;
-        Do not return a..." />
+        Do not retu..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -24,7 +25,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://xuanhe95.github.io">
-  <img class="avatar" src="https://xuanhe95.github.io/images/avatar.png?v=1629134864015" alt="">
+  <img class="avatar" src="https://xuanhe95.github.io/images/avatar.png?v=1629136823135" alt="">
   </a>
   <h1 class="site-title">
     Xander&#39;s blog
@@ -99,7 +100,8 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <pre><code class="language-python">class Solution:
+                <h1 id="移动零">移动零</h1>
+<pre><code class="language-python">class Solution:
     def moveZeroes(self, nums: List[int]) -&gt; None:
         &quot;&quot;&quot;
         Do not return anything, modify nums in-place instead.
@@ -114,11 +116,29 @@
             j+=1
         return nums
         ```
+# 两数之和2-输入有序数组
+        ```python
+        class Solution:
+    def twoSum(self, numbers: List[int], target: int) -&gt; List[int]:
+        
+        n=len(numbers)
+        i,j=0,n-1 #双指针放置在左右两侧,因为数组是排列好的,逼近时可以遍历到每个和.
+        while i&lt;n:
+            if numbers[i]+numbers[j]&gt;target:
+                j-=1
+            elif numbers[i]+numbers[j]&lt;target:
+                i+=1
+            else:
+                return [i+1,j+1]
+                ```
 </code></pre>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li><a href="#%E7%A7%BB%E5%8A%A8%E9%9B%B6">移动零</a></li>
+</ul>
+
               </div>
             </div>
           </article>
