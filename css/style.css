@@ -492,6 +492,10 @@ body {
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
+  background-image: url("../images/back.svg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
