@@ -14,7 +14,7 @@
 <meta property="og:description" content="问题概述You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).Find two lines that together with the">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-05T16:50:01.000Z">
-<meta property="article:modified_time" content="2022-04-05T16:51:48.652Z">
+<meta property="article:modified_time" content="2022-04-05T16:54:23.744Z">
 <meta property="article:author" content="Xuanhe">
 <meta property="article:tag" content="LeetCode">
 <meta property="article:tag" content="双指针">
@@ -132,7 +132,7 @@
       
         <time datetime="2022-04-05T16:50:01.000Z" itemprop="datePublished">2022-04-06</time>
         
-        (Updated: <time datetime="2022-04-05T16:51:48.652Z" itemprop="dateModified">2022-04-06</time>)
+        (Updated: <time datetime="2022-04-05T16:54:23.744Z" itemprop="dateModified">2022-04-06</time>)
         
       
     </div>
@@ -164,28 +164,7 @@
 <blockquote>
 <p>感觉这个移动有点博弈论的味了，每次都移动自己最差的一边，虽然可能变得更差，但是总比不动（或者减小）强，动最差的部分可能找到更好的结果，但是动另一边总会更差或者不变，兄弟们，这不是题，这是人生，逃离舒适圈！！（这解释我觉得无敌了，哈哈哈）</p>
 </blockquote>
-<p>class Solution {<br>    public int maxArea(int[] height) {<br>        int best &#x3D; 0;</p>
-<pre><code>    int i = 0;
-    int j = height.length - 1;
-    
-    while ( i &lt; j )&#123;
-        int product = 0;
-        if (height[i] &lt; height[j])&#123;
-            product = height[i] * ( j -i );
-            i++;
-        &#125;
-        else&#123;
-            product = height[j] * ( j -i );
-            j--;
-        &#125;
-        if ( product &gt; best)&#123;
-            best = product;
-        &#125;
-    &#125;
-    return best;
-&#125;
-</code></pre>
-<p>}</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">best</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> height.length - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> ( i &lt; j )&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">product</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &lt; height[j])&#123;</span><br><span class="line">                product = height[i] * ( j -i );</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                product = height[j] * ( j -i );</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> ( product &gt; best)&#123;</span><br><span class="line">                best = product;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> best;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
   </div>
 </article>
