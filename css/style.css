@@ -436,6 +436,11 @@ body td {
 }
 @font-face {
   font-family: "Source Han Sans CN";
+  src: local('SiYuan N'), url("../lib/SiYuanHeiTi/SourceHanSansCN-Normal-2") format("opentype");
+  unicode-range: U+4E00-9FA5;
+}
+@font-face {
+  font-family: "Source Han Sans CN";
   src: local('SiYuan L'), url("../lib/SiYuanHeiTi/SourceHanSansCN-Light-2.otf") format("opentype");
   unicode-range: U+4E00-9FA5;
 }
@@ -488,7 +493,7 @@ body {
   font-display: swap;
   font-weight: 400;
   font-size: 14px;
-  font-family: "SiYuan L", "Source Han Sans CN", "Menlo", "Meslo LG", monospace, "Menlo", "Meslo LG", monospace;
+  font-family: "SiYuan N", "Source Han Sans CN", "Menlo", "Meslo LG", monospace, "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   flex: 1;
@@ -1092,6 +1097,11 @@ body {
 .project-list .project-item p {
   display: inline;
 }
+#writing {
+  background: #1d1f21;
+  border-radius: 15px;
+  padding: 0px 15px 0px 15px;
+}
 article header .posttitle {
   margin-top: 0;
   margin-bottom: 0;
@@ -1114,6 +1124,12 @@ article header .author {
 }
 article header .postdate {
   display: inline;
+}
+article .content {
+  background: #1d1f21;
+  border-radius: 15px;
+  padding: 15px;
+/* http://webdesignerwall.com/tutorials/css-elastic-videos */
 }
 article .content h2:before {
   position: absolute;
@@ -1233,6 +1249,11 @@ article .content .caption {
   .article-category:before {
     content: "|";
   }
+}
+#archive {
+  background: #1d1f21;
+  border-radius: 15px;
+  padding: 0px 15px 0px 15px;
 }
 #archive .post-year {
   list-style-type: none;
@@ -1420,7 +1441,7 @@ article .content .caption {
   font-display: swap;
   font-weight: 400;
   font-size: 11.200000000000001px;
-  font-family: "SiYuan L", "Source Han Sans CN", "Menlo", "Meslo LG", monospace, "Menlo", "Meslo LG", monospace;
+  font-family: "SiYuan N", "Source Han Sans CN", "Menlo", "Meslo LG", monospace, "Menlo", "Meslo LG", monospace;
   line-height: 1.725;
   text-rendering: geometricPrecision;
   text-align: center;
