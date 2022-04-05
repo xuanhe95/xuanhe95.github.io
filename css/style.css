@@ -495,15 +495,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
-@media (min-width: 678px) {
+@media (min-width: 480px) {
   body {
-    position: sticky;
     background-image: url("../images/back.svg");
-    background-origin: content-box;
     background-size: cover;
     background-position: center bottom;
     background-repeat: no-repeat;
-    background-clip: text;
     background-attachment: fixed;
   }
 }
