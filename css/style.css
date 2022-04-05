@@ -495,7 +495,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
 }
-@media (min-width: 480px) {
+@media (min-width: 500px) {
   body {
     background-image: url("../images/back.svg");
     background-size: cover;
