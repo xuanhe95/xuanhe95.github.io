@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+    <meta name="description" content="问题Given an integer array arr, and an integer target, return the number of tuples i, j, k such that i &lt; j &lt; k and arr[i] + arr[j] + arr[k] &#x3D;&#x3D; target. As the answer can be very large, r">
+<meta property="og:type" content="article">
+<meta property="og:title" content="923. 3Sum With Multiplicity">
+<meta property="og:url" content="https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/index.html">
+<meta property="og:site_name" content="XANDER Studio">
+<meta property="og:description" content="问题Given an integer array arr, and an integer target, return the number of tuples i, j, k such that i &lt; j &lt; k and arr[i] + arr[j] + arr[k] &#x3D;&#x3D; target. As the answer can be very large, r">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-04-06T18:27:00.000Z">
+<meta property="article:modified_time" content="2022-04-06T18:27:00.097Z">
+<meta property="article:author" content="Xuanhe">
+<meta property="article:tag" content="Hash Map">
+<meta property="article:tag" content="每日一题">
+<meta name="twitter:card" content="summary">
+    
+    
+      
+        
+          <link rel="shortcut icon" href="/images/favicon.ico">
+        
+      
+      
+        
+          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+        
+      
+      
+        
+          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+        
+      
+    
+    <!-- title -->
+    <title>923. 3Sum With Multiplicity</title>
+    <!-- styles -->
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <!-- persian styles -->
+    
+    <!-- rss -->
+    
+    
+	<!-- mathjax -->
+	
+<meta name="generator" content="Hexo 5.4.1"></head>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/xuanhe95">Projects</a></li><!--
+     -->
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" aria-label="Next post" href="/2022/04/06/118-Pascal-s-Triangle/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&text=923. 3Sum With Multiplicity"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&is_video=false&description=923. 3Sum With Multiplicity"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=923. 3Sum With Multiplicity&body=Check out this article: https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&name=923. 3Sum With Multiplicity&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&t=923. 3Sum With Multiplicity"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index py4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        923. 3Sum With Multiplicity
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Xuanhe</span>
+      </span>
+      
+    <div class="postdate">
+      
+        <time datetime="2022-04-06T18:27:00.000Z" itemprop="datePublished">2022-04-07</time>
+        
+        (Updated: <time datetime="2022-04-06T18:27:00.097Z" itemprop="dateModified">2022-04-07</time>)
+        
+      
+    </div>
+
+
+      
+    <div class="article-category">
+        <i class="fas fa-archive"></i>
+        <a class="category-link" href="/categories/LeetCode/">LeetCode</a> › <a class="category-link" href="/categories/LeetCode/Medium/">Medium</a> › <a class="category-link" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a>
+    </div>
+
+
+      
+    <div class="article-tag">
+        <i class="fas fa-tag"></i>
+        <a class="tag-link-link" href="/tags/Hash-Map/" rel="tag">Hash Map</a>, <a class="tag-link-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="tag">每日一题</a>
+    </div>
+
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <blockquote>
+<p>问题<br>Given an integer array arr, and an integer target, return the number of tuples i, j, k such that i &lt; j &lt; k and arr[i] + arr[j] + arr[k] &#x3D;&#x3D; target.</p>
+<p>As the answer can be very large, return it modulo 109 + 7.</p>
+</blockquote>
+<p>首先遍历元素，根据元素的值和出现次数建立哈希表。<br>然后再哈希表中选择三个元素，如果和等于target，则计算三个元素出现次数的乘积。<br>最后除以重复计算的次数。<br>由于数值较大，因此中途计算应该采用长整型long。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">threeSumMulti</span><span class="params">(<span class="type">int</span>[] arr, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        <span class="comment">//enumberate every element and put them into the map</span></span><br><span class="line">        HashMap&lt;Integer, Long&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Integer, Long&gt;();</span><br><span class="line">        <span class="type">long</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> ( <span class="type">int</span> num : arr )&#123;</span><br><span class="line">            <span class="keyword">if</span> (!map.containsKey(num))&#123;</span><br><span class="line">                map.put(num, (<span class="type">long</span>)<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                map.put(num, map.get(num)+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="comment">//traverse whole elements and select three numbers</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> ( <span class="type">int</span> a : map.keySet() )&#123;</span><br><span class="line">            <span class="type">long</span> <span class="variable">totalA</span> <span class="operator">=</span> map.get(a);</span><br><span class="line">            <span class="keyword">for</span> (<span class="type">int</span> b : map.keySet())&#123;</span><br><span class="line">                <span class="type">long</span> <span class="variable">totalB</span> <span class="operator">=</span> map.get(b);</span><br><span class="line">                <span class="keyword">if</span> ( a == b )&#123;</span><br><span class="line">                    <span class="keyword">if</span> (totalB &lt; <span class="number">2</span>)&#123;</span><br><span class="line">                        <span class="keyword">continue</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                    totalB = totalB - <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="type">int</span> <span class="variable">c</span> <span class="operator">=</span> target - a - b;</span><br><span class="line">                <span class="keyword">if</span> ( map.containsKey(c) )&#123;</span><br><span class="line">                    <span class="type">long</span> <span class="variable">totalC</span> <span class="operator">=</span> map.get(c);</span><br><span class="line">                    <span class="type">long</span> <span class="variable">total</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">                    <span class="keyword">if</span> ( a == b &amp;&amp; b == c )&#123;</span><br><span class="line">                        total = totalA * totalB * ( totalC - <span class="number">2</span> ) ;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span> <span class="keyword">if</span> ( b == c || a == c )&#123;</span><br><span class="line">                        total = totalA * totalB * ( totalC - <span class="number">1</span> ) ;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">else</span>&#123;</span><br><span class="line">                        total = totalA * totalB * totalC;</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="keyword">if</span> ( total &gt; <span class="number">0</span> )&#123;</span><br><span class="line">                        count += total;</span><br><span class="line">                    &#125;</span><br><span class="line"></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        count/=<span class="number">6</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> (<span class="type">int</span>) (count % <span class="number">1000000007</span>);</span><br><span class="line">            </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+  </div>
+</article>
+
+
+
+        
+          <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a target="_blank" rel="noopener" href="http://github.com/xuanhe95">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&text=923. 3Sum With Multiplicity"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&is_video=false&description=923. 3Sum With Multiplicity"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=923. 3Sum With Multiplicity&body=Check out this article: https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&title=923. 3Sum With Multiplicity"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&name=923. 3Sum With Multiplicity&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://xuanhe95.github.io/2022/04/07/923-3Sum-With-Multiplicity/&t=923. 3Sum With Multiplicity"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+        
+        <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy;
+    
+    
+    2022
+    Xuanhe
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+        <!--
+       --><li><a href="/">Home</a></li><!--
+     --><!--
+       --><li><a href="/">About</a></li><!--
+     --><!--
+       --><li><a href="/archives/">Writing</a></li><!--
+     --><!--
+       --><li><a target="_blank" rel="noopener" href="http://github.com/xuanhe95">Projects</a></li><!--
+     -->
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+    </div>
+    <!-- styles -->
+
+
+
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
+
+
+    <!-- jquery -->
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
+
+
+
+
+<!-- clipboard -->
+
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
+  
+  <script type="text/javascript">
+  $(function() {
+    // copy-btn HTML
+    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
+    btn += '<i class="far fa-clone"></i>';
+    btn += '</span>'; 
+    // mount it!
+    $(".highlight table").before(btn);
+    var clip = new ClipboardJS('.btn-copy', {
+      text: function(trigger) {
+        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
+      }
+    });
+    clip.on('success', function(e) {
+      e.trigger.setAttribute('aria-label', "Copied!");
+      e.clearSelection();
+    })
+  })
+  </script>
+
+
+<script src="/js/main.js"></script>
+
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Cloudflare Analytics -->
+
+<!-- Umami Analytics -->
+
+<!-- Disqus Comments -->
+
+<!-- utterances Comments -->
+
+</body>
+</html>
