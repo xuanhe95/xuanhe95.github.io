@@ -14,7 +14,7 @@
 <meta property="og:description" content="问题Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise. In other words, return true if one of s1’s permutations is the substring of s2.  将要查找的组合加入数组，数值为字符出现">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-07T06:28:20.000Z">
-<meta property="article:modified_time" content="2022-04-07T06:28:20.531Z">
+<meta property="article:modified_time" content="2022-04-07T06:35:24.973Z">
 <meta property="article:author" content="Xuanhe">
 <meta property="article:tag" content="滑动窗口">
 <meta name="twitter:card" content="summary">
@@ -75,6 +75,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" aria-label="Previous post" href="/2022/04/07/242-Valid-Anagram/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" aria-label="Next post" href="/2022/04/07/3-Longest-Substring-Without-Repeating-Characters/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -130,7 +132,7 @@
       
         <time datetime="2022-04-07T06:28:20.000Z" itemprop="datePublished">2022-04-07</time>
         
-        (Updated: <time datetime="2022-04-07T06:28:20.531Z" itemprop="dateModified">2022-04-07</time>)
+        (Updated: <time datetime="2022-04-07T06:35:24.973Z" itemprop="dateModified">2022-04-07</time>)
         
       
     </div>
@@ -159,7 +161,7 @@
 <p>问题<br>Given two strings s1 and s2, return true if s2 contains a permutation of s1, or false otherwise.</p>
 <p>In other words, return true if one of s1’s permutations is the substring of s2.</p>
 </blockquote>
-<p>将要查找的组合加入数组，数值为字符出现的次数。<br>滑动窗口，入窗口对应的元素数值-1，出窗口对应的元素数值+1。<br>每次移动窗口都检验一次数组的数值是否全部为0，如果是真，则返回真。</p>
+<p>将要查找的组合加入数组，数值为字符出现的次数。<br>滑动窗口，入窗口对应的元素数值-1，出窗口对应的元素数值+1。<br>每次移动窗口都检验一次数组的数值是否全部为0，如果是真，则返回真。<br><strong>小技巧：</strong>直接用数组来记录字符出现的次数，用字符减去与’a’的差作为下标。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkInclusion</span><span class="params">(String s1, String s2)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (s1.length() &gt; s2.length())&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span>[] dic = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s1.length(); i++)&#123;</span><br><span class="line">            dic[s1.charAt(i)-<span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">            dic[s2.charAt(i)-<span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> s1.length();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>( j &lt; s2.length() )&#123;</span><br><span class="line">            <span class="keyword">if</span> ( allZero(dic) )&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            dic[s2.charAt(i)-<span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">            dic[s2.charAt(j)-<span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">            i++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> allZero(dic);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">allZero</span><span class="params">(<span class="type">int</span>[] dic)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> num : dic)&#123;</span><br><span class="line">            <span class="keyword">if</span> ( num != <span class="number">0</span> )&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
 </article>
