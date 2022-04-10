@@ -6,15 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="问题Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.  设置前一个节点和当前节点两个指针。遍历时比较两个节点，如相等则前一个节点的next指向当前节点的next。">
+    <meta name="description" content="问题Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.  设置前一个节点和当前节点两个指针。由于是有数的链表，遍历时可以直接比较两个节点。如相等则前一个节点的nex">
 <meta property="og:type" content="article">
 <meta property="og:title" content="83. Remove Duplicates from Sorted List">
 <meta property="og:url" content="https://xuanhe95.github.io/2022/04/10/83-Remove-Duplicates-from-Sorted-List/index.html">
 <meta property="og:site_name" content="XANDER Studio">
-<meta property="og:description" content="问题Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.  设置前一个节点和当前节点两个指针。遍历时比较两个节点，如相等则前一个节点的next指向当前节点的next。">
+<meta property="og:description" content="问题Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.  设置前一个节点和当前节点两个指针。由于是有数的链表，遍历时可以直接比较两个节点。如相等则前一个节点的nex">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-10T00:38:58.000Z">
-<meta property="article:modified_time" content="2022-04-10T00:38:58.182Z">
+<meta property="article:modified_time" content="2022-04-10T00:41:06.849Z">
 <meta property="article:author" content="Xuanhe">
 <meta property="article:tag" content="数据结构">
 <meta property="article:tag" content="Linked List">
@@ -76,6 +76,8 @@
     <span id="actions">
       <ul>
         
+        <li><a class="icon" aria-label="Previous post" href="/2022/04/10/617-Merge-Two-Binary-Trees/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
         
         <li><a class="icon" aria-label="Next post" href="/2022/04/10/695-Max-Area-of-Island/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
         
@@ -131,7 +133,7 @@
       
         <time datetime="2022-04-10T00:38:58.000Z" itemprop="datePublished">2022-04-10</time>
         
-        (Updated: <time datetime="2022-04-10T00:38:58.182Z" itemprop="dateModified">2022-04-10</time>)
+        (Updated: <time datetime="2022-04-10T00:41:06.849Z" itemprop="dateModified">2022-04-10</time>)
         
       
     </div>
@@ -159,7 +161,7 @@
     <blockquote>
 <p>问题<br>Given the head of a sorted linked list, delete all duplicates such that each element appears only once. Return the linked list sorted as well.</p>
 </blockquote>
-<p>设置前一个节点和当前节点两个指针。<br>遍历时比较两个节点，如相等则前一个节点的next指向当前节点的next。</p>
+<p>设置前一个节点和当前节点两个指针。<br>由于是有数的链表，遍历时可以直接比较两个节点。<br>如相等则前一个节点的next指向当前节点的next。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     ListNode(int val, ListNode next) &#123; this.val = val; this.next = next; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> ListNode <span class="title function_">deleteDuplicates</span><span class="params">(ListNode head)</span> &#123;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span> ( head == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ( head.next == <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">prev</span> <span class="operator">=</span> head;</span><br><span class="line">        <span class="type">ListNode</span> <span class="variable">curr</span> <span class="operator">=</span> head.next;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(curr != <span class="literal">null</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(prev.val != curr.val)&#123;</span><br><span class="line">                curr = curr.next;</span><br><span class="line">                prev = prev.next;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                prev.next = curr.next;</span><br><span class="line">                curr = curr.next;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> head;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
 </article>
