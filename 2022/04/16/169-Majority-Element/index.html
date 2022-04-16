@@ -14,7 +14,7 @@
 <meta property="og:description" content="问题Given an array nums of size n, return the majority element. The majority element is the element that appears more than ⌊n &#x2F; 2⌋ times. You may assume that the majority element always exists in">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-16T11:20:43.000Z">
-<meta property="article:modified_time" content="2022-04-16T11:20:43.367Z">
+<meta property="article:modified_time" content="2022-04-16T11:24:07.730Z">
 <meta property="article:author" content="Xuanhe">
 <meta property="article:tag" content="Hash Map">
 <meta property="article:tag" content="算法">
@@ -132,7 +132,7 @@
       
         <time datetime="2022-04-16T11:20:43.000Z" itemprop="datePublished">2022-04-16</time>
         
-        (Updated: <time datetime="2022-04-16T11:20:43.367Z" itemprop="dateModified">2022-04-16</time>)
+        (Updated: <time datetime="2022-04-16T11:24:07.730Z" itemprop="dateModified">2022-04-16</time>)
         
       
     </div>
@@ -163,9 +163,14 @@
 </blockquote>
 <p>Boyer-Moore投票算法<br>基本思想：<br>众数的值为+1，非众数的值为-1。其加和作为投票值。<br>遍历整个数组，由于众数数量大于非众数，因此最后结果一定为正数。</p>
 <p>设置count记录票数，遍历数组。<br>当count为0时，则将当前的数组设为众数。当之后的数字与其相等，则count+1，反之则-1。<br>遍历完成后返回当前的众数。</p>
-<p>每次我们选择的众数，都是当前已遍历数组范围内出现最多次数的数值之一。<br>由于给定的数组有数值超过半数，因此遍历到最后的众数，一定是整个数组中出现最多次的数值。</p>
+<ul>
+<li><p>根据以上规则，每次我们选择的众数，都是<strong>已遍历数组范围内出现最多次数的数值之一。</strong></p>
+</li>
+<li><p>由于给定的数组的众数<strong>超过半数</strong>，因此遍历到最后的众数，一定是整个数组中出现最多次的数值。</p>
+</li>
+</ul>
 <blockquote>
-<p><strong>核心就是对拼消耗</strong><br>玩一个诸侯争霸的游戏，假设你方人口超过总人口一半以上，并且能保证每个人口出去干仗都能一对一同归于尽。最后还有人活下来的国家就是胜利。</p>
+<p><strong>核心就是对拼消耗。</strong><br>玩一个诸侯争霸的游戏，假设你方人口超过总人口一半以上，并且能保证每个人口出去干仗都能一对一同归于尽。最后还有人活下来的国家就是胜利。</p>
 <p>那就大混战呗，最差所有人都联合起来对付你（对应你每次选择作为计数器的数都是众数），或者其他国家也会相互攻击（会选择其他数作为计数器的数），但是只要你们不要内斗，最后肯定你赢。</p>
 <p>最后能剩下的必定是自己人。</p>
 </blockquote>
