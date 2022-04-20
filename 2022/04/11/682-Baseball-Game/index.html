@@ -14,9 +14,10 @@
 <meta property="og:description" content="问题You are keeping score for a baseball game with strange rules. The game consists of several rounds, where the scores of past rounds may affect future rounds’ scores. At the beginning of the game, yo">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-10T18:04:38.000Z">
-<meta property="article:modified_time" content="2022-04-10T18:04:38.689Z">
+<meta property="article:modified_time" content="2022-04-20T11:32:32.948Z">
 <meta property="article:author" content="Xuanhe">
 <meta property="article:tag" content="每日一题">
+<meta property="article:tag" content="Array">
 <meta name="twitter:card" content="summary">
     
     
@@ -132,7 +133,7 @@
       
         <time datetime="2022-04-10T18:04:38.000Z" itemprop="datePublished">2022-04-11</time>
         
-        (Updated: <time datetime="2022-04-10T18:04:38.689Z" itemprop="dateModified">2022-04-11</time>)
+        (Updated: <time datetime="2022-04-20T11:32:32.948Z" itemprop="dateModified">2022-04-20</time>)
         
       
     </div>
@@ -148,7 +149,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="tag">每日一题</a>
+        <a class="tag-link-link" href="/tags/Array/" rel="tag">Array</a>, <a class="tag-link-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="tag">每日一题</a>
     </div>
 
 
@@ -160,7 +161,13 @@
     <blockquote>
 <p><strong>问题</strong><br>You are keeping score for a baseball game with strange rules. The game consists of several rounds, where the scores of past rounds may affect future rounds’ scores.</p>
 <p>At the beginning of the game, you start with an empty record. You are given a list of strings ops, where ops[i] is the ith operation you must apply to the record and is one of the following:</p>
-<p>An integer x - Record a new score of x.<br>“+” - Record a new score that is the sum of the previous two scores. It is guaranteed there will always be two previous scores.<br>“D” - Record a new score that is double the previous score. It is guaranteed there will always be a previous score.<br>“C” - Invalidate the previous score, removing it from the record. It is guaranteed there will always be a previous score.<br>Return the sum of all the scores on the record.</p>
+<ol>
+<li>An integer x - Record a new score of x.</li>
+<li>“+” - Record a new score that is the sum of the previous two scores. It is guaranteed there will always be two previous scores.</li>
+<li>“D” - Record a new score that is double the previous score. It is guaranteed there will always be a previous score.</li>
+<li>“C” - Invalidate the previous score, removing it from the record. It is guaranteed there will always be a previous score.</li>
+</ol>
+<p>Return the sum of all the scores on the record.</p>
 </blockquote>
 <p>遍历选项，根据内容决定对ArrayList的操作。<br>然后遍历将ArrayList加和，返回。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">calPoints</span><span class="params">(String[] ops)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">ans</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        List&lt;Integer&gt; records = <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (String op : ops)&#123;</span><br><span class="line">            <span class="keyword">switch</span>(op)&#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;+&quot;</span>:</span><br><span class="line">                    records.add(records.get(records.size()-<span class="number">1</span>)+records.get(records.size()-<span class="number">2</span>));</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;D&quot;</span>:</span><br><span class="line">                    records.add(records.get(records.size()-<span class="number">1</span>)*<span class="number">2</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">&quot;C&quot;</span>:</span><br><span class="line">                    records.remove(records.size()-<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    records.add(Integer.parseInt(op));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> record : records)&#123;</span><br><span class="line">            ans += record;</span><br><span class="line">        &#125;                 </span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>

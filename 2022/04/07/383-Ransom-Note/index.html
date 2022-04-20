@@ -6,17 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="问题Given two strings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise. Each letter in magazine can only be used once in ransomNote.  哈希表，遍历添加字典及次">
+    <meta name="description" content="Given two strings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise. Each letter in magazine can only be used once in ransomNote.  哈希表，遍历添加字典及次数。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="383. Ransom Note">
 <meta property="og:url" content="https://xuanhe95.github.io/2022/04/07/383-Ransom-Note/index.html">
 <meta property="og:site_name" content="XANDER Studio">
-<meta property="og:description" content="问题Given two strings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise. Each letter in magazine can only be used once in ransomNote.  哈希表，遍历添加字典及次">
+<meta property="og:description" content="Given two strings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise. Each letter in magazine can only be used once in ransomNote.  哈希表，遍历添加字典及次数。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-07T05:02:15.000Z">
-<meta property="article:modified_time" content="2022-04-07T05:02:15.980Z">
+<meta property="article:modified_time" content="2022-04-20T11:35:34.461Z">
 <meta property="article:author" content="Xuanhe">
 <meta property="article:tag" content="Hash Map">
+<meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary">
     
     
@@ -132,7 +133,7 @@
       
         <time datetime="2022-04-07T05:02:15.000Z" itemprop="datePublished">2022-04-07</time>
         
-        (Updated: <time datetime="2022-04-07T05:02:15.980Z" itemprop="dateModified">2022-04-07</time>)
+        (Updated: <time datetime="2022-04-20T11:35:34.461Z" itemprop="dateModified">2022-04-20</time>)
         
       
     </div>
@@ -148,7 +149,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Hash-Map/" rel="tag">Hash Map</a>
+        <a class="tag-link-link" href="/tags/Hash-Map/" rel="tag">Hash Map</a>, <a class="tag-link-link" href="/tags/String/" rel="tag">String</a>
     </div>
 
 
@@ -158,13 +159,12 @@
 
   <div class="content" itemprop="articleBody">
     <blockquote>
-<p><strong>问题</strong><br>Given two strings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise.</p>
+<p>Given two strings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise.</p>
 <p>Each letter in magazine can only be used once in ransomNote.</p>
 </blockquote>
 <p>哈希表，遍历添加字典及次数。<br>然后遍历note，与字典中的字符数量作比较。</p>
 <p>可以优化速度，采用数组记录所有英文字母的数量。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canConstruct</span><span class="params">(String ransomNote, String magazine)</span> &#123;</span><br><span class="line">        HashMap&lt;Character, Integer&gt; dic = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;Character, Integer&gt;();</span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; magazine.length(); i++)&#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">curChar</span> <span class="operator">=</span> magazine.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (!dic.containsKey(curChar))&#123;</span><br><span class="line">                dic.put(curChar, <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                dic.put(curChar, dic.get(curChar)+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">                </span><br><span class="line">        <span class="keyword">for</span> (<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; ransomNote.length(); i++)&#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">curChar</span> <span class="operator">=</span> ransomNote.charAt(i);</span><br><span class="line">            <span class="keyword">if</span> (dic.containsKey(curChar) &amp;&amp; dic.get(curChar) &gt; <span class="number">0</span>)&#123;</span><br><span class="line">                dic.put(curChar, dic.get(curChar)-<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
   </div>
 </article>
 

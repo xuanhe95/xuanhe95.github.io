@@ -14,11 +14,12 @@
 <meta property="og:description" content="问题Given a string s, return true if the s can be palindrome after deleting at most one character from it.  双指针，字符串两边对比。如果两边字符不相等，则更新两边指针，并分别传入辅助方法再次对比。两个结果有一个是true则返回true。 1234567891011121314151617181">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-04-07T00:37:01.000Z">
-<meta property="article:modified_time" content="2022-04-07T00:37:01.629Z">
+<meta property="article:modified_time" content="2022-04-20T11:37:19.492Z">
 <meta property="article:author" content="Xuanhe">
 <meta property="article:tag" content="双指针">
 <meta property="article:tag" content="每日一题">
 <meta property="article:tag" content="回文">
+<meta property="article:tag" content="String">
 <meta name="twitter:card" content="summary">
     
     
@@ -134,7 +135,7 @@
       
         <time datetime="2022-04-07T00:37:01.000Z" itemprop="datePublished">2022-04-07</time>
         
-        (Updated: <time datetime="2022-04-07T00:37:01.629Z" itemprop="dateModified">2022-04-07</time>)
+        (Updated: <time datetime="2022-04-20T11:37:19.492Z" itemprop="dateModified">2022-04-20</time>)
         
       
     </div>
@@ -150,7 +151,7 @@
       
     <div class="article-tag">
         <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>, <a class="tag-link-link" href="/tags/%E5%9B%9E%E6%96%87/" rel="tag">回文</a>, <a class="tag-link-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="tag">每日一题</a>
+        <a class="tag-link-link" href="/tags/String/" rel="tag">String</a>, <a class="tag-link-link" href="/tags/%E5%8F%8C%E6%8C%87%E9%92%88/" rel="tag">双指针</a>, <a class="tag-link-link" href="/tags/%E5%9B%9E%E6%96%87/" rel="tag">回文</a>, <a class="tag-link-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="tag">每日一题</a>
     </div>
 
 
@@ -164,7 +165,6 @@
 </blockquote>
 <p>双指针，字符串两边对比。<br>如果两边字符不相等，则更新两边指针，并分别传入辅助方法再次对比。<br>两个结果有一个是true则返回true。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">validPalindrome</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> s.length() - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(left) == s.charAt(right) )&#123;</span><br><span class="line">                left++;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> ( checkPalindrome(s, left+<span class="number">1</span>, right) || checkPalindrome(s, left, right-<span class="number">1</span>));</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">checkPalindrome</span><span class="params">(String s, <span class="type">int</span> left, <span class="type">int</span> right)</span>&#123;</span><br><span class="line">        <span class="keyword">while</span> (left &lt; right)&#123;</span><br><span class="line">            <span class="keyword">if</span> (s.charAt(left)==s.charAt(right))&#123;</span><br><span class="line">                left++;</span><br><span class="line">                right--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
   </div>
 </article>
 
