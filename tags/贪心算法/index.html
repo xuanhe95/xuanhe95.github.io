@@ -1,376 +1,106 @@
-<!DOCTYPE html>
-<html lang=en>
-<head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="Stay Foolish, Stay Hungery...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="XANDER Studio">
-<meta property="og:url" content="https://xuanhe95.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/index.html">
-<meta property="og:site_name" content="XANDER Studio">
-<meta property="og:description" content="Stay Foolish, Stay Hungery...">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="Xuanhe">
-<meta property="article:tag" content="studio, blog">
-<meta name="twitter:card" content="summary">
-    
-    
-      
-        
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>Tag: 贪心算法</title>
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/css/style.css">
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="robots" content="noindex"><title>Tag: 贪心算法 - XANDER Studio</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="XANDER Studio"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="XANDER Studio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="Stay Foolish, Stay Hungery..."><meta property="og:type" content="website"><meta property="og:title" content="XANDER Studio"><meta property="og:url" content="https://xuanhe95.github.io/"><meta property="og:site_name" content="XANDER Studio"><meta property="og:description" content="Stay Foolish, Stay Hungery..."><meta property="og:locale" content="en_US"><meta property="og:image" content="https://xuanhe95.github.io/img/og_image.png"><meta property="article:author" content="Xuanhe"><meta property="article:tag" content="studio, blog"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://xuanhe95.github.io"},"headline":"XANDER Studio","image":["https://xuanhe95.github.io/img/og_image.png"],"author":{"@type":"Person","name":"Xuanhe"},"publisher":{"@type":"Organization","name":"XANDER Studio","logo":{"@type":"ImageObject"}},"description":"Stay Foolish, Stay Hungery..."}</script><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">XANDER Studio</a></div><div class="navbar-menu"><div class="navbar-end"></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">Tags</a></li><li class="is-active"><a href="#" aria-current="page">贪心算法</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-05-01T15:53:23.000Z" title="2022/5/1 下午11:53:23">2022-05-01</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-05-01T15:59:35.210Z" title="2022/5/1 下午11:59:35">2022-05-01</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/05/01/300-Longest-Increasing-Subsequence/">300. Longest Increasing Subsequence</a></h1><div class="content"><blockquote>
+<p>Given an integer array nums, return the length of the longest strictly increasing subsequence.</p>
+<p>A subsequence is a sequence that can be derived from an array by deleting some or no elements without changing the order of the remaining elements. For example, [3,6,2,7] is a subsequence of the array [0,3,1,6,2,2,7].</p>
+</blockquote>
+<p>此题还有更快的二分查找解法。</p>
+<p>动态规划，创建一个数组dp[]用来记录最大长度，创建max记录最大值。<br>遍历，先将数组dp[]上的所有位置都填上1。<br>从0到i-1遍历j。当nums[i] &gt; nums[j]时，更新dp[i]为dp[i]与dp[j]+1中的较大值。<br>当更新dp[i]时将其和max比较，如果比max大则更新max。<br>最后返回max值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">lengthOfLIS</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> nums.length;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            dp[i] = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> i-<span class="number">1</span>; j &gt;= <span class="number">0</span>; j--)&#123;</span><br><span class="line">                <span class="keyword">if</span>(nums[i] &gt; nums[j])&#123;</span><br><span class="line">                    dp[i] = Math.max(dp[i], dp[j]+<span class="number">1</span>);</span><br><span class="line">                    <span class="keyword">if</span>(max &lt; dp[i])&#123;</span><br><span class="line">                        max = dp[i];</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-28T15:30:35.000Z" title="2022/4/28 下午11:30:35">2022-04-28</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-28T15:37:09.937Z" title="2022/4/28 下午11:37:09">2022-04-28</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/28/1631-Path-With-Minimum-Effort/">1631. Path With Minimum Effort</a></h1><div class="content"><blockquote>
+<p>You are a hiker preparing for an upcoming hike. You are given heights, a 2D array of size rows x columns, where heights[row][col] represents the height of cell (row, col). You are situated in the top-left cell, (0, 0), and you hope to travel to the bottom-right cell, (rows-1, columns-1) (i.e., 0-indexed). You can move up, down, left, or right, and you wish to find a route that requires the minimum effort.</p>
+<p>A route’s effort is the maximum absolute difference in heights between two consecutive cells of the route.</p>
+<p>Return the minimum effort required to travel from the top-left cell to the bottom-right cell.</p>
+</blockquote>
+<p>A*算法，启发式搜索。BFS搜索结合Priority Queue。<br>采用一个数组储存当前访问点的位置，以及其effort。<br>采用优先队列，优先搜索effort最小的方向。<br>每次循环倾倒出队列中所有的元素。<br>计算上一个节点和当前节点的差值作为nextEffort，并和上一个节点的effort作比较，较大的作为当前节点的effort，<br>将effort作为权重，优先搜索一个层级内effort较小的路径。<br>将所有操作加入队列，并排除越界的位置。<br>当当前节点为最后一个节点时，返回其effort。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span> min;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minimumEffortPath</span><span class="params">(<span class="type">int</span>[][] heights)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[][] operations = &#123;&#123;<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;-<span class="number">1</span>,<span class="number">0</span>&#125;,&#123;<span class="number">0</span>,<span class="number">1</span>&#125;,&#123;<span class="number">0</span>,-<span class="number">1</span>&#125;&#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> heights.length, n = heights[<span class="number">0</span>].length;</span><br><span class="line">        </span><br><span class="line">        Queue&lt;<span class="type">int</span>[]&gt; q = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;((a, b) -&gt; a[<span class="number">2</span>] - b[<span class="number">2</span>]);</span><br><span class="line">        <span class="type">int</span>[] point = &#123;<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>&#125;;</span><br><span class="line">        <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="type">int</span>[][] visited = <span class="keyword">new</span> <span class="title class_">int</span>[m][n];</span><br><span class="line">        </span><br><span class="line">        q.add(point);</span><br><span class="line">        <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>; k &lt; size; k++)&#123;</span><br><span class="line">                <span class="type">int</span>[] curr = q.poll();</span><br><span class="line">                <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> curr[<span class="number">0</span>], j = curr[<span class="number">1</span>], currEffort = curr[<span class="number">2</span>];</span><br><span class="line">                <span class="keyword">if</span>(visited[i][j] == <span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line">                visited[i][j] = <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span>(i == m-<span class="number">1</span> &amp;&amp; j == n-<span class="number">1</span>) <span class="keyword">return</span> currEffort;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span>[] operation : operations)&#123;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">nextX</span> <span class="operator">=</span> i + operation[<span class="number">0</span>];</span><br><span class="line">                    <span class="type">int</span> <span class="variable">nextY</span> <span class="operator">=</span> j + operation[<span class="number">1</span>];</span><br><span class="line">                    <span class="keyword">if</span>(nextX &lt; <span class="number">0</span> || nextY &lt; <span class="number">0</span> || nextX &gt;= m || nextY &gt;= n) <span class="keyword">continue</span>;</span><br><span class="line">                    <span class="type">int</span> <span class="variable">nextEffort</span> <span class="operator">=</span> Math.max(currEffort, Math.abs(heights[i][j] - heights[nextX][nextY]));</span><br><span class="line">                    <span class="type">int</span>[] next = &#123;nextX, nextY, nextEffort&#125;;</span><br><span class="line">                    </span><br><span class="line">                    q.add(next);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            size = q.size();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-28T03:13:28.000Z" title="2022/4/28 上午11:13:28">2022-04-28</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-28T03:13:28.404Z" title="2022/4/28 上午11:13:28">2022-04-28</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/28/45-Jump-Game-II/">45. Jump Game II</a></h1><div class="content"><blockquote>
+<p>Given an array of non-negative integers nums, you are initially positioned at the first index of the array.</p>
+<p>Each element in the array represents your maximum jump length at that position.</p>
+<p>Your goal is to reach the last index in the minimum number of jumps.</p>
+<p>You can assume that you can always reach the last index.</p>
+</blockquote>
+<p>设置一个当前可以访问的最大范围limit，在遍历中对其进行更新。<br>和当前可访问位置中的最远距离end，每次访问到达end时，计算步数。</p>
+<p>遍历数组，比较limit和当前i能访问的最远距离i+nums[i]，保留较大值。<br>当i达到end时，更新end为之前记录的可访问最远距离limit。步数+1。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">jump</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">limit</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">end</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length-<span class="number">1</span>; i++)&#123;</span><br><span class="line">            limit = Math.max(limit, i + nums[i]);</span><br><span class="line">            <span class="keyword">if</span>(i == end)&#123;</span><br><span class="line">                end = limit;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-26T16:05:32.000Z" title="2022/4/27 上午12:05:32">2022-04-27</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-26T16:05:32.542Z" title="2022/4/27 上午12:05:32">2022-04-27</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/27/55-Jump-Game/">55. Jump Game</a></h1><div class="content"><blockquote>
+<p>You are given an integer array nums. You are initially positioned at the array’s first index, and each element in the array represents your maximum jump length at that position.</p>
+<p>Return true if you can reach the last index, or false otherwise.</p>
+</blockquote>
+<p>反向查找，动态规划。<br>到达目标点前必须到达上一个节点，且上一个节点能前进的步数必须大于目标点。<br>设置目标点goal，反向遍历goal以外的点。<br>如果该点能前进的步数加上自身的位置i大于目标点，则可以从上一个点到达goal。<br>更新goal的位置到上一个点。<br>如果遍历结束后，能返回到起始点0，则可以到达终点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canJump</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">goal</span> <span class="operator">=</span> nums.length-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> nums.length-<span class="number">2</span>; i &gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] &gt;= goal - i) goal = i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">return</span> <span class="variable">goal</span> <span class="operator">=</span>= <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    <!-- persian styles -->
-    
-    <!-- rss -->
-    
-    
-	<!-- mathjax -->
-	
-<meta name="generator" content="Hexo 5.4.1"></head>
-
-<body class="max-width mx-auto px3 ltr">
-    
-    <div class="content index py4">
-        
-          <header id="header">
-  <a href="/">
-  
-    
-      <div id="logo" style="background-image: url(/images/logo.png);"></div>
-    
-  
-    <div id="title">
-      <h1>XANDER Studio</h1>
-    </div>
-  </a>
-  <div id="nav">
-    <ul>
-      <li class="icon">
-        <a href="#" aria-label="Menu"><i class="fas fa-bars fa-2x"></i></a>
-      </li>
-      <!--
-     --><li><a href="/">Home</a></li><!--
-   --><!--
-     --><li><a href="/">About</a></li><!--
-   --><!--
-     --><li><a href="/archives/">Writing</a></li><!--
-   --><!--
-     --><li><a target="_blank" rel="noopener" href="http://github.com/xuanhe95">Projects</a></li><!--
-   -->
-    </ul>
-  </div>
-</header>
-
-        
-        <div id="archive">
-  <ul class="post-list">
-    
-    
-    
-    
-      
-      
-      
-      
-        <li class="post-year"><h2>2022</h2></li>
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-05-01T15:53:23.000Z" itemprop="datePublished">2022-05-01</time>
-        
-      
-    </div>
+<p>贪心算法，储存一个到i时可以到达的最远值maxJump。<br>遍历数组，如果i大于maxJump，则无法到达下一个点，返回false。<br>在当前点可以到达的最大范围为nums[i]+i，如果大于maxJump则更新该值。<br>遍历完毕返回true。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canJump</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxJump</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i &gt; maxJump) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            maxJump = Math.max(maxJump, nums[i] + i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> maxJump &gt;= nums.length-<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-        <span>
-    
-        <a class="" href="/2022/05/01/300-Longest-Increasing-Subsequence/">300. Longest Increasing Subsequence</a>
-    
+<p>设置一个数组记录可访问的范围。<br>当遍历时，如果可以访问，则将当前位置可以进一步访问的位置变为1。<br>如果访问范围大于等于数组末尾，则返回真。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canJump</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] reach = <span class="keyword">new</span> <span class="title class_">int</span>[nums.length];</span><br><span class="line">        reach[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(reach[i] == <span class="number">1</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i == nums.length-<span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; nums[i]; j++)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(i+j+<span class="number">1</span> &gt;= nums.length) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                    reach[i+j+<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-21T10:24:54.000Z" title="2022/4/21 下午6:24:54">2022-04-21</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-21T10:30:51.770Z" title="2022/4/21 下午6:30:51">2022-04-21</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/21/763-Partition-Labels/">763. Partition Labels</a></h1><div class="content"><blockquote>
+<p>You are given a string s. We want to partition the string into as many parts as possible so that each letter appears in at most one part.</p>
+<p>Note that the partition is done so that after concatenating all the parts in order, the resultant string should be s.</p>
+<p>Return a list of integers representing the size of these parts.</p>
+</blockquote>
+<p>将英文字母出现的首尾作为intervals看待。<br>根据字符创建数组并填入左右的index。<br>根据左侧index排序数组。</p>
+<p>从左至右，如果intervals有交集，则合并。<br>否则在答案中添加当前interval的长度。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> List&lt;Integer&gt; <span class="title function_">partitionLabels</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[][] alphabet = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>][<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">head</span> <span class="operator">=</span> s.charAt(<span class="number">0</span>) - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> s.charAt(i) - <span class="string">&#x27;a&#x27;</span>;</span><br><span class="line">            <span class="keyword">if</span>(head != index &amp;&amp; alphabet[index][<span class="number">0</span>] == <span class="number">0</span>) alphabet[index][<span class="number">0</span>] = i;</span><br><span class="line">            alphabet[index][<span class="number">1</span>] = i;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Arrays.sort(alphabet, (a,b) -&gt; a[<span class="number">0</span>] - b[<span class="number">0</span>]);</span><br><span class="line">        </span><br><span class="line">        List&lt;Integer&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>();</span><br><span class="line">        <span class="type">int</span>[] hold = alphabet[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; alphabet.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(alphabet[i][<span class="number">0</span>] &lt;= hold[<span class="number">1</span>])&#123;</span><br><span class="line">                hold[<span class="number">1</span>] = Math.max(hold[<span class="number">1</span>], alphabet[i][<span class="number">1</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                ans.add(hold[<span class="number">1</span>]-hold[<span class="number">0</span>]+<span class="number">1</span>);</span><br><span class="line">                hold = alphabet[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        ans.add(hold[<span class="number">1</span>]-hold[<span class="number">0</span>]+<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> ans;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-20T05:35:04.000Z" title="2022/4/20 下午1:35:04">2022-04-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-20T11:27:50.839Z" title="2022/4/20 下午7:27:50">2022-04-20</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/20/334-Increasing-Triplet-Subsequence/">334. Increasing Triplet Subsequence</a></h1><div class="content"><blockquote>
+<p>Given an integer array nums, return true if there exists a triple of indices (i, j, k) such that i &lt; j &lt; k and nums[i] &lt; nums[j] &lt; nums[k]. If no such indices exists, return false.</p>
+</blockquote>
+<p>贪心算法。<br>将first与second初始化为最大值。<br>first保存遍历过的最小值。<br>second保存遍历过的大于之前最小值的最小值。</p>
+<p>遍历数组。<br>条件一：如果数字小于现在第一个值，则更新第一个值。<br>（此时一定不满足条件二，因此可以安全地更新更小的数字。）<br>条件二：如果数字大于第一个值，且小于第二个值，则更新第二个值。<br>（此时第一个值已经被更新过了，满足第一个值小于第二个值。）<br>条件三：如果数字大于第二个值，则返回true。<br>（此时两个值一定都被更新过了，满足第一个值小于第二个值小于第三个值。）</p>
+<p><strong>注意：</strong><br>更新first后，second不会更新，但是second的存在可以确保曾经存在first小于second。<br>如果此时数字大于second，则数组中存在Triplet Subsequence。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">increasingTriplet</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">first</span> <span class="operator">=</span> Integer.MAX_VALUE;</span><br><span class="line">        <span class="type">int</span> <span class="variable">second</span> <span class="operator">=</span> Integer.MAX_VALUE;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(num &lt; first)&#123;</span><br><span class="line">                first = num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(num &gt; first &amp;&amp; num &lt; second)&#123;</span><br><span class="line">                second = num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(num &gt; second)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            &#125;   </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p>双向遍历，逐渐收紧搜索窗口。设置i，k两个指针分别在头尾。<br>当nums[j] &lt;&#x3D; nums[i]，则更新i指针为j。<br>当nums[j] &gt;&#x3D; nums[k]，则更新k指针为j。<br>如果找到符合条件的nums[i] &lt; nums[j] &lt; nums[k]则返回。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">increasingTriplet</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> nums.length -<span class="number">1</span> ;</span><br><span class="line">        <span class="type">int</span> j;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(i &lt; k &amp;&amp; i + count &lt; k)&#123;</span><br><span class="line">            <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">                j = i + count;</span><br><span class="line">                <span class="keyword">if</span>(nums[i] &gt;= nums[j])&#123;</span><br><span class="line">                    i = j;</span><br><span class="line">                    count = <span class="number">1</span>;</span><br><span class="line">                    flag = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(nums[j] &lt; nums[k])&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                flag = !flag;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                j = k - count;</span><br><span class="line">                <span class="keyword">if</span>(nums[k] &lt;= nums[j])&#123;</span><br><span class="line">                    k = j;</span><br><span class="line">                    count = <span class="number">1</span>;</span><br><span class="line">                    flag = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(nums[j] &gt; nums[i])&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span>&#123;</span><br><span class="line">                    count++;</span><br><span class="line">                &#125;</span><br><span class="line">                flag = !flag;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-19T08:07:06.000Z" title="2022/4/19 下午4:07:06">2022-04-19</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-19T08:07:06.724Z" title="2022/4/19 下午4:07:06">2022-04-19</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/19/986-Interval-List-Intersections/">986. Interval List Intersections</a></h1><div class="content"><blockquote>
+<p>You are given two lists of closed intervals, firstList and secondList, where firstList[i] &#x3D; [starti, endi] and secondList[j] &#x3D; [startj, endj]. Each list of intervals is pairwise disjoint and in sorted order.</p>
+<p>Return the intersection of these two interval lists.</p>
+<p>A closed interval [a, b] (with a &lt;&#x3D; b) denotes the set of real numbers x with a &lt;&#x3D; x &lt;&#x3D; b.</p>
+<p>The intersection of two closed intervals is a set of real numbers that are either empty or represented as a closed interval. For example, the intersection of [1, 3] and [2, 4] is [2, 3].</p>
+</blockquote>
+<p><img src="https://assets.leetcode.com/uploads/2019/01/30/interval1.png"></p>
+<p>设置两个指针，分别指向两个intervals的头部。<br>循环，相交的left等于两者左端的较大值。right等于两者右端的较小值。<br>只有在left小于right时，两个interval才相交，填入列表。<br>然后更新两个interval中右端较小的指针。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] intervalIntersection(<span class="type">int</span>[][] firstList, <span class="type">int</span>[][] secondList) &#123;</span><br><span class="line">        List&lt;<span class="type">int</span>[]&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(); </span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(i &lt; firstList.length &amp;&amp; j &lt; secondList.length)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> Math.max( firstList[i][<span class="number">0</span>], secondList[j][<span class="number">0</span>] );</span><br><span class="line">            <span class="type">int</span> <span class="variable">right</span> <span class="operator">=</span> Math.min( firstList[i][<span class="number">1</span>], secondList[j][<span class="number">1</span>] );</span><br><span class="line">            <span class="keyword">if</span>(left &lt;= right)&#123;</span><br><span class="line">                ans.add(<span class="keyword">new</span> <span class="title class_">int</span>[]&#123;left, right&#125;);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(firstList[i][<span class="number">1</span>] &lt; secondList[j][<span class="number">1</span>]) i++;</span><br><span class="line">            <span class="keyword">else</span> j++;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span>[][] ret = <span class="keyword">new</span> <span class="title class_">int</span>[ans.size()][<span class="number">2</span>];</span><br><span class="line">        ans.toArray(ret);</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-04-28T15:30:35.000Z" itemprop="datePublished">2022-04-28</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2022/04/28/1631-Path-With-Minimum-Effort/">1631. Path With Minimum Effort</a>
-    
-
-
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-04-28T03:13:28.000Z" itemprop="datePublished">2022-04-28</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2022/04/28/45-Jump-Game-II/">45. Jump Game II</a>
-    
-
-
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-04-26T16:05:32.000Z" itemprop="datePublished">2022-04-27</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2022/04/27/55-Jump-Game/">55. Jump Game</a>
-    
-
-
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-04-21T10:24:54.000Z" itemprop="datePublished">2022-04-21</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2022/04/21/763-Partition-Labels/">763. Partition Labels</a>
-    
-
-
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-04-20T05:35:04.000Z" itemprop="datePublished">2022-04-20</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2022/04/20/334-Increasing-Triplet-Subsequence/">334. Increasing Triplet Subsequence</a>
-    
-
-
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-04-19T08:07:06.000Z" itemprop="datePublished">2022-04-19</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2022/04/19/986-Interval-List-Intersections/">986. Interval List Intersections</a>
-    
-
-
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-04-19T04:28:33.000Z" itemprop="datePublished">2022-04-19</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2022/04/19/435-Non-overlapping-Intervals/">435. Non-overlapping Intervals</a>
-    
-
-
-</span>
-      </li>
-    
-      
-      
-      
-      
-      <li class="post-item">
-        
-    <div class="meta">
-      
-        
-          <time datetime="2022-04-05T16:50:01.000Z" itemprop="datePublished">2022-04-06</time>
-        
-      
-    </div>
-
-
-        <span>
-    
-        <a class="" href="/2022/04/06/11-Container-With-Most-Water/">11. Container With Most Water</a>
-    
-
-
-</span>
-      </li>
-    
-  </ul>
-  
-
-</div>
-
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2022
-    Xuanhe
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a target="_blank" rel="noopener" href="http://github.com/xuanhe95">Projects</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-    </div>
-    <!-- styles -->
-
-
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
-
-
-
-
-<!-- clipboard -->
-
-
-<script src="/js/main.js"></script>
-
-<!-- search -->
-
-<!-- Google Analytics -->
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Umami Analytics -->
-
-<!-- Disqus Comments -->
-
-<!-- utterances Comments -->
-
-</body>
-</html>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] intervalIntersection(<span class="type">int</span>[][] firstList, <span class="type">int</span>[][] secondList) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        ArrayList&lt;<span class="type">int</span>[]&gt; ans = <span class="keyword">new</span> <span class="title class_">ArrayList</span>(); </span><br><span class="line">        <span class="type">int</span>[] holdA;</span><br><span class="line">        <span class="type">int</span>[] holdB;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(i &lt; firstList.length &amp;&amp; j &lt; secondList.length)&#123;</span><br><span class="line">            holdA = firstList[i];</span><br><span class="line">            holdB = secondList[j];</span><br><span class="line">            </span><br><span class="line">            <span class="type">int</span>[] arr = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span>(holdA[<span class="number">0</span>] &lt;= holdB[<span class="number">0</span>] &amp;&amp; holdA[<span class="number">1</span>] &gt;= holdB[<span class="number">1</span>])&#123;</span><br><span class="line">                ans.add(holdB);</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(holdA[<span class="number">0</span>] &gt;= holdB[<span class="number">0</span>] &amp;&amp; holdA[<span class="number">1</span>] &lt;= holdB[<span class="number">1</span>])&#123;</span><br><span class="line">                ans.add(holdA);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(holdA[<span class="number">0</span>] &lt;= holdB[<span class="number">0</span>] &amp;&amp; holdA[<span class="number">1</span>] &gt;= holdB[<span class="number">0</span>])&#123;</span><br><span class="line">                arr[<span class="number">0</span>] = holdB[<span class="number">0</span>];</span><br><span class="line">                arr[<span class="number">1</span>] = holdA[<span class="number">1</span>];</span><br><span class="line">                ans.add(arr);</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(holdA[<span class="number">0</span>] &gt;= holdB[<span class="number">0</span>] &amp;&amp; holdB[<span class="number">1</span>] &gt;= holdA[<span class="number">0</span>])&#123;</span><br><span class="line">                arr[<span class="number">0</span>] = holdA[<span class="number">0</span>];</span><br><span class="line">                arr[<span class="number">1</span>] = holdB[<span class="number">1</span>];</span><br><span class="line">                ans.add(arr);</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(holdA[<span class="number">1</span>] &lt;= holdB[<span class="number">1</span>])&#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span>[][] ret = <span class="keyword">new</span> <span class="title class_">int</span>[ans.size()][<span class="number">2</span>];</span><br><span class="line">        ans.toArray(ret);</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-19T04:28:33.000Z" title="2022/4/19 下午12:28:33">2022-04-19</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-19T07:13:09.060Z" title="2022/4/19 下午3:13:09">2022-04-19</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/19/435-Non-overlapping-Intervals/">435. Non-overlapping Intervals</a></h1><div class="content"><blockquote>
+<p>Given an array of intervals intervals where intervals[i] &#x3D; [starti, endi], return the minimum number of intervals you need to remove to make the rest of the intervals non-overlapping.</p>
+</blockquote>
+<p>首先对intervals按照后一项的大小进行排序。（直接将两数字相减作为比较值比Integer.compare方法更快。）<br>贪心算法，将已取得的最大值max设置为最小整数值。<br>遍历intervals，如果当前interval的左侧小于max，则不能选择该interval，计数加一。<br>反之则可以选择interval，更新max的值为interval的最大值。<br>返回总数。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">eraseOverlapIntervals</span><span class="params">(<span class="type">int</span>[][] intervals)</span> &#123;</span><br><span class="line">        Arrays.sort(intervals, (a,b) -&gt; a[<span class="number">1</span>] - b[<span class="number">1</span>]);</span><br><span class="line">        <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> Integer.MIN_VALUE;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span>[] interval : intervals)&#123;</span><br><span class="line">            <span class="keyword">if</span>(interval[<span class="number">0</span>] &lt; max)&#123;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                max = interval[<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-05T16:50:01.000Z" title="2022/4/6 上午12:50:01">2022-04-06</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-05T19:03:02.604Z" title="2022/4/6 上午3:03:02">2022-04-06</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a></span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/04/06/11-Container-With-Most-Water/">11. Container With Most Water</a></h1><div class="content"><blockquote>
+<p><strong>问题</strong><br>You are given an integer array height of length n. There are n vertical lines drawn such that the two endpoints of the ith line are (i, 0) and (i, height[i]).<br>Find two lines that together with the x-axis form a container, such that the container contains the most water.<br>Return the maximum amount of water a container can store.<br>Notice that you may not slant the container.</p>
+</blockquote>
+<p>双指针在首尾，二者容量取决于两者中较小的一个。<br>贪心算法，保留两个指针上较大的元素，移动较小一边的指针。<br>由于指针移动时距离只会减小，因此当新的元素比上一个更大时才有可能比之前的容量更大。<br>遍历一次找到最大容量。<br>时间复杂度：O(n)</p>
+<blockquote>
+<p>感觉这个移动有点博弈论的味了，每次都移动自己最差的一边，虽然可能变得更差，但是总比不动（或者减小）强，动最差的部分可能找到更好的结果，但是动另一边总会更差或者不变，兄弟们，这不是题，这是人生，逃离舒适圈！！（这解释我觉得无敌了，哈哈哈）</p>
+</blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span>[] height)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">best</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> height.length - <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> ( i &lt; j )&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">product</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">if</span> (height[i] &lt; height[j])&#123;</span><br><span class="line">                product = height[i] * ( j -i );</span><br><span class="line">                i++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                product = height[j] * ( j -i );</span><br><span class="line">                j--;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> ( product &gt; best)&#123;</span><br><span class="line">                best = product;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> best;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div></article></div></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">XANDER Studio</a><p class="is-size-7"><span>&copy; 2022 Xuanhe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><!--!--><script src="/js/main.js" defer></script><!--!--></body></html>

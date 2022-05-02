@@ -1,309 +1,43 @@
-<!DOCTYPE html>
-<html lang=en>
-<head>
-    <!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
-    <meta name="description" content="You are given a string s, and an array of pairs of indices in the string pairs where pairs[i] &#x3D; [a, b] indicates 2 indices(0-indexed) of the string. You can swap the characters at any pair of in">
-<meta property="og:type" content="article">
-<meta property="og:title" content="1202. Smallest String With Swaps">
-<meta property="og:url" content="https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/index.html">
-<meta property="og:site_name" content="XANDER Studio">
-<meta property="og:description" content="You are given a string s, and an array of pairs of indices in the string pairs where pairs[i] &#x3D; [a, b] indicates 2 indices(0-indexed) of the string. You can swap the characters at any pair of in">
-<meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-04-27T06:10:58.000Z">
-<meta property="article:modified_time" content="2022-04-27T06:10:59.028Z">
-<meta property="article:author" content="Xuanhe">
-<meta property="article:tag" content="Hash Map">
-<meta property="article:tag" content="每日一题">
-<meta property="article:tag" content="Priority Queue">
-<meta property="article:tag" content="String">
-<meta property="article:tag" content="Disjoint Set">
-<meta name="twitter:card" content="summary">
-    
-    
-      
-        
-          <link rel="shortcut icon" href="/images/favicon.ico">
-        
-      
-      
-        
-          <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-        
-      
-      
-        
-          <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-        
-      
-    
-    <!-- title -->
-    <title>1202. Smallest String With Swaps</title>
-    <!-- styles -->
-    
-<link rel="stylesheet" href="/css/style.css">
-
-    <!-- persian styles -->
-    
-    <!-- rss -->
-    
-    
-	<!-- mathjax -->
-	
-<meta name="generator" content="Hexo 5.4.1"></head>
-
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
-  <a id="menu-icon" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#" aria-label="Menu"><i class="fas fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" aria-label="Top" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a target="_blank" rel="noopener" href="http://github.com/xuanhe95">Projects</a></li><!--
-     -->
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        <li><a class="icon" aria-label="Previous post" href="/2022/04/27/707-Design-Linked-List/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
-        
-        
-        <li><a class="icon" aria-label="Next post" href="/2022/04/27/55-Jump-Game/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" aria-label="Back to top" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" aria-label="Share post" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&text=1202. Smallest String With Swaps"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&is_video=false&description=1202. Smallest String With Swaps"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=1202. Smallest String With Swaps&body=Check out this article: https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&name=1202. Smallest String With Swaps&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&t=1202. Smallest String With Swaps"><i class="fab fa-hacker-news " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    <div id="toc">
-      
-    </div>
-  </span>
-</div>
-
-    
-    <div class="content index py4">
-        
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-        1202. Smallest String With Swaps
-    </h1>
-
-
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Xuanhe</span>
-      </span>
-      
-    <div class="postdate">
-      
-        <time datetime="2022-04-27T06:10:58.000Z" itemprop="datePublished">2022-04-27</time>
-        
-        (Updated: <time datetime="2022-04-27T06:10:59.028Z" itemprop="dateModified">2022-04-27</time>)
-        
-      
-    </div>
-
-
-      
-    <div class="article-category">
-        <i class="fas fa-archive"></i>
-        <a class="category-link" href="/categories/LeetCode/">LeetCode</a> › <a class="category-link" href="/categories/LeetCode/Medium/">Medium</a> › <a class="category-link" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a>
-    </div>
-
-
-      
-    <div class="article-tag">
-        <i class="fas fa-tag"></i>
-        <a class="tag-link-link" href="/tags/Disjoint-Set/" rel="tag">Disjoint Set</a>, <a class="tag-link-link" href="/tags/Hash-Map/" rel="tag">Hash Map</a>, <a class="tag-link-link" href="/tags/Priority-Queue/" rel="tag">Priority Queue</a>, <a class="tag-link-link" href="/tags/String/" rel="tag">String</a>, <a class="tag-link-link" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/" rel="tag">每日一题</a>
-    </div>
-
-
-    </div>
-  </header>
-  
-
-  <div class="content" itemprop="articleBody">
-    <blockquote>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>1202. Smallest String With Swaps - XANDER Studio</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="XANDER Studio"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="XANDER Studio"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="You are given a string s, and an array of pairs of indices in the string pairs where pairs[i] &amp;#x3D; [a, b] indicates 2 indices(0-indexed) of the string. You can swap the characters at any pair of in"><meta property="og:type" content="article"><meta property="og:title" content="1202. Smallest String With Swaps"><meta property="og:url" content="https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/"><meta property="og:site_name" content="XANDER Studio"><meta property="og:description" content="You are given a string s, and an array of pairs of indices in the string pairs where pairs[i] &amp;#x3D; [a, b] indicates 2 indices(0-indexed) of the string. You can swap the characters at any pair of in"><meta property="og:locale" content="en_US"><meta property="og:image" content="https://xuanhe95.github.io/img/og_image.png"><meta property="article:published_time" content="2022-04-27T06:10:58.000Z"><meta property="article:modified_time" content="2022-04-27T06:10:59.028Z"><meta property="article:author" content="Xuanhe"><meta property="article:tag" content="Hash Map"><meta property="article:tag" content="每日一题"><meta property="article:tag" content="Priority Queue"><meta property="article:tag" content="String"><meta property="article:tag" content="Disjoint Set"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/"},"headline":"1202. Smallest String With Swaps","image":["https://xuanhe95.github.io/img/og_image.png"],"datePublished":"2022-04-27T06:10:58.000Z","dateModified":"2022-04-27T06:10:59.028Z","author":{"@type":"Person","name":"Xuanhe"},"publisher":{"@type":"Organization","name":"XANDER Studio","logo":{"@type":"ImageObject"}},"description":"You are given a string s, and an array of pairs of indices in the string pairs where pairs[i] &#x3D; [a, b] indicates 2 indices(0-indexed) of the string. You can swap the characters at any pair of in"}</script><link rel="canonical" href="https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-1-column"><nav class="navbar navbar-main"><div class="container navbar-container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">XANDER Studio</a></div><div class="navbar-menu"><div class="navbar-end"></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-12"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-04-27T06:10:58.000Z" title="2022/4/27 下午2:10:58">2022-04-27</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-04-27T06:10:59.028Z" title="2022/4/27 下午2:10:59">2022-04-27</time></span><span class="level-item"><a class="link-muted" href="/categories/LeetCode/">LeetCode</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/">Medium</a><span> / </span><a class="link-muted" href="/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/">复习</a></span></div></div><h1 class="title is-3 is-size-4-mobile">1202. Smallest String With Swaps</h1><div class="content"><blockquote>
 <p>You are given a string s, and an array of pairs of indices in the string pairs where pairs[i] &#x3D; [a, b] indicates 2 indices(0-indexed) of the string.</p>
 <p>You can swap the characters at any pair of indices in the given pairs any number of times.</p>
 <p>Return the lexicographically smallest string that s can be changed to after using the swaps.</p>
 </blockquote>
 <p>并查集，注意要使用路径压缩否则会超时。<br>先将所有配对联通。然后创建一个数组group记录每个字符串位置的分组情况。<br>根据分组，借助优先队列保存字符串。<br>通过哈希表创建group和PriorityQueue的映射。<br>按当前位置的分组情况和优先队列的顺序来添加字符串。<br>最后返回字符串。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">smallestStringWithSwaps</span><span class="params">(String s, List&lt;List&lt;Integer&gt;&gt; pairs)</span> &#123;</span><br><span class="line">        <span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">        <span class="type">UnionFind</span> <span class="variable">uf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UnionFind</span>(s.length());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(List&lt;Integer&gt; pair : pairs)&#123;</span><br><span class="line">            uf.union(pair.get(<span class="number">0</span>), pair.get(<span class="number">1</span>));    </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span>[] group = <span class="keyword">new</span> <span class="title class_">int</span>[s.length()];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            group[i] = uf.find(i);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        HashMap&lt;Integer, PriorityQueue&lt;Character&gt;&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            PriorityQueue&lt;Character&gt; bin = map.getOrDefault(group[i], <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;Character&gt;());</span><br><span class="line">            bin.add(s.charAt(i));</span><br><span class="line">            map.put(group[i], bin);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sb.append(map.get(group[i]).poll());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">UnionFind</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] parent;</span><br><span class="line">        <span class="type">int</span>[] count;</span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">UnionFind</span><span class="params">(<span class="type">int</span> n)</span>&#123;</span><br><span class="line">            parent = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">            count = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">                parent[i] = i;</span><br><span class="line">                count[i] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">find</span><span class="params">(<span class="type">int</span> id)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(parent[id] == id) <span class="keyword">return</span> id;</span><br><span class="line">            parent[id] = find(parent[id]);</span><br><span class="line">            <span class="keyword">return</span> parent[id];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">union</span><span class="params">(<span class="type">int</span> id1, <span class="type">int</span> id2)</span>&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">p1</span> <span class="operator">=</span> find(id1);</span><br><span class="line">            <span class="type">int</span> <span class="variable">p2</span> <span class="operator">=</span> find(id2);</span><br><span class="line">            <span class="keyword">if</span>(p1 == p2) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(count[p1] &gt; count[p2]) parent[p2] = p1;</span><br><span class="line">            <span class="keyword">else</span> parent[p1] = p2;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-  </div>
-</article>
-
-
-
-        
-          <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/">About</a></li>
-         
-          <li><a href="/archives/">Writing</a></li>
-         
-          <li><a target="_blank" rel="noopener" href="http://github.com/xuanhe95">Projects</a></li>
-        
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.facebook.com/sharer.php?u=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://twitter.com/share?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&text=1202. Smallest String With Swaps"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.linkedin.com/shareArticle?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://pinterest.com/pin/create/bookmarklet/?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&is_video=false&description=1202. Smallest String With Swaps"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=1202. Smallest String With Swaps&body=Check out this article: https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://getpocket.com/save?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://reddit.com/submit?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.stumbleupon.com/submit?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://digg.com/submit?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&title=1202. Smallest String With Swaps"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="http://www.tumblr.com/share/link?url=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&name=1202. Smallest String With Swaps&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" target="_blank" rel="noopener" href="https://news.ycombinator.com/submitlink?u=https://xuanhe95.github.io/2022/04/27/1202-Smallest-String-With-Swaps/&t=1202. Smallest String With Swaps"><i class="fab fa-hacker-news fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
-        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
-        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
-        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
-    </div>
-
-  </div>
-</div>
-
-        
-        <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy;
-    
-    
-    2022
-    Xuanhe
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-        <!--
-       --><li><a href="/">Home</a></li><!--
-     --><!--
-       --><li><a href="/">About</a></li><!--
-     --><!--
-       --><li><a href="/archives/">Writing</a></li><!--
-     --><!--
-       --><li><a target="_blank" rel="noopener" href="http://github.com/xuanhe95">Projects</a></li><!--
-     -->
-      </ul>
-    </nav>
-  </div>
-</footer>
-
-    </div>
-    <!-- styles -->
-
-
-
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" crossorigin="anonymous" onload="this.onload=null;this.rel='stylesheet'"/>
-
-
-    <!-- jquery -->
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"></script> 
-
-
-
-
-<!-- clipboard -->
-
-  
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.7/clipboard.min.js" crossorigin="anonymous"></script> 
-  
-  <script type="text/javascript">
-  $(function() {
-    // copy-btn HTML
-    var btn = "<span class=\"btn-copy tooltipped tooltipped-sw\" aria-label=\"Copy to clipboard!\">";
-    btn += '<i class="far fa-clone"></i>';
-    btn += '</span>'; 
-    // mount it!
-    $(".highlight table").before(btn);
-    var clip = new ClipboardJS('.btn-copy', {
-      text: function(trigger) {
-        return Array.from(trigger.nextElementSibling.querySelectorAll('.code')).reduce((str,it)=>str+it.innerText+'\n','')
-      }
-    });
-    clip.on('success', function(e) {
-      e.trigger.setAttribute('aria-label', "Copied!");
-      e.clearSelection();
-    })
-  })
-  </script>
-
-
-<script src="/js/main.js"></script>
-
-<!-- search -->
-
-<!-- Google Analytics -->
-
-<!-- Baidu Analytics -->
-
-<!-- Cloudflare Analytics -->
-
-<!-- Umami Analytics -->
-
-<!-- Disqus Comments -->
-
-<!-- utterances Comments -->
-
-</body>
-</html>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> String <span class="title function_">smallestStringWithSwaps</span><span class="params">(String s, List&lt;List&lt;Integer&gt;&gt; pairs)</span> &#123;</span><br><span class="line">        <span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">        <span class="type">UnionFind</span> <span class="variable">uf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UnionFind</span>(s.length());</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(List&lt;Integer&gt; pair : pairs)&#123;</span><br><span class="line">            uf.union(pair.get(<span class="number">0</span>), pair.get(<span class="number">1</span>));    </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span>[] group = <span class="keyword">new</span> <span class="title class_">int</span>[s.length()];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            group[i] = uf.find(i);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        HashMap&lt;Integer, PriorityQueue&lt;Character&gt;&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            PriorityQueue&lt;Character&gt; bin = map.getOrDefault(group[i], <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;Character&gt;());</span><br><span class="line">            bin.add(s.charAt(i));</span><br><span class="line">            map.put(group[i], bin);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; s.length(); i++)&#123;</span><br><span class="line">            sb.append(map.get(group[i]).poll());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sb.toString();</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">class</span> <span class="title class_">UnionFind</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] parent;</span><br><span class="line">        <span class="type">int</span>[] count;</span><br><span class="line">        <span class="keyword">public</span> <span class="title function_">UnionFind</span><span class="params">(<span class="type">int</span> n)</span>&#123;</span><br><span class="line">            parent = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">            count = <span class="keyword">new</span> <span class="title class_">int</span>[n];</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">                parent[i] = i;</span><br><span class="line">                count[i] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">find</span><span class="params">(<span class="type">int</span> id)</span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(parent[id] == id) <span class="keyword">return</span> id;</span><br><span class="line">            parent[id] = find(parent[id]);</span><br><span class="line">            <span class="keyword">return</span> parent[id];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">union</span><span class="params">(<span class="type">int</span> id1, <span class="type">int</span> id2)</span>&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">p1</span> <span class="operator">=</span> find(id1);</span><br><span class="line">            <span class="type">int</span> <span class="variable">p2</span> <span class="operator">=</span> find(id2);</span><br><span class="line">            <span class="keyword">if</span>(p1 == p2) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span>(count[p1] &gt; count[p2]) parent[p2] = p1;</span><br><span class="line">            <span class="keyword">else</span> parent[p1] = p2;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/Hash-Map/">Hash Map</a><a class="link-muted mr-2" rel="tag" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a><a class="link-muted mr-2" rel="tag" href="/tags/Priority-Queue/">Priority Queue</a><a class="link-muted mr-2" rel="tag" href="/tags/String/">String</a><a class="link-muted mr-2" rel="tag" href="/tags/Disjoint-Set/">Disjoint Set</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2022/04/27/707-Design-Linked-List/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">707. Design Linked List</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/04/27/55-Jump-Game/"><span class="level-item">55. Jump Game</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">XANDER Studio</a><p class="is-size-7"><span>&copy; 2022 Xuanhe</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("en");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><!--!--><script src="/js/main.js" defer></script><!--!--></body></html>
