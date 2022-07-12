@@ -1,5 +1,4 @@
 https://xuanhe95.github.io/2022/06/26/2315-Count-Asterisks/
-https://xuanhe95.github.io/2022/07/13/test/
 https://xuanhe95.github.io/2022/07/13/473-Matchsticks-to-Square/
 https://xuanhe95.github.io/2022/07/10/746-Min-Cost-Climbing-Stairs/
 https://xuanhe95.github.io/2022/07/07/509-Fibonacci-Number/

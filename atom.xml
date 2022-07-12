@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-07-12T23:32:45.957Z</updated>
+  <updated>2022-07-12T22:04:02.514Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test</title>
-    <link href="https://xuanhe95.github.io/2022/07/13/test/"/>
-    <id>https://xuanhe95.github.io/2022/07/13/test/</id>
-    <published>2022-07-12T23:32:45.000Z</published>
-    <updated>2022-07-12T23:32:45.957Z</updated>
-    
-    <content type="html"><![CDATA[<p>stes</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;stes&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>473. Matchsticks to Square</title>
@@ -627,6 +606,39 @@
     <category term="Priority Queue" scheme="https://xuanhe95.github.io/tags/Priority-Queue/"/>
     
     <category term="贪心算法" scheme="https://xuanhe95.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1354. Construct Target Array With Multiple Sums</title>
+    <link href="https://xuanhe95.github.io/2022/06/24/1354-Construct-Target-Array-With-Multiple-Sums/"/>
+    <id>https://xuanhe95.github.io/2022/06/24/1354-Construct-Target-Array-With-Multiple-Sums/</id>
+    <published>2022-06-24T03:01:17.000Z</published>
+    <updated>2022-06-24T03:01:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given an array <code>target</code> of n integers. From a starting array <code>arr</code> consisting of <code>n</code> 1’s, you may perform the following procedure :</p><ul><li>let <code>x</code> be the sum of all elements currently in your array.</li><li>choose index <code>i</code>, such that <code>0 &lt;= i &lt; n</code> and set the value of <code>arr</code> at index <code>i</code> to <code>x</code>.</li><li>You may repeat this procedure as many times as needed.</li></ul><p>Return <code>true</code> <em>if it is possible to construct the</em> <code>target</code> <em>array from</em> <code>arr</code><em>, otherwise, return</em> <code>false</code>.</p></blockquote><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><p>递归，每次寻找到数组中最大的数字的下标maxIndex，并对整个数组加和。<br>当数组中出现小于1的数时，不成立，返回false。<br>当数组加和等于数组长度时，返回true。</p><p>记录剩余的数字others，如果没有剩余数字，则返回false。<br>将target[maxIndex]减去others，因此每次翻倍，快速逼近。<br>当小于0时，则还原到上一个target[maxIndex]。</p><p>递归更改后的数组。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPossible</span><span class="params">(<span class="type">int</span>[] target)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">maxIndex</span> <span class="operator">=</span> <span class="number">0</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; target.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(target[i] &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;    <span class="comment">//数组中出现小于1的数，则不成立，返回false</span></span><br><span class="line">            <span class="keyword">if</span>(target[maxIndex] &lt; target[i]) maxIndex = i;</span><br><span class="line">            sum += target[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(sum == target.length) <span class="keyword">return</span> <span class="literal">true</span>;   <span class="comment">//加和等于长度，则数组内全部为1，返回true</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">others</span> <span class="operator">=</span> sum - target[maxIndex];</span><br><span class="line">        <span class="keyword">if</span>(others == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;   <span class="comment">//没有其他值时返回false</span></span><br><span class="line">        target[maxIndex] -= others;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(target[maxIndex] &gt; others)&#123;</span><br><span class="line">            target[maxIndex] -= n * others;</span><br><span class="line">            <span class="keyword">if</span>(target[maxIndex] &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">                target[maxIndex] += n * others;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            n*=<span class="number">2</span>;   <span class="comment">//因子每次翻倍，快速逼近</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> isPossible(target);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><p>优先级队列， 大根堆。<br>每次挤出队列里最大的数字max。</p><p>如果max的值为1，则返回true。</p><p>计算加和和新的值，并更新sum。<br>如果最大的数字max小于0，或者剩余的sum小于0，则返回false。</p><p>当max仍然大于剩下的数字时，继续做减法。采用因数翻倍，快速接近目标值。<br>如果max小于0，则恢复到上一个值，并添加到优先级队列中。</p><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPossible</span><span class="params">(<span class="type">int</span>[] target)</span> &#123;</span><br><span class="line">        PriorityQueue&lt;Integer&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;(Collections.reverseOrder());</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : target)&#123;</span><br><span class="line">            pq.offer(num);</span><br><span class="line">            sum+=num;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">max</span> <span class="operator">=</span> pq.poll();</span><br><span class="line">            <span class="keyword">if</span>(max == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line">            sum -= max;</span><br><span class="line">            max = max - sum;</span><br><span class="line">            <span class="keyword">if</span>(sum &lt;= <span class="number">0</span> || max &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(max &gt; sum)&#123;</span><br><span class="line">                max -= n * sum;</span><br><span class="line">                <span class="keyword">if</span>(max &lt;= <span class="number">0</span>)&#123;</span><br><span class="line">                    max += n * sum;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                n*=<span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            sum += max;</span><br><span class="line">            pq.offer(max);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;You are given an array &lt;code&gt;targ</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Hard" scheme="https://xuanhe95.github.io/categories/LeetCode/Hard/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="递归" scheme="https://xuanhe95.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    
+    <category term="Priority Queue" scheme="https://xuanhe95.github.io/tags/Priority-Queue/"/>
+    
+    <category term="Math" scheme="https://xuanhe95.github.io/tags/Math/"/>
     
   </entry>
   
