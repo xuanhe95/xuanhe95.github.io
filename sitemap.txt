@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/04/13/102-Binary-Tree-Level-Order-Traversal/
 https://xuanhe95.github.io/2022/06/26/2315-Count-Asterisks/
 https://xuanhe95.github.io/2022/07/13/473-Matchsticks-to-Square/
 https://xuanhe95.github.io/2022/07/10/746-Min-Cost-Climbing-Stairs/
@@ -215,7 +216,6 @@ https://xuanhe95.github.io/2022/04/14/198-House-Robber/
 https://xuanhe95.github.io/2022/04/13/226-Invert-Binary-Tree/
 https://xuanhe95.github.io/2022/04/13/101-Symmetric-Tree/
 https://xuanhe95.github.io/2022/04/13/104-Maximum-Depth-of-Binary-Tree/
-https://xuanhe95.github.io/2022/04/13/102-Binary-Tree-Level-Order-Traversal/
 https://xuanhe95.github.io/2022/04/13/59-Spiral-Matrix-II/
 https://xuanhe95.github.io/2022/04/12/289-Game-of-Life/
 https://xuanhe95.github.io/2022/04/12/145-Binary-Tree-Postorder-Traversal/
