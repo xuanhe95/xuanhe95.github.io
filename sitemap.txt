@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/04/10/695-Max-Area-of-Island/
 https://xuanhe95.github.io/2022/04/13/102-Binary-Tree-Level-Order-Traversal/
 https://xuanhe95.github.io/2022/06/26/2315-Count-Asterisks/
 https://xuanhe95.github.io/2022/07/13/473-Matchsticks-to-Square/
@@ -230,7 +231,6 @@ https://xuanhe95.github.io/2022/04/10/994-Rotting-Oranges/
 https://xuanhe95.github.io/2022/04/10/542-01-Matrix/
 https://xuanhe95.github.io/2022/04/10/20-Valid-Parentheses/
 https://xuanhe95.github.io/2022/04/10/83-Remove-Duplicates-from-Sorted-List/
-https://xuanhe95.github.io/2022/04/10/695-Max-Area-of-Island/
 https://xuanhe95.github.io/2022/04/10/206-Reverse-Linked-List/
 https://xuanhe95.github.io/2022/04/09/203-Remove-Linked-List-Elements/
 https://xuanhe95.github.io/2022/04/07/876-Middle-of-the-Linked-List/
