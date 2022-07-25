@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-07-22T12:42:50.024Z</updated>
+  <updated>2022-07-25T01:38:42.468Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>34. Find the Element in Sorted Array</title>
+    <link href="https://xuanhe95.github.io/2022/07/24/34-Find-the-Element-in-Sorted-Array/"/>
+    <id>https://xuanhe95.github.io/2022/07/24/34-Find-the-Element-in-Sorted-Array/</id>
+    <published>2022-07-25T01:23:46.000Z</published>
+    <updated>2022-07-25T01:38:42.468Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array of integers <code>nums</code> sorted in non-decreasing order, find the starting and ending position of a given <code>target</code> value.</p><p>If <code>target</code> is not found in the array, return <code>[-1, -1]</code>.</p><p>You must write an algorithm with <code>O(log n)</code> runtime complexity.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>二分搜索，首先搜索target。如果搜索到结果为负数，则返回[-1, -1]。<br>如果搜索到target，则记录index。<br>然后从index向两边搜索，直到找到界限并返回。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] searchRange(<span class="type">int</span>[] nums, <span class="type">int</span> target) &#123;</span><br><span class="line">        <span class="type">int</span>[] ret = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">index</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        index = Arrays.binarySearch(nums, target);</span><br><span class="line">        <span class="keyword">if</span>(index &lt; <span class="number">0</span>)&#123;</span><br><span class="line">            ret[<span class="number">0</span>] = -<span class="number">1</span>;</span><br><span class="line">            ret[<span class="number">1</span>] = -<span class="number">1</span>;</span><br><span class="line">            <span class="keyword">return</span> ret;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">int</span> <span class="variable">less</span> <span class="operator">=</span> index, more = index;</span><br><span class="line">        <span class="keyword">while</span>(less &gt;= <span class="number">0</span> &amp;&amp; nums[less] == target) less--;</span><br><span class="line">        <span class="keyword">while</span>(more &lt; nums.length &amp;&amp; nums[more] == target) more++;</span><br><span class="line">        </span><br><span class="line">        ret[<span class="number">0</span>] = less + <span class="number">1</span>;</span><br><span class="line">        ret[<span class="number">1</span>] = more - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Given an array of integers &lt;code&gt;</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="Binary Search" scheme="https://xuanhe95.github.io/tags/Binary-Search/"/>
+    
+  </entry>
   
   <entry>
     <title>86. Partition List</title>
@@ -608,37 +637,6 @@
     <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
     
     <category term="LeetCode Contest" scheme="https://xuanhe95.github.io/tags/LeetCode-Contest/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>665. Non-decreasing Array</title>
-    <link href="https://xuanhe95.github.io/2022/06/24/665-Non-decreasing-Array/"/>
-    <id>https://xuanhe95.github.io/2022/06/24/665-Non-decreasing-Array/</id>
-    <published>2022-06-25T02:14:19.000Z</published>
-    <updated>2022-06-25T02:14:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array <code>nums</code> with <code>n</code> integers, your task is to check if it could become non-decreasing by modifying <strong>at most one element</strong>.</p><p>We define an array is non-decreasing if <code>nums[i] &lt;= nums[i + 1]</code> holds for every <code>i</code> (<strong>0-based</strong>) such that (<code>0 &lt;= i &lt;= n - 2</code>).</p></blockquote><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><p>记录两个最大值last1和last2，初始化为整数最小值。真值flag初始化为true用来记录是否已经有非单调递增的值出现。<br>遍历数组，如果当前数字num大于等于last2，则符合单调递增，更新last1和last2。</p><p>如果num小于last2，则不符合单调递增，此时将flag置为false。</p><ul><li>如果num大于等于last1，则跳过现有的last2，将num保存在last2上。</li><li>如果num小于，则保留当前的last2</li></ul><p>如果flag已经为false，则非单调递增的数字超过1个，返回false。<br>遍历完毕则返回true。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkPossibility</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">last1</span> <span class="operator">=</span> Integer.MIN_VALUE, last2 = Integer.MIN_VALUE;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(num &gt;= last2)&#123;</span><br><span class="line">                last1 = last2;</span><br><span class="line">                last2 = num;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">if</span>(num &gt;= last1) last2 = num;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><p>原理和Solution 1相同，只不过采用单调栈的形式保存单调递增数字。</p><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkPossibility</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        Stack&lt;Integer&gt; s = <span class="keyword">new</span> <span class="title class_">Stack</span>&lt;&gt;();</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">flag</span> <span class="operator">=</span> <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : nums)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s.isEmpty() || num &gt;= s.peek()) s.push(num);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(flag)&#123;</span><br><span class="line">                flag = <span class="literal">false</span>;</span><br><span class="line">                <span class="type">int</span> <span class="variable">temp</span> <span class="operator">=</span> s.pop();</span><br><span class="line">                <span class="keyword">if</span>(s.isEmpty() || num &gt;= s.peek()) s.push(num);</span><br><span class="line">                <span class="keyword">else</span> s.push(temp);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Given an array &lt;code&gt;nums&lt;/code&gt; </summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="Stack" scheme="https://xuanhe95.github.io/tags/Stack/"/>
-    
-    <category term="贪心算法" scheme="https://xuanhe95.github.io/tags/%E8%B4%AA%E5%BF%83%E7%AE%97%E6%B3%95/"/>
     
   </entry>
   
