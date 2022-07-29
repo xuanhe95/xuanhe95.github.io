@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/07/29/890-Find-and-Replace-Pattern/
 https://xuanhe95.github.io/2022/04/06/242-Valid-Anagram/
 https://xuanhe95.github.io/2022/07/27/114-Flatten-Binary-Tree-to-Linked-List/
 https://xuanhe95.github.io/2022/05/03/236-Lowest-Common-Ancestor-of-a-Binary-Tree/
