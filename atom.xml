@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-08-03T17:10:58.893Z</updated>
+  <updated>2022-08-04T22:29:21.340Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>858. Mirror Reflection</title>
+    <link href="https://xuanhe95.github.io/2022/08/04/858-Mirror-Reflection/"/>
+    <id>https://xuanhe95.github.io/2022/08/04/858-Mirror-Reflection/</id>
+    <published>2022-08-04T22:29:03.000Z</published>
+    <updated>2022-08-04T22:29:21.340Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>There is a special square room with mirrors on each of the four walls. Except for the southwest corner, there are receptors on each of the remaining corners, numbered <code>0</code>, <code>1</code>, and <code>2</code>.</p><p>The square room has walls of length <code>p</code> and a laser ray from the southwest corner first meets the east wall at a distance <code>q</code> from the <code>0&lt;sup&gt;th&lt;/sup&gt;</code> receptor.</p><p>Given the two integers <code>p</code> and <code>q</code>, return <em>the number of the receptor that the ray meets first</em>.</p><p>The test cases are guaranteed so that the ray will meet a receptor eventually.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>激光在箱子里折射，可以想象成在无限延展的空间内直线发射光线。<br>因此三个接收器可以被视作组成了一个无限延展的矩阵。</p><p>只需要将q和p化简，然后确定坐标(q, p)所对应的接收器即可。<br>由于接收器是间隔的，因此只需要先化简q，p后计算两者的奇偶性即可。</p><p>如果q与p皆为奇数，则返回1号接收器。<br>如果q是奇数，p不是，则返回0号接收器。<br>如果p是奇数，q不是，则返回2号接收器。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">mirrorReflection</span><span class="params">(<span class="type">int</span> p, <span class="type">int</span> q)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">gcd</span> <span class="operator">=</span> gcd(p, q);</span><br><span class="line">        p/=gcd;</span><br><span class="line">        q/=gcd;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">xIsOdd</span> <span class="operator">=</span> (p &amp; <span class="number">1</span>) == <span class="number">1</span>, yIsOdd = (q &amp; <span class="number">1</span>) == <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(xIsOdd &amp;&amp; yIsOdd) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(xIsOdd) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">gcd</span><span class="params">(<span class="type">int</span> a, <span class="type">int</span> b)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a == b) <span class="keyword">return</span> a;</span><br><span class="line">        <span class="keyword">if</span>(a &gt; b) <span class="keyword">return</span> gcd(b, a-b);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> gcd(a, b-a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;There is a special square room wi</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="数学" scheme="https://xuanhe95.github.io/tags/%E6%95%B0%E5%AD%A6/"/>
+    
+  </entry>
   
   <entry>
     <title>729. My Calendar I</title>
@@ -606,39 +635,6 @@
     <category term="双向遍历" scheme="https://xuanhe95.github.io/tags/%E5%8F%8C%E5%90%91%E9%81%8D%E5%8E%86/"/>
     
     <category term="Sliding Window" scheme="https://xuanhe95.github.io/tags/Sliding-Window/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2318. Number of Distinct Roll Sequences</title>
-    <link href="https://xuanhe95.github.io/2022/06/25/2318-Number-of-Distinct-Roll-Sequences/"/>
-    <id>https://xuanhe95.github.io/2022/06/25/2318-Number-of-Distinct-Roll-Sequences/</id>
-    <published>2022-06-25T19:20:18.000Z</published>
-    <updated>2022-06-25T19:20:20.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given an integer <code>n</code>. You roll a fair 6-sided dice <code>n</code> times. Determine the total number of <strong>distinct</strong> sequences of rolls possible such that the following conditions are satisfied:</p><ol><li>The <strong>greatest common divisor</strong> of any <strong>adjacent</strong> values in the sequence is equal to <code>1</code>.</li><li>There is <strong>at least</strong> a gap of <code>2</code> rolls between <strong>equal</strong> valued rolls. More formally, if the value of the <code>i&lt;sup&gt;th&lt;/sup&gt;</code> roll is <strong>equal</strong> to the value of the <code>j&lt;sup&gt;th&lt;/sup&gt;</code> roll, then <code>abs(i - j) &gt; 2</code>.</li></ol><p>Return <em>the</em>* total number** of distinct sequences possible*. Since the answer may be very large, return it <strong>modulo</strong> <code>10&lt;sup&gt;9&lt;/sup&gt;&lt;span&gt; &lt;/span&gt;+ 7</code>.</p><p>Two sequences are considered distinct if at least one element is different.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>DFS+记忆化搜索剪枝。<br>辅助方法getValidNext计算前两个位置为last1和last2时的所有的下一个有效值，将返回值储存在next[][]数组中。</p><h4 id="DFS搜索"><a href="#DFS搜索" class="headerlink" title="DFS搜索"></a>DFS搜索</h4><p>DFS搜索，传入剩余骰子数量n，前两个骰子的值x和y。<br>从next[x][y]中得到所有有效值。并进行递归。<br>将返回结果加和并返回。<br>当n等于0时，只有一个组合，因此返回1。</p><h4 id="记忆化搜索"><a href="#记忆化搜索" class="headerlink" title="记忆化搜索"></a>记忆化搜索</h4><p>在搜索时会重复计算很多相同的x，y与n的组合，因此可以采用记忆化搜索进行剪枝。<br>用memo[][][]数组记录x，y与n的状态。如果此前已经计算过其结果，则直接返回memo[x][y][n]。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    List&lt;Integer&gt;[][] next;</span><br><span class="line">    <span class="type">int</span>[][][] memo;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">distinctSequences</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        next = <span class="keyword">new</span> <span class="title class_">ArrayList</span>[<span class="number">7</span>][<span class="number">7</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;= <span class="number">6</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt;= <span class="number">6</span>; j++)&#123;</span><br><span class="line">                next[i][j] = getValidNext(i, j);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        memo = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">7</span>][<span class="number">7</span>][<span class="number">10001</span>];</span><br><span class="line">        <span class="keyword">return</span> count(n, <span class="number">0</span>, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">count</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> x, <span class="type">int</span> y)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(memo[x][y][n] != <span class="number">0</span>) <span class="keyword">return</span> memo[x][y][n];</span><br><span class="line">        List&lt;Integer&gt; validNext = next[x][y];</span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> z : validNext)&#123;</span><br><span class="line">            sum += count(n-<span class="number">1</span>, y, z);</span><br><span class="line">            sum %= <span class="number">1000000007</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        memo[x][y][n] = sum;</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> List&lt;Integer&gt; <span class="title function_">getValidNext</span><span class="params">(<span class="type">int</span> last1, <span class="type">int</span> last2)</span>&#123;</span><br><span class="line">        List&lt;Integer&gt; arr = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= <span class="number">6</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(last1 == <span class="number">0</span> &amp;&amp; last2 == <span class="number">0</span>) arr.add(i);</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(i == last1 || i == last2) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>((last2 &amp; <span class="number">1</span>) == <span class="number">0</span> &amp;&amp; (i &amp; <span class="number">1</span>) == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>((last2 == <span class="number">3</span> || last2 == <span class="number">6</span>) &amp;&amp; (i == <span class="number">3</span> || i == <span class="number">6</span>)) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">else</span> arr.add(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> arr;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;You are given an integer &lt;code&gt;n&lt;</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Hard" scheme="https://xuanhe95.github.io/categories/LeetCode/Hard/"/>
-    
-    <category term="复习" scheme="https://xuanhe95.github.io/categories/LeetCode/Hard/%E5%A4%8D%E4%B9%A0/"/>
-    
-    
-    <category term="DFS" scheme="https://xuanhe95.github.io/tags/DFS/"/>
-    
-    <category term="LeetCode Contest" scheme="https://xuanhe95.github.io/tags/LeetCode-Contest/"/>
-    
-    <category term="Memoization" scheme="https://xuanhe95.github.io/tags/Memoization/"/>
     
   </entry>
   
