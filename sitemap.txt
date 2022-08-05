@@ -1,3 +1,5 @@
+https://xuanhe95.github.io/2022/08/05/377-Combination-Sum-IV/
+https://xuanhe95.github.io/2022/08/04/%E4%BD%BF%E7%94%A8Blender%E7%94%9F%E6%88%90Avatar%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%8A%A8%E4%BD%9C/
 https://xuanhe95.github.io/2022/08/04/858-Mirror-Reflection/
 https://xuanhe95.github.io/2022/08/03/729-My-Calendar-I/
 https://xuanhe95.github.io/2022/07/29/890-Find-and-Replace-Pattern/
@@ -320,6 +322,7 @@ https://xuanhe95.github.io/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/
 https://xuanhe95.github.io/tags/%E6%A0%91%E5%BD%A2DP/
 https://xuanhe95.github.io/tags/Front-end/
 https://xuanhe95.github.io/tags/Unity/
+https://xuanhe95.github.io/tags/Blender/
 https://xuanhe95.github.io/categories/LeetCode/
 https://xuanhe95.github.io/categories/LeetCode/Medium/
 https://xuanhe95.github.io/categories/LeetCode/Easy/
@@ -334,3 +337,5 @@ https://xuanhe95.github.io/categories/Hard/%E5%A4%8D%E4%B9%A0/
 https://xuanhe95.github.io/categories/Hexo/
 https://xuanhe95.github.io/categories/Unity/
 https://xuanhe95.github.io/categories/Hexo/Theme/
+https://xuanhe95.github.io/categories/Drawing-Modelling/
+https://xuanhe95.github.io/categories/Drawing-Modelling/Blender/

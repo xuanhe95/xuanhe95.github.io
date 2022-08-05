@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-08-04T22:29:21.340Z</updated>
+  <updated>2022-08-05T21:30:43.356Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>377. Combination Sum IV</title>
+    <link href="https://xuanhe95.github.io/2022/08/05/377-Combination-Sum-IV/"/>
+    <id>https://xuanhe95.github.io/2022/08/05/377-Combination-Sum-IV/</id>
+    <published>2022-08-05T21:30:00.000Z</published>
+    <updated>2022-08-05T21:30:43.356Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an array of <strong>distinct</strong> integers <code>nums</code> and a target integer <code>target</code>, return <em>the number of possible combinations that add up to</em> <code>target</code>.</p><p>The test cases are generated so that the answer can fit in a <strong>32-bit</strong> integer.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>记忆化搜索，memo[]数组用来记录达到某个总和时的可行方案数量。<br>辅助方法count记录累计的总和memo[total]。</p><p>递归DFS，记忆化剪枝，如果memo[]数组不为空，则直接返回记忆内容。<br>当total等于target时，该组合成立，返回1。</p><p>遍历nums[]数组中的每个元素，并将总组合数相加记录到memo[total]中。<br>最后返回总组合数memo[total]。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] numbers;</span><br><span class="line">    Integer[] memo;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">combinationSum4</span><span class="params">(<span class="type">int</span>[] nums, <span class="type">int</span> target)</span> &#123;</span><br><span class="line">        numbers = nums;</span><br><span class="line">        memo = <span class="keyword">new</span> <span class="title class_">Integer</span>[target+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">return</span> count(<span class="number">0</span>, target);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">count</span><span class="params">(<span class="type">int</span> total, <span class="type">int</span> target)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(memo[total] != <span class="literal">null</span>) <span class="keyword">return</span> memo[total];</span><br><span class="line">        <span class="keyword">if</span>(total == target) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    </span><br><span class="line">        <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; numbers.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(total + numbers[i] &lt;= target) sum += count(total + numbers[i], target);</span><br><span class="line">        &#125;</span><br><span class="line">        memo[total] = sum;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> memo[total];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Given an array of &lt;strong&gt;distinc</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="DFS" scheme="https://xuanhe95.github.io/tags/DFS/"/>
+    
+    <category term="Memoization" scheme="https://xuanhe95.github.io/tags/Memoization/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Blender生成Avatar并添加动作</title>
+    <link href="https://xuanhe95.github.io/2022/08/04/%E4%BD%BF%E7%94%A8Blender%E7%94%9F%E6%88%90Avatar%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%8A%A8%E4%BD%9C/"/>
+    <id>https://xuanhe95.github.io/2022/08/04/%E4%BD%BF%E7%94%A8Blender%E7%94%9F%E6%88%90Avatar%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%8A%A8%E4%BD%9C/</id>
+    <published>2022-08-05T04:30:28.000Z</published>
+    <updated>2022-08-05T07:54:20.819Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="拍摄并处理照片"><a href="#拍摄并处理照片" class="headerlink" title="拍摄并处理照片"></a>拍摄并处理照片</h3><p>拍摄正面照片，手脚需要分开，背景可以用PS修改为白色，方便软件后期处理。</p><h3 id="使用PIFuHD生成模型文件"><a href="#使用PIFuHD生成模型文件" class="headerlink" title="使用PIFuHD生成模型文件"></a>使用PIFuHD生成模型文件</h3><p><a href="https://colab.research.google.com/drive/11z58bl3meSzo6kFqkahMa35G5jmh2Wgt#scrollTo=eclLG4xlJRIE">PIFuHD Demo - Colaboratory (google.com)</a></p><p>通过这个库来处理照片文件。<br>处理完毕后得到OBJ文件和PNG文件。</p><h3 id="使用Blender为模型添加材质"><a href="#使用Blender为模型添加材质" class="headerlink" title="使用Blender为模型添加材质"></a>使用Blender为模型添加材质</h3><p>打开Blender，将OBJ文件导入。<br>选择UV Editing，在UV界面加载之前处理过的PNG文件，</p><p>首先将OBJ文件的正面向前。然后选择UV-Project from View。<br>此时会将模型上的控制点映射到UV窗口中。然后通过Scale，Move等工具将正面贴图与控制点相匹配。<br>如果出现双面人脸，可以通过调整部分控制点使材质隐藏。</p><p>再Material Properties一栏中的base color选择Image Texture。载入人物正面图片即可。</p><p>导出为FBX文件。</p><h3 id="使用Mixamo为模型添加动作"><a href="#使用Mixamo为模型添加动作" class="headerlink" title="使用Mixamo为模型添加动作"></a>使用Mixamo为模型添加动作</h3><p>将文件上传到<a href="https://www.mixamo.com/#/">Mixamo</a>，选择不同动作，即可为自己的模型添加各种动作。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;拍摄并处理照片&quot;&gt;&lt;a href=&quot;#拍摄并处理照片&quot; class=&quot;headerlink&quot; title=&quot;拍摄并处理照片&quot;&gt;&lt;/a&gt;拍摄并处理照片&lt;/h3&gt;&lt;p&gt;拍摄正面照片，手脚需要分开，背景可以用PS修改为白色，方便软件后期处理。&lt;/p&gt;
+&lt;h3 id=&quot;使</summary>
+      
+    
+    
+    
+    <category term="Drawing/Modelling" scheme="https://xuanhe95.github.io/categories/Drawing-Modelling/"/>
+    
+    <category term="Blender" scheme="https://xuanhe95.github.io/categories/Drawing-Modelling/Blender/"/>
+    
+    
+    <category term="Blender" scheme="https://xuanhe95.github.io/tags/Blender/"/>
+    
+  </entry>
   
   <entry>
     <title>858. Mirror Reflection</title>
@@ -573,68 +631,6 @@
     <category term="LeetCode Contest" scheme="https://xuanhe95.github.io/tags/LeetCode-Contest/"/>
     
     <category term="Memoization" scheme="https://xuanhe95.github.io/tags/Memoization/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2319. Check if Matrix Is X-Matrix</title>
-    <link href="https://xuanhe95.github.io/2022/06/25/2319-Check-if-Matrix-Is-X-Matrix/"/>
-    <id>https://xuanhe95.github.io/2022/06/25/2319-Check-if-Matrix-Is-X-Matrix/</id>
-    <published>2022-06-26T05:25:26.000Z</published>
-    <updated>2022-06-26T05:25:28.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>A square matrix is said to be an <strong>X-Matrix</strong> if <strong>both</strong> of the following conditions hold:</p><ol><li>All the elements in the diagonals of the matrix are <strong>non-zero</strong>.</li><li>All other elements are 0.</li></ol><p>Given a 2D integer array <code>grid</code> of size <code>n x n</code> representing a square matrix, return <code>true</code>* if <em><code>grid</code></em> is an X-Matrix*. Otherwise, return <code>false</code>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>遍历，直接判断是否在对角线上，如果在且位置为0，则返回false。<br>如果不在对角线上，且位置部位0，则返回false。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">checkXMatrix</span><span class="params">(<span class="type">int</span>[][] grid)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> grid.length;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt; n; j++)&#123;</span><br><span class="line">                <span class="keyword">if</span>(i == j || i + j == n - <span class="number">1</span>)&#123;</span><br><span class="line">                    <span class="keyword">if</span>(grid[i][j] == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(grid[i][j] != <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;A square matrix is said to be an </summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Easy" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/"/>
-    
-    
-    <category term="Matrix" scheme="https://xuanhe95.github.io/tags/Matrix/"/>
-    
-    <category term="LeetCode Contest" scheme="https://xuanhe95.github.io/tags/LeetCode-Contest/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1423. Maximum Points You Can Obtain from Cards</title>
-    <link href="https://xuanhe95.github.io/2022/06/25/1423-Maximum-Points-You-Can-Obtain-from-Cards/"/>
-    <id>https://xuanhe95.github.io/2022/06/25/1423-Maximum-Points-You-Can-Obtain-from-Cards/</id>
-    <published>2022-06-26T05:13:39.000Z</published>
-    <updated>2022-06-26T06:18:16.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>There are several cards <strong>arranged in a row</strong>, and each card has an associated number of points. The points are given in the integer array <code>cardPoints</code>.</p><p>In one step, you can take one card from the beginning or from the end of the row. You have to take exactly <code>k</code> cards.</p><p>Your score is the sum of the points of the cards you have taken.</p><p>Given the integer array <code>cardPoints</code> and the integer <code>k</code>, return the <em>maximum score</em> you can obtain.</p></blockquote><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><p>这种取两端的问题可以转化为取中间连续k个元素之和最小。</p><p>计算所有数字的和sum。<br>然后用维护一个宽度为k的窗口内的加和temp，并记录其最小值min。</p><p>返回sum - min，结果即是取两侧时可以取的最大值。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxScore</span><span class="params">(<span class="type">int</span>[] cardPoints, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> cardPoints.length, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> point : cardPoints) sum += point; <span class="comment">//求所有数值的和</span></span><br><span class="line">        <span class="keyword">if</span>(k == n) <span class="keyword">return</span> sum;</span><br><span class="line">        <span class="type">int</span> <span class="variable">left</span> <span class="operator">=</span> <span class="number">0</span>, right = n-k, temp = <span class="number">0</span>, min = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n-k; i++)&#123;</span><br><span class="line">            temp += cardPoints[i];</span><br><span class="line">            min = temp;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span>(right &lt; n)&#123;   <span class="comment">//维护窗口内的temp，并更新min</span></span><br><span class="line">            temp += cardPoints[right] - cardPoints[left];; </span><br><span class="line">            min = Math.min(min, temp);</span><br><span class="line">            right++;</span><br><span class="line">            left++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> sum - min;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><p>分别计算从两侧开始的加和并记录在两个数组left[]和right[]上。</p><p>然后分别取两个指针，左侧指针l从0开始遍历到k，右侧指针对应的位置为l+n-k。计算并更新最大值max。</p><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxScore</span><span class="params">(<span class="type">int</span>[] cardPoints, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> cardPoints.length, max = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span>[] left = <span class="keyword">new</span> <span class="title class_">int</span>[n+<span class="number">1</span>], right = <span class="keyword">new</span> <span class="title class_">int</span>[n+<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            left[i+<span class="number">1</span>] = left[i] + cardPoints[i];</span><br><span class="line">            right[n-i-<span class="number">1</span>] = right[n-i] + cardPoints[n-i-<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">l</span> <span class="operator">=</span> <span class="number">0</span>; l &lt;= k; l++)&#123;</span><br><span class="line">            max = Math.max(max, left[l] + right[n-k+l]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;There are several cards &lt;strong&gt;a</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="双指针" scheme="https://xuanhe95.github.io/tags/%E5%8F%8C%E6%8C%87%E9%92%88/"/>
-    
-    <category term="双向遍历" scheme="https://xuanhe95.github.io/tags/%E5%8F%8C%E5%90%91%E9%81%8D%E5%8E%86/"/>
-    
-    <category term="Sliding Window" scheme="https://xuanhe95.github.io/tags/Sliding-Window/"/>
     
   </entry>
   
