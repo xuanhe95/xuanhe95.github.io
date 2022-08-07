@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/08/06/1220-Count-Vowels-Permutation/
 https://xuanhe95.github.io/2022/08/05/377-Combination-Sum-IV/
 https://xuanhe95.github.io/2022/08/04/%E4%BD%BF%E7%94%A8Blender%E7%94%9F%E6%88%90Avatar%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%8A%A8%E4%BD%9C/
 https://xuanhe95.github.io/2022/08/04/858-Mirror-Reflection/
