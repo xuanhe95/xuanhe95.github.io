@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/05/01/300-Longest-Increasing-Subsequence/
 https://xuanhe95.github.io/2022/08/06/1220-Count-Vowels-Permutation/
 https://xuanhe95.github.io/2022/08/05/377-Combination-Sum-IV/
 https://xuanhe95.github.io/2022/08/04/%E4%BD%BF%E7%94%A8Blender%E7%94%9F%E6%88%90Avatar%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%8A%A8%E4%BD%9C/
@@ -67,7 +68,6 @@ https://xuanhe95.github.io/2022/05/27/268-Missing-Number/
 https://xuanhe95.github.io/2022/05/27/1342-Number-of-Steps-to-Reduce-a-Number-to-Zero/
 https://xuanhe95.github.io/2022/05/25/354-Russian-Doll-Envelopes/
 https://xuanhe95.github.io/2022/05/24/32-Longest-Valid-Parentheses/
-https://xuanhe95.github.io/2022/05/01/300-Longest-Increasing-Subsequence/
 https://xuanhe95.github.io/2022/05/23/474-Ones-and-Zeroes/
 https://xuanhe95.github.io/2022/05/22/2281-Sum-of-Total-Strength-of-Wizards/
 https://xuanhe95.github.io/2022/05/21/2280-Minimum-Lines-to-Represent-a-Line-Chart/
@@ -324,6 +324,7 @@ https://xuanhe95.github.io/tags/%E6%A0%91%E5%BD%A2DP/
 https://xuanhe95.github.io/tags/Front-end/
 https://xuanhe95.github.io/tags/Unity/
 https://xuanhe95.github.io/tags/Blender/
+https://xuanhe95.github.io/tags/Epic-Hard/
 https://xuanhe95.github.io/categories/LeetCode/
 https://xuanhe95.github.io/categories/LeetCode/Medium/
 https://xuanhe95.github.io/categories/LeetCode/Easy/
