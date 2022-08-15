@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-08-09T03:36:32.141Z</updated>
+  <updated>2022-08-15T20:09:18.788Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>13. Roman to Integer</title>
+    <link href="https://xuanhe95.github.io/2022/08/15/13-Roman-to-Integer/"/>
+    <id>https://xuanhe95.github.io/2022/08/15/13-Roman-to-Integer/</id>
+    <published>2022-08-15T20:09:18.000Z</published>
+    <updated>2022-08-15T20:09:18.788Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Roman numerals are represented by seven different symbols: <code>I</code>, <code>V</code>, <code>X</code>, <code>L</code>, <code>C</code>, <code>D</code> and <code>M</code>.</p></blockquote><pre><strong>Symbol</strong>       <strong>Value</strong>I             1V             5X             10L             50C             100D             500M             1000</pre><blockquote></blockquote><blockquote><p>For example, <code>2</code> is written as <code>II</code> in Roman numeral, just two ones added together. <code>12</code> is written as <code>XII</code>, which is simply <code>X + II</code>. The number <code>27</code> is written as <code>XXVII</code>, which is <code>XX + V + II</code>.</p></blockquote><blockquote><p>Roman numerals are usually written largest to smallest from left to right. However, the numeral for four is not <code>IIII</code>. Instead, the number four is written as <code>IV</code>. Because the one is before the five we subtract it making four. The same principle applies to the number nine, which is written as <code>IX</code>. There are six instances where subtraction is used:</p><ul><li><code>I</code> can be placed before <code>V</code> (5) and <code>X</code> (10) to make 4 and 9.</li><li><code>X</code> can be placed before <code>L</code> (50) and <code>C</code> (100) to make 40 and 90.</li><li><code>C</code> can be placed before <code>D</code> (500) and <code>M</code> (1000) to make 400 and 900.</li></ul><p>Given a roman numeral, convert it to an integer.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>倒叙遍历，记录几个mark以标注是否出现对应的字母。</p><p>初始res为0，根据字符加减数值。<br>如果出现则将mark设置为真。<br>如果mark为真，且上一个字符出现对应需要减去的罗马字符，则改加为减。</p><p>最后返回res值。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">romanToInt</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">res</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="type">boolean</span> <span class="variable">markX</span> <span class="operator">=</span> <span class="literal">false</span>, markC = <span class="literal">false</span>, markM = <span class="literal">false</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> s.length()-<span class="number">1</span>; i &gt;= <span class="number">0</span>; i--)&#123;</span><br><span class="line">            <span class="type">char</span> <span class="variable">c</span> <span class="operator">=</span> s.charAt(i);</span><br><span class="line">            <span class="keyword">if</span>(c == <span class="string">&#x27;I&#x27;</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span>(markX) res -= <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">else</span> res += <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">&#x27;V&#x27;</span>)&#123;</span><br><span class="line">                markX = <span class="literal">true</span>;</span><br><span class="line">                res += <span class="number">5</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">&#x27;X&#x27;</span>)&#123;</span><br><span class="line">                markX = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">if</span>(markC) res -= <span class="number">10</span>;</span><br><span class="line">                <span class="keyword">else</span> res += <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">&#x27;L&#x27;</span>)&#123;</span><br><span class="line">                markC = <span class="literal">true</span>;</span><br><span class="line">                res += <span class="number">50</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">&#x27;C&#x27;</span>)&#123;</span><br><span class="line">                markC = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">if</span>(markM) res -= <span class="number">100</span>;</span><br><span class="line">                <span class="keyword">else</span> res += <span class="number">100</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">&#x27;D&#x27;</span>)&#123;</span><br><span class="line">                markM = <span class="literal">true</span>;</span><br><span class="line">                res += <span class="number">500</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c == <span class="string">&#x27;M&#x27;</span>)&#123;</span><br><span class="line">                markM = <span class="literal">true</span>;</span><br><span class="line">                res += <span class="number">1000</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Roman numerals are represented by</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Easy" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
+    
+  </entry>
   
   <entry>
     <title>823. Binary Trees With Factors</title>
@@ -612,35 +641,6 @@
     <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
     
     <category term="Hash" scheme="https://xuanhe95.github.io/tags/Hash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1689. Partitioning Into Deci-Binary Numbers</title>
-    <link href="https://xuanhe95.github.io/2022/06/27/1689-Partitioning-Into-Deci-Binary-Numbers/"/>
-    <id>https://xuanhe95.github.io/2022/06/27/1689-Partitioning-Into-Deci-Binary-Numbers/</id>
-    <published>2022-06-27T13:46:52.000Z</published>
-    <updated>2022-06-27T13:47:22.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>A decimal number is called <strong>deci-binary</strong> if each of its digits is either <code>0</code> or <code>1</code> without any leading zeros. For example, <code>101</code> and <code>1100</code> are <strong>deci-binary</strong>, while <code>112</code> and <code>3001</code> are not.</p><p>Given a string <code>n</code> that represents a positive decimal integer, return <em>the <strong>minimum</strong> number of positive <strong>deci-binary</strong> numbers needed so that they sum up to <em><code>n</code></em>.</em></p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>遍历所有字符，返回字符串中的最大整数。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minPartitions</span><span class="params">(String n)</span> &#123;</span><br><span class="line">        <span class="type">char</span> <span class="variable">max</span> <span class="operator">=</span> <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> s : n.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span>(s &gt; max) max = s;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max - <span class="string">&#x27;0&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;A decimal number is called &lt;stron</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
     
   </entry>
   
