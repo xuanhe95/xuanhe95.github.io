@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/04/06/387-First-Unique-Character-in-a-String/
 https://xuanhe95.github.io/2022/08/15/13-Roman-to-Integer/
 https://xuanhe95.github.io/2022/08/08/823-Binary-Trees-With-Factors/
 https://xuanhe95.github.io/2022/05/01/300-Longest-Increasing-Subsequence/
@@ -185,7 +186,6 @@ https://xuanhe95.github.io/2022/04/06/923-3Sum-With-Multiplicity/
 https://xuanhe95.github.io/2022/04/06/680-Valid-Palindrome-II/
 https://xuanhe95.github.io/2022/04/06/19-Remove-Nth-Node-From-End-of-List/
 https://xuanhe95.github.io/2022/04/06/1046-Last-Stone-Weight/
-https://xuanhe95.github.io/2022/04/06/387-First-Unique-Character-in-a-String/
 https://xuanhe95.github.io/2022/04/06/383-Ransom-Note/
 https://xuanhe95.github.io/2022/04/06/567-Permutation-in-String/
 https://xuanhe95.github.io/2022/04/08/21-Merge-Two-Sorted-Lists/
