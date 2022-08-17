@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-08-15T20:55:32.797Z</updated>
+  <updated>2022-08-17T19:45:07.644Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>804. Unique Morse Code Words</title>
+    <link href="https://xuanhe95.github.io/2022/08/17/804-Unique-Morse-Code-Words/"/>
+    <id>https://xuanhe95.github.io/2022/08/17/804-Unique-Morse-Code-Words/</id>
+    <published>2022-08-17T19:12:33.000Z</published>
+    <updated>2022-08-17T19:45:07.644Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows:</p></blockquote><blockquote><ul><li><code>&#39;a&#39;</code> maps to <code>&quot;.-&quot;</code>,</li><li><code>&#39;b&#39;</code> maps to <code>&quot;-...&quot;</code>,</li><li><code>&#39;c&#39;</code> maps to <code>&quot;-.-.&quot;</code>, and so on.</li></ul></blockquote><blockquote><p>For convenience, the full table for the <code>26</code> letters of the English alphabet is given below:</p></blockquote><pre>[&#34;.-&#34;,&#34;-...&#34;,&#34;-.-.&#34;,&#34;-..&#34;,&#34;.&#34;,&#34;..-.&#34;,&#34;--.&#34;,&#34;....&#34;,&#34;..&#34;,&#34;.---&#34;,&#34;-.-&#34;,&#34;.-..&#34;,&#34;--&#34;,&#34;-.&#34;,&#34;---&#34;,&#34;.--.&#34;,&#34;--.-&#34;,&#34;.-.&#34;,&#34;...&#34;,&#34;-&#34;,&#34;..-&#34;,&#34;...-&#34;,&#34;.--&#34;,&#34;-..-&#34;,&#34;-.--&#34;,&#34;--..&#34;]</pre><blockquote></blockquote><blockquote><p>Given an array of strings <code>words</code> where each word can be written as a concatenation of the Morse code of each letter.</p></blockquote><blockquote><ul><li>For example, <code>&quot;cab&quot;</code> can be written as <code>&quot;-.-..--...&quot;</code>, which is the concatenation of <code>&quot;-.-.&quot;</code>, <code>&quot;.-&quot;</code>, and <code>&quot;-...&quot;</code>. We will call such a concatenation the <strong>transformation</strong> of a word.</li></ul></blockquote><blockquote></blockquote><blockquote><p>Return <em>the number of different <strong>transformations</strong> among all words we have</em>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">uniqueMorseRepresentations</span><span class="params">(String[] words)</span> &#123;</span><br><span class="line">        String[] alphabet = <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;.-&quot;</span>,<span class="string">&quot;-...&quot;</span>,<span class="string">&quot;-.-.&quot;</span>,<span class="string">&quot;-..&quot;</span>,<span class="string">&quot;.&quot;</span>,<span class="string">&quot;..-.&quot;</span>,<span class="string">&quot;--.&quot;</span>,</span><br><span class="line">                                         <span class="string">&quot;....&quot;</span>,<span class="string">&quot;..&quot;</span>,<span class="string">&quot;.---&quot;</span>,<span class="string">&quot;-.-&quot;</span>,<span class="string">&quot;.-..&quot;</span>,<span class="string">&quot;--&quot;</span>,<span class="string">&quot;-.&quot;</span>,</span><br><span class="line">                                         <span class="string">&quot;---&quot;</span>,<span class="string">&quot;.--.&quot;</span>,<span class="string">&quot;--.-&quot;</span>,<span class="string">&quot;.-.&quot;</span>,<span class="string">&quot;...&quot;</span>,<span class="string">&quot;-&quot;</span>,<span class="string">&quot;..-&quot;</span>,</span><br><span class="line">                                         <span class="string">&quot;...-&quot;</span>,<span class="string">&quot;.--&quot;</span>,<span class="string">&quot;-..-&quot;</span>,<span class="string">&quot;-.--&quot;</span>,<span class="string">&quot;--..&quot;</span>&#125;;</span><br><span class="line">        HashSet&lt;String&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(String word : words)&#123;</span><br><span class="line">            <span class="type">StringBuffer</span> <span class="variable">sb</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">char</span> c : word.toCharArray())&#123;</span><br><span class="line">                sb.append(alphabet[c - <span class="string">&#x27;a&#x27;</span>]);</span><br><span class="line">            &#125;</span><br><span class="line">            set.add(sb.toString());</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> set.size();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;International Morse Code defines </summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Easy" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
+    
+  </entry>
   
   <entry>
     <title>13. Roman to Integer</title>
@@ -610,37 +639,6 @@
     
     
     <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1647. Make Character Frequencies Unique</title>
-    <link href="https://xuanhe95.github.io/2022/06/28/1647-Make-Character-Frequencies-Unique/"/>
-    <id>https://xuanhe95.github.io/2022/06/28/1647-Make-Character-Frequencies-Unique/</id>
-    <published>2022-06-28T10:24:44.000Z</published>
-    <updated>2022-07-01T11:38:34.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>A string <code>s</code> is called <strong>good</strong> if there are no two different characters in <code>s</code> that have the same <strong>frequency</strong>.</p><p>Given a string <code>s</code>, return* the <strong>minimum</strong> number of characters you need to delete to make <em><code>s</code></em> <strong>good</strong>.*</p><p>The <strong>frequency</strong> of a character in a string is the number of times it appears in the string. For example, in the string <code>&quot;aab&quot;</code>, the <strong>frequency</strong> of <code>&#39;a&#39;</code> is <code>2</code>, while the <strong>frequency</strong> of <code>&#39;b&#39;</code> is <code>1</code>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>数组统计+哈希表<br>用数组统计记录每个字符出现的数量。<br>count记录需要减少的字符数量。</p><p>遍历统计数组，如果哈希表中已经记录，则将数组统计减少，直到归零。<br>每减少一次则为count加一。<br>如果哈希表中未记录，则将当前数字添加到哈希表中。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minDeletions</span><span class="params">(String s)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        HashSet&lt;Integer&gt; set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        <span class="type">int</span>[] bin = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> c : s.toCharArray())&#123;</span><br><span class="line">            bin[c - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; <span class="number">26</span>; i++)&#123;</span><br><span class="line">            <span class="keyword">while</span>(bin[i] !=<span class="number">0</span> &amp;&amp; set.contains(bin[i]))&#123;</span><br><span class="line">                bin[i]--;</span><br><span class="line">                count++;</span><br><span class="line">            &#125;</span><br><span class="line">            set.add(bin[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;A string &lt;code&gt;s&lt;/code&gt; is called</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
-    
-    <category term="Hash" scheme="https://xuanhe95.github.io/tags/Hash/"/>
     
   </entry>
   
