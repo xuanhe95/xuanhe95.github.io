@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-08-21T09:53:16.550Z</updated>
+  <updated>2022-08-22T07:03:35.786Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>342. Power of Four</title>
+    <link href="https://xuanhe95.github.io/2022/08/22/342-Power-of-Four/"/>
+    <id>https://xuanhe95.github.io/2022/08/22/342-Power-of-Four/</id>
+    <published>2022-08-22T07:02:44.000Z</published>
+    <updated>2022-08-22T07:03:35.786Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of four. Otherwise, return <code>false</code></em>.</p><p>An integer <code>n</code> is a power of four, if there exists an integer <code>x</code> such that <code>n == 4&lt;sup&gt;x&lt;/sup&gt;</code>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>递归，如果n小于等于零则返回false。<br>如果n等于1则返回true。</p><p>如果n可以除以4，则递归返回n&#x2F;4。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPowerOfFour</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">4</span> == <span class="number">0</span>) <span class="keyword">return</span> isPowerOfFour(n / <span class="number">4</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Given an integer &lt;code&gt;n&lt;/code&gt;, </summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Easy" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="递归" scheme="https://xuanhe95.github.io/tags/%E9%80%92%E5%BD%92/"/>
+    
+  </entry>
   
   <entry>
     <title>659. Split Array into Consecutive Subsequences</title>
@@ -618,35 +647,6 @@
     <category term="其他解法？" scheme="https://xuanhe95.github.io/tags/%E5%85%B6%E4%BB%96%E8%A7%A3%E6%B3%95%EF%BC%9F/"/>
     
     <category term="双向遍历" scheme="https://xuanhe95.github.io/tags/%E5%8F%8C%E5%90%91%E9%81%8D%E5%8E%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1465. Max Area After Horizontal and Vertical Cuts</title>
-    <link href="https://xuanhe95.github.io/2022/07/01/1465-Max-Area-After-Horizontal-and-Vertical-Cuts/"/>
-    <id>https://xuanhe95.github.io/2022/07/01/1465-Max-Area-After-Horizontal-and-Vertical-Cuts/</id>
-    <published>2022-07-02T03:47:02.000Z</published>
-    <updated>2022-07-02T03:50:44.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given a rectangular cake of size <code>h x w</code> and two arrays of integers <code>horizontalCuts</code> and <code>verticalCuts</code> where:</p><ul><li><code>horizontalCuts[i]</code> is the distance from the top of the rectangular cake to the <code>i&lt;sup&gt;th&lt;/sup&gt;</code> horizontal cut and similarly, and</li><li><code>verticalCuts[j]</code> is the distance from the left of the rectangular cake to the <code>j&lt;sup&gt;th&lt;/sup&gt;</code> vertical cut.</li></ul><p>Return <em>the maximum area of a piece of cake after you cut at each horizontal and vertical position provided in the arrays</em> <code>horizontalCuts</code> <em>and</em> <code>verticalCuts</code>. Since the answer can be a large number, return this <strong>modulo</strong> <code>10&lt;sup&gt;9&lt;/sup&gt;&lt;span&gt; &lt;/span&gt;+ 7</code>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>先排序，记录两次切割之间的距离的最大值。<br>最后同样需要比较蛋糕的总尺寸和最后一次切割的距离。</p><p>返回宽度和长度的最大值的乘积即可。</p><p>注意：两个int整数相乘会溢出，max需要记录为long类型。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxArea</span><span class="params">(<span class="type">int</span> h, <span class="type">int</span> w, <span class="type">int</span>[] horizontalCuts, <span class="type">int</span>[] verticalCuts)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">MOD</span> <span class="operator">=</span> (<span class="type">int</span>) Math.pow(<span class="number">10</span>,<span class="number">9</span>)+<span class="number">7</span>;</span><br><span class="line">        Arrays.sort(horizontalCuts);</span><br><span class="line">        Arrays.sort(verticalCuts);</span><br><span class="line">        <span class="type">long</span> <span class="variable">maxH</span> <span class="operator">=</span> <span class="number">0</span>, maxV = <span class="number">0</span>;</span><br><span class="line">        <span class="type">int</span> <span class="variable">lastH</span> <span class="operator">=</span> <span class="number">0</span>, lastV = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; horizontalCuts.length; i++)&#123;</span><br><span class="line">            maxH = Math.max(maxH, horizontalCuts[i] - lastH);</span><br><span class="line">            lastH = horizontalCuts[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        maxH = Math.max(maxH, h - lastH);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; verticalCuts.length; i++)&#123;</span><br><span class="line">            maxV = Math.max(maxV, verticalCuts[i] - lastV);</span><br><span class="line">            lastV = verticalCuts[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        maxV = Math.max(maxV, w - lastV);</span><br><span class="line">        <span class="keyword">return</span> (<span class="type">int</span>) (maxV * maxH % MOD) ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;You are given a rectangular cake </summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="Sort" scheme="https://xuanhe95.github.io/tags/Sort/"/>
     
   </entry>
   
