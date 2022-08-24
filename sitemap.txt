@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/08/23/326-Power-of-Three/
 https://xuanhe95.github.io/2022/08/22/234-Palindrome-Linked-List/
 https://xuanhe95.github.io/2022/08/22/342-Power-of-Four/
 https://xuanhe95.github.io/2022/08/21/659-Split-Array-into-Consecutive-Subsequences/
