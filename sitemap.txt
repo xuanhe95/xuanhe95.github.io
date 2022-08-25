@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/08/25/383-Ransom-Note/
 https://xuanhe95.github.io/2022/08/23/326-Power-of-Three/
 https://xuanhe95.github.io/2022/08/22/234-Palindrome-Linked-List/
 https://xuanhe95.github.io/2022/08/22/342-Power-of-Four/
@@ -191,7 +192,6 @@ https://xuanhe95.github.io/2022/04/06/923-3Sum-With-Multiplicity/
 https://xuanhe95.github.io/2022/04/06/680-Valid-Palindrome-II/
 https://xuanhe95.github.io/2022/04/06/19-Remove-Nth-Node-From-End-of-List/
 https://xuanhe95.github.io/2022/04/06/1046-Last-Stone-Weight/
-https://xuanhe95.github.io/2022/04/06/383-Ransom-Note/
 https://xuanhe95.github.io/2022/04/06/567-Permutation-in-String/
 https://xuanhe95.github.io/2022/04/08/21-Merge-Two-Sorted-Lists/
 https://xuanhe95.github.io/2022/04/08/733-Flood-Fill/

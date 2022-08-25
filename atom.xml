@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-08-24T03:07:55.861Z</updated>
+  <updated>2022-08-25T07:48:13.415Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>383. Ransom Note</title>
+    <link href="https://xuanhe95.github.io/2022/08/25/383-Ransom-Note/"/>
+    <id>https://xuanhe95.github.io/2022/08/25/383-Ransom-Note/</id>
+    <published>2022-08-25T07:47:58.000Z</published>
+    <updated>2022-08-25T07:48:13.415Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given two strings <code>ransomNote</code> and <code>magazine</code>, return <code>true</code>* if <em><code>ransomNote</code></em> can be constructed by using the letters from <em><code>magazine</code></em> and <em><code>false</code></em> otherwise*.</p><p>Each letter in <code>magazine</code> can only be used once in <code>ransomNote</code>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>数组统计，统计magazine内的字符。<br>遍历ransomNote，如果对字符数组位置为0则返回false。<br>每次遍历减少数组统计结果。</p><p>最后返回true。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canConstruct</span><span class="params">(String ransomNote, String magazine)</span> &#123;</span><br><span class="line">        <span class="type">char</span>[] bin = <span class="keyword">new</span> <span class="title class_">char</span>[<span class="number">26</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> c : magazine.toCharArray()) bin[c-<span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">char</span> c : ransomNote.toCharArray())&#123;</span><br><span class="line">            <span class="keyword">if</span>(bin[c-<span class="string">&#x27;a&#x27;</span>] == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            bin[c-<span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;Given two strings &lt;code&gt;ransomNot</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Easy" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
+    
+  </entry>
   
   <entry>
     <title>326. Power of Three</title>
@@ -606,35 +635,6 @@
     <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     <category term="DP" scheme="https://xuanhe95.github.io/tags/DP/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>509. Fibonacci Number</title>
-    <link href="https://xuanhe95.github.io/2022/07/06/509-Fibonacci-Number/"/>
-    <id>https://xuanhe95.github.io/2022/07/06/509-Fibonacci-Number/</id>
-    <published>2022-07-07T02:29:31.000Z</published>
-    <updated>2022-07-07T02:30:06.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>The <strong>Fibonacci numbers</strong>, commonly denoted <code>F(n)</code> form a sequence, called the <strong>Fibonacci sequence</strong>, such that each number is the sum of the two preceding ones, starting from <code>0</code> and <code>1</code>. That is,</p><pre>F(0) = 0, F(1) = 1F(n) = F(n - 1) + F(n - 2), for n &gt; 1.</pre><p>Given <code>n</code>, calculate <code>F(n)</code>.</p></blockquote><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><p>记忆化搜索，在递归时递归过的n放入数组memo中记录。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="type">int</span>[] memo;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span> || n == <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        memo = <span class="keyword">new</span> <span class="title class_">int</span>[n+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">return</span> fibo(n);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">int</span> <span class="title function_">fibo</span><span class="params">(<span class="type">int</span> n)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span> || n == <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">if</span>(memo[n] == <span class="number">0</span>) memo[n] = fibo(n-<span class="number">1</span>) + fibo(n-<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">return</span> memo[n];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><p>递归，当n等于0或者1时返回固定值。<br>否则返回fib(n-1)+fib(n-2)。</p><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">fib</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">0</span> || n == <span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">        <span class="keyword">return</span> fib(n-<span class="number">1</span>) + fib(n-<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;The &lt;strong&gt;Fibonacci numbers&lt;/st</summary>
-      
-    
-    
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="DP" scheme="https://xuanhe95.github.io/tags/DP/"/>
-    
-    <category term="Math" scheme="https://xuanhe95.github.io/tags/Math/"/>
-    
-    <category term="Memoization" scheme="https://xuanhe95.github.io/tags/Memoization/"/>
     
   </entry>
   
