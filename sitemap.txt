@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/08/26/869-Reordered-Power-of-2/
 https://xuanhe95.github.io/2022/08/25/383-Ransom-Note/
 https://xuanhe95.github.io/2022/08/23/326-Power-of-Three/
 https://xuanhe95.github.io/2022/08/22/234-Palindrome-Linked-List/

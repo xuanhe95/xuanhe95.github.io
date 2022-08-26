@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-08-25T07:48:13.415Z</updated>
+  <updated>2022-08-26T08:13:33.053Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,43 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>869. Reordered Power of 2</title>
+    <link href="https://xuanhe95.github.io/2022/08/26/869-Reordered-Power-of-2/"/>
+    <id>https://xuanhe95.github.io/2022/08/26/869-Reordered-Power-of-2/</id>
+    <published>2022-08-26T08:13:15.000Z</published>
+    <updated>2022-08-26T08:13:33.053Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given an integer <code>n</code>. We reorder the digits in any order (including the original order) such that the leading digit is not zero.</p><p>Return <code>true</code> <em>if and only if we can do this so that the resulting number is a power of two</em>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>打表，将所有二的指数全部计算出来，并用数组统计各个数字出现的频率。<br>然后同样统计n中各个数字出现的频率。</p><p>如果两者中有频率完全相同的情况，则返回true，反之返回false。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">reorderedPowerOf2</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] reorders = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">10</span>];</span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> <span class="number">1</span>, digits = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> n; i &gt; <span class="number">0</span>; i/=<span class="number">10</span>)&#123;</span><br><span class="line">            reorders[i % <span class="number">10</span>]++;</span><br><span class="line">            digits++;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span> <span class="variable">size</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        List&lt;Integer[]&gt; powerOfTwo = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(m &gt; <span class="number">0</span> &amp;&amp; size &lt;= digits)&#123;</span><br><span class="line">            size = <span class="number">0</span>;</span><br><span class="line">            Integer[] bin = <span class="keyword">new</span> <span class="title class_">Integer</span>[<span class="number">10</span>];</span><br><span class="line">            Arrays.fill(bin, <span class="number">0</span>);</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> m; i &gt; <span class="number">0</span>; i/=<span class="number">10</span>)&#123;</span><br><span class="line">                size++;</span><br><span class="line">                bin[i % <span class="number">10</span>]++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(size == digits) powerOfTwo.add(bin);</span><br><span class="line">            m *= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(Integer[] bin : powerOfTwo) <span class="keyword">if</span>(check(bin, reorders)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">check</span><span class="params">(Integer[] bin, <span class="type">int</span>[] reorders)</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; bin.length; i++) <span class="keyword">if</span>(bin[i] != reorders[i]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><p>回溯，遍历计算可以组成的所有数字。<br>打表记录所有二的指数并记录在哈希表内，如果所有组成数字中有哈希表内的数字则返回true，反之返回false。</p><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    HashSet&lt;Integer&gt; visited, set, numbers;</span><br><span class="line">    List&lt;Integer&gt; arr, res;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">reorderedPowerOf2</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> <span class="number">1</span>;</span><br><span class="line">        set = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        visited = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        numbers = <span class="keyword">new</span> <span class="title class_">HashSet</span>&lt;&gt;();</span><br><span class="line">        res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;Integer&gt;();</span><br><span class="line">        <span class="keyword">while</span>(m &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            set.add(m);</span><br><span class="line">            m *= <span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        arr = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(n &gt; <span class="number">0</span>)&#123;</span><br><span class="line">            arr.add(n % <span class="number">10</span>);</span><br><span class="line">            n /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt; arr.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(arr.get(i) == <span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">            visited.add(i);</span><br><span class="line">            reorder(arr.get(i));</span><br><span class="line">            visited.remove(i);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> num : res) <span class="keyword">if</span>(set.contains(num)) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">reorder</span><span class="params">(<span class="type">int</span> num)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(visited.size() == arr.size())&#123;</span><br><span class="line">            res.add(num);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(numbers.contains(num)) <span class="keyword">return</span>;</span><br><span class="line">        numbers.add(num);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; arr.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(visited.contains(i)) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="type">int</span> <span class="variable">next</span> <span class="operator">=</span> num * <span class="number">10</span> + arr.get(i);</span><br><span class="line">            visited.add(i);</span><br><span class="line">            reorder(next);</span><br><span class="line">            visited.remove(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;You are given an integer &lt;code&gt;n&lt;</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
+    
+    <category term="复习" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="Eureka!" scheme="https://xuanhe95.github.io/tags/Eureka/"/>
+    
+    <category term="Hash Map" scheme="https://xuanhe95.github.io/tags/Hash-Map/"/>
+    
+    <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
+    
+    <category term="Backtracking" scheme="https://xuanhe95.github.io/tags/Backtracking/"/>
+    
+  </entry>
   
   <entry>
     <title>383. Ransom Note</title>
@@ -604,37 +641,6 @@
     <category term="其他解法？" scheme="https://xuanhe95.github.io/tags/%E5%85%B6%E4%BB%96%E8%A7%A3%E6%B3%95%EF%BC%9F/"/>
     
     <category term="Backtracking" scheme="https://xuanhe95.github.io/tags/Backtracking/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>746. Min Cost Climbing Stairs</title>
-    <link href="https://xuanhe95.github.io/2022/07/10/746-Min-Cost-Climbing-Stairs/"/>
-    <id>https://xuanhe95.github.io/2022/07/10/746-Min-Cost-Climbing-Stairs/</id>
-    <published>2022-07-10T14:19:56.000Z</published>
-    <updated>2022-07-11T16:45:17.603Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given an integer array cost where cost[i] is the cost of ith step on a staircase. Once you pay the cost, you can either climb one or two steps.</p><p>You can either start from the step with index 0, or the step with index 1.</p><p>Return the minimum cost to reach the top of the floor.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>动态规划，每一个新位置的等于前一个位置加上其cost和前两个位置加上cost的较小值。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">minCostClimbingStairs</span><span class="params">(<span class="type">int</span>[] cost)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] dp = <span class="keyword">new</span> <span class="title class_">int</span>[cost.length+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">2</span>; i &lt;= cost.length; i++)&#123;</span><br><span class="line">            dp[i] = Math.min(dp[i-<span class="number">1</span>] + cost[i-<span class="number">1</span>], dp[i-<span class="number">2</span>] + cost[i-<span class="number">2</span>]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[cost.length];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;You are given an integer array co</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Easy" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/"/>
-    
-    <category term="复习" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/%E5%A4%8D%E4%B9%A0/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="DP" scheme="https://xuanhe95.github.io/tags/DP/"/>
     
   </entry>
   
