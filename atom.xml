@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-09-07T06:01:02.759Z</updated>
+  <updated>2022-09-11T20:09:24.422Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1996. The Number of Weak Characters in the Game</title>
+    <link href="https://xuanhe95.github.io/2022/09/11/1996-The-Number-of-Weak-Characters-in-the-Game/"/>
+    <id>https://xuanhe95.github.io/2022/09/11/1996-The-Number-of-Weak-Characters-in-the-Game/</id>
+    <published>2022-09-11T20:06:48.000Z</published>
+    <updated>2022-09-11T20:09:24.422Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are playing a game that contains multiple characters, and each of the characters has <strong>two</strong> main properties: <strong>attack</strong> and <strong>defense</strong>. You are given a 2D integer array <code>properties</code> where <code>properties[i] = [attack&lt;sub&gt;i&lt;/sub&gt;, defense&lt;sub&gt;i&lt;/sub&gt;]</code> represents the properties of the <code>i&lt;sup&gt;th&lt;/sup&gt;</code> character in the game.</p><p>A character is said to be <strong>weak</strong> if any other character has <strong>both</strong> attack and defense levels <strong>strictly greater</strong> than this character’s attack and defense levels. More formally, a character <code>i</code> is said to be <strong>weak</strong> if there exists another character <code>j</code> where <code>attack&lt;sub&gt;j&lt;/sub&gt;&lt;span&gt; &lt;/span&gt;&gt; attack&lt;sub&gt;i&lt;/sub&gt;</code> and <code>defense&lt;sub&gt;j&lt;/sub&gt;&lt;span&gt; &lt;/span&gt;&gt; defense&lt;sub&gt;i&lt;/sub&gt;</code>.</p><p>Return <em>the number of <strong>weak</strong> characters</em>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>本题与<a href="https://xuanhe95.github.io/2022/05/25/354-Russian-Doll-Envelopes/">354. Russian Doll Envelopes</a>相近。</p><p>首先对数组进行排序，根据角色的attack数值<strong>降序</strong>排序，如果两者的attack数值相等，则根据两者的defence<strong>升序</strong>排序。</p><p>记录一个遍历过的最大defence数值maxDefence，遍历数组，如果当前maxDef大于角色的防御值，则此时当前遍历角色的attack与defence均严格小于上一个计算的角色，因此count加一。<br>否则更新maxDef。</p><p>*由于attack是降序的，因此可以确定遍历时下一组数组的attack一定更弱。（由于相同attack的角色是根据defence升序排列，因此记录maxDef时会逐个更新maxDef的值。）</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numberOfWeakCharacters</span><span class="params">(<span class="type">int</span>[][] properties)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>, maxDef = Integer.MIN_VALUE;</span><br><span class="line">            </span><br><span class="line">        Arrays.sort(properties, <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;<span class="type">int</span>[]&gt;()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span>[] b)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(a[<span class="number">0</span>] == b[<span class="number">0</span>]) <span class="keyword">return</span> a[<span class="number">1</span>] - b[<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">return</span> b[<span class="number">0</span>] - a[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span>[] character : properties)&#123;</span><br><span class="line">            <span class="keyword">if</span>(maxDef &gt; character[<span class="number">1</span>]) count++;</span><br><span class="line">            <span class="keyword">else</span> maxDef = character[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;You are playing a game that conta</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
+    
+    <category term="复习" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="Sort" scheme="https://xuanhe95.github.io/tags/Sort/"/>
+    
+    <category term="双参量" scheme="https://xuanhe95.github.io/tags/%E5%8F%8C%E5%8F%82%E9%87%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>606. Construct String from Binary Tree</title>
@@ -608,33 +641,6 @@
     <category term="DFS" scheme="https://xuanhe95.github.io/tags/DFS/"/>
     
     <category term="Memoization" scheme="https://xuanhe95.github.io/tags/Memoization/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Blender生成Avatar并添加动作</title>
-    <link href="https://xuanhe95.github.io/2022/08/04/%E4%BD%BF%E7%94%A8Blender%E7%94%9F%E6%88%90Avatar%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%8A%A8%E4%BD%9C/"/>
-    <id>https://xuanhe95.github.io/2022/08/04/%E4%BD%BF%E7%94%A8Blender%E7%94%9F%E6%88%90Avatar%E5%B9%B6%E6%B7%BB%E5%8A%A0%E5%8A%A8%E4%BD%9C/</id>
-    <published>2022-08-05T04:30:28.000Z</published>
-    <updated>2022-08-05T07:54:20.819Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="拍摄并处理照片"><a href="#拍摄并处理照片" class="headerlink" title="拍摄并处理照片"></a>拍摄并处理照片</h3><p>拍摄正面照片，手脚需要分开，背景可以用PS修改为白色，方便软件后期处理。</p><h3 id="使用PIFuHD生成模型文件"><a href="#使用PIFuHD生成模型文件" class="headerlink" title="使用PIFuHD生成模型文件"></a>使用PIFuHD生成模型文件</h3><p><a href="https://colab.research.google.com/drive/11z58bl3meSzo6kFqkahMa35G5jmh2Wgt#scrollTo=eclLG4xlJRIE">PIFuHD Demo - Colaboratory (google.com)</a></p><p>通过这个库来处理照片文件。<br>处理完毕后得到OBJ文件和PNG文件。</p><h3 id="使用Blender为模型添加材质"><a href="#使用Blender为模型添加材质" class="headerlink" title="使用Blender为模型添加材质"></a>使用Blender为模型添加材质</h3><p>打开Blender，将OBJ文件导入。<br>选择UV Editing，在UV界面加载之前处理过的PNG文件，</p><p>首先将OBJ文件的正面向前。然后选择UV-Project from View。<br>此时会将模型上的控制点映射到UV窗口中。然后通过Scale，Move等工具将正面贴图与控制点相匹配。<br>如果出现双面人脸，可以通过调整部分控制点使材质隐藏。</p><p>再Material Properties一栏中的base color选择Image Texture。载入人物正面图片即可。</p><p>导出为FBX文件。</p><h3 id="使用Mixamo为模型添加动作"><a href="#使用Mixamo为模型添加动作" class="headerlink" title="使用Mixamo为模型添加动作"></a>使用Mixamo为模型添加动作</h3><p>将文件上传到<a href="https://www.mixamo.com/#/">Mixamo</a>，选择不同动作，即可为自己的模型添加各种动作。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;拍摄并处理照片&quot;&gt;&lt;a href=&quot;#拍摄并处理照片&quot; class=&quot;headerlink&quot; title=&quot;拍摄并处理照片&quot;&gt;&lt;/a&gt;拍摄并处理照片&lt;/h3&gt;&lt;p&gt;拍摄正面照片，手脚需要分开，背景可以用PS修改为白色，方便软件后期处理。&lt;/p&gt;
-&lt;h3 id=&quot;使</summary>
-      
-    
-    
-    
-    <category term="Drawing/Modelling" scheme="https://xuanhe95.github.io/categories/Drawing-Modelling/"/>
-    
-    <category term="Blender" scheme="https://xuanhe95.github.io/categories/Drawing-Modelling/Blender/"/>
-    
-    
-    <category term="Blender" scheme="https://xuanhe95.github.io/tags/Blender/"/>
     
   </entry>
   
