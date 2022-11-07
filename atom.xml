@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-11-07T00:51:09.299Z</updated>
+  <updated>2022-11-07T00:52:40.643Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://xuanhe95.github.io/2022/11/06/Recursive-Relation-LHRC-Honoi-Tower/"/>
     <id>https://xuanhe95.github.io/2022/11/06/Recursive-Relation-LHRC-Honoi-Tower/</id>
     <published>2022-11-07T00:37:49.000Z</published>
-    <updated>2022-11-07T00:51:09.299Z</updated>
+    <updated>2022-11-07T00:52:40.643Z</updated>
     
-    <content type="html"><![CDATA[<p>Find <strong>closed formula</strong> for an.</p><ol><li>Iteration (Proof by Induction)</li><li>Linear homogeneous recursive relation with constant coefficiens (LHRC)<br>find the roots of equation t<sub>2</sub>+c<sub>1</sub>t+C<sub>2</sub><br>then where exist constants b, d such that a<sub>n</sub> &#x3D; br<sub>1</sub><sup>n</sup>+dr<sub>2</sub><sup>n</sup>, for n &gt;&#x3D; 0</li></ol><p>Recursive Relation, Honoi Tower, LHRC</p><div class="row"><iframe src="https://drive.google.com/file/d/12v4WdhlpxC5Cx_c2Cnr06wh6eUG3BbZ1/view?usp=sharing" style="width:100%; height:550px"></iframe></div>]]></content>
+    <content type="html"><![CDATA[<p>Find <strong>closed formula</strong> for an.</p><ol><li>Iteration (Proof by Induction)</li><li>Linear homogeneous recursive relation with constant coefficiens (LHRC)<br>find the roots of equation t<sub>2</sub>+c<sub>1</sub>t+C<sub>2</sub><br>then where exist constants b, d such that a<sub>n</sub> &#x3D; br<sub>1</sub><sup>n</sup>+dr<sub>2</sub><sup>n</sup>, for n &gt;&#x3D; 0</li></ol><p>Recursive Relation, Honoi Tower, LHRC</p><div class="row"><iframe src="https://drive.google.com/file/d/12v4WdhlpxC5Cx_c2Cnr06wh6eUG3BbZ1/view" style="width:100%; height:550px"></iframe></div>]]></content>
     
     
       
