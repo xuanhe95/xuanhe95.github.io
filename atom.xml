@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-10-03T23:59:26.415Z</updated>
+  <updated>2022-11-07T00:38:03.101Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Recursive Relation, LHRC, Honoi Tower</title>
+    <link href="https://xuanhe95.github.io/2022/11/06/Recursive-Relation-LHRC-Honoi-Tower/"/>
+    <id>https://xuanhe95.github.io/2022/11/06/Recursive-Relation-LHRC-Honoi-Tower/</id>
+    <published>2022-11-07T00:37:49.000Z</published>
+    <updated>2022-11-07T00:38:03.101Z</updated>
+    
+    <content type="html"><![CDATA[<p>Find <strong>closed formula</strong> for an.</p><ol><li>Iteration (Proof by Induction)</li><li>Linear homogeneous recursive relation with constant coefficiens (LHRC)<br>find the roots of equation t<sub>2</sub>+c<sub>1</sub>t+C<sub>2</sub><br>then where exist constants b, d such that a<sub>n</sub> &#x3D; br<sub>1</sub><sup>n</sup>+dr<sub>2</sub><sup>n</sup>, for n &gt;&#x3D; 0</li></ol><p>Recursive Relation, Honoi Tower, LHRC</p><div class="row">    <embed src="https://github.com/xuanhe95/uclaMath61/blob/5029e131ead6839f90c4bb0742c6d44240a0b8bf/Notes/61%20-%20Week%204%20notes%20--%207.1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Find &lt;strong&gt;closed formula&lt;/strong&gt; for an.&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Iteration (Proof by Induction)&lt;/li&gt;
+&lt;li&gt;Linear homogeneous recursive relation w</summary>
+      
+    
+    
+    
+    <category term="Course" scheme="https://xuanhe95.github.io/categories/Course/"/>
+    
+    <category term="Math" scheme="https://xuanhe95.github.io/categories/Course/Math/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>1578. Minimum Time to Make Rope Colorful</title>
@@ -29,37 +56,6 @@
       
       
     <summary type="html">&lt;h3 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h3&gt;&lt;p&gt;Alice has &lt;code&gt;n&lt;/code&gt; balloons arranged on a ro</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="滑动窗口" scheme="https://xuanhe95.github.io/tags/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1578. Minimum Time to Make Rope Colorful</title>
-    <link href="https://xuanhe95.github.io/2022/10/03/1578-Minimum-Time-to-Make-Rope-Colorful%20-%20Copy/"/>
-    <id>https://xuanhe95.github.io/2022/10/03/1578-Minimum-Time-to-Make-Rope-Colorful%20-%20Copy/</id>
-    <published>2022-10-03T23:59:07.000Z</published>
-    <updated>2022-11-07T00:33:48.893Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><div class="row">    <embed src="https://github.com/xuanhe95/uclaMath61/blob/5029e131ead6839f90c4bb0742c6d44240a0b8bf/Notes/61%20-%20Week%204%20notes%20--%207.1.pdf" width="100%" height="550" type="application/pdf"></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h3&gt;
-
-	&lt;div class=&quot;row&quot;&gt;
-    &lt;embed src=&quot;https://github.c</summary>
       
     
     

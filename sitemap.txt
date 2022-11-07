@@ -1,4 +1,4 @@
-https://xuanhe95.github.io/2022/10/03/1578-Minimum-Time-to-Make-Rope-Colorful%20-%20Copy/
+https://xuanhe95.github.io/2022/11/06/Recursive-Relation-LHRC-Honoi-Tower/
 https://xuanhe95.github.io/2022/10/03/1578-Minimum-Time-to-Make-Rope-Colorful/
 https://xuanhe95.github.io/2022/09/19/609-Find-Duplicate-File-in-System/
 https://xuanhe95.github.io/2022/09/18/42-Trapping-Rain-Water/
@@ -371,3 +371,5 @@ https://xuanhe95.github.io/categories/Unity/
 https://xuanhe95.github.io/categories/Hexo/Theme/
 https://xuanhe95.github.io/categories/Drawing-Modelling/
 https://xuanhe95.github.io/categories/Drawing-Modelling/Blender/
+https://xuanhe95.github.io/categories/Course/
+https://xuanhe95.github.io/categories/Course/Math/
