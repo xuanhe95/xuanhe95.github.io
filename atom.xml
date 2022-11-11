@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-11-07T01:02:50.459Z</updated>
+  <updated>2022-11-11T20:32:23.067Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>26. Remove Duplicates from Sorted Array</title>
+    <link href="https://xuanhe95.github.io/2022/11/11/26-Remove-Duplicates-from-Sorted-Array/"/>
+    <id>https://xuanhe95.github.io/2022/11/11/26-Remove-Duplicates-from-Sorted-Array/</id>
+    <published>2022-11-11T20:32:03.000Z</published>
+    <updated>2022-11-11T20:32:23.067Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><p>Given an integer array <code>nums</code> sorted in <strong>non-decreasing order</strong>, remove the duplicates <a href="https://en.wikipedia.org/wiki/In-place_algorithm"><strong>in-place</strong></a> such that each unique element appears only <strong>once</strong>. The <strong>relative order</strong> of the elements should be kept the <strong>same</strong>.</p><p>Since it is impossible to change the length of the array in some languages, you must instead have the result be placed in the <strong>first part</strong> of the array <code>nums</code>. More formally, if there are <code>k</code> elements after removing the duplicates, then the first <code>k</code> elements of <code>nums</code> should hold the final result. It does not matter what you leave beyond the first <code>k</code> elements.</p><p>Return <code>k</code>* after placing the final result in the first <em><code>k</code></em> slots of *<code>nums</code>.</p><p>Do <strong>not</strong> allocate extra space for another array. You must do this by <strong>modifying the input array <a href="https://en.wikipedia.org/wiki/In-place_algorithm">in-place</a></strong> with O(1) extra memory.</p><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>由于数组本身已经排序，只要比较当前nums中的元素是否大于上一个保存的数值就可以决定是否保留。<br>创建一个k记录遍历的位置，每次比较nums[k]与nums[i]的位置元素的大小，如果当前的nums[i]大于nums[k]，则将k位置向后移动1，并将下一个位置记录为nums[i]。</p><p>最后返回k+1。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">removeDuplicates</span><span class="params">(<span class="type">int</span>[] nums)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">k</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; nums.length; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[k] &lt; nums[i])&#123;</span><br><span class="line">                k++;</span><br><span class="line">                nums[k] = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> k + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;p&gt;Given an integer array &lt;code&gt;nums&lt;/code&gt; sorte</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Easy" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="Array" scheme="https://xuanhe95.github.io/tags/Array/"/>
+    
+  </entry>
   
   <entry>
     <title>Recursive Relation, LHRC, Honoi Tower</title>
@@ -604,35 +632,6 @@
     <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     <category term="String" scheme="https://xuanhe95.github.io/tags/String/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>326. Power of Three</title>
-    <link href="https://xuanhe95.github.io/2022/08/23/326-Power-of-Three/"/>
-    <id>https://xuanhe95.github.io/2022/08/23/326-Power-of-Three/</id>
-    <published>2022-08-24T03:07:39.000Z</published>
-    <updated>2022-08-24T03:07:55.861Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an integer <code>n</code>, return <em><code>true</code> if it is a power of three. Otherwise, return <code>false</code></em>.</p><p>An integer <code>n</code> is a power of three, if there exists an integer <code>x</code> such that <code>n == 3&lt;sup&gt;x&lt;/sup&gt;</code>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>与isPowerOfFour相同，如果n小于0则返回false。<br>如果n等于1则返回true。<br>递归，如果n可以整除3，则返回isPowerOfThree(n &#x2F; 3)。<br>否则返回false。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">isPowerOfThree</span><span class="params">(<span class="type">int</span> n)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(n &lt;= <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">if</span>(n % <span class="number">3</span> == <span class="number">0</span>) <span class="keyword">return</span> isPowerOfThree(n / <span class="number">3</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Given an integer &lt;code&gt;n&lt;/code&gt;, </summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Easy" scheme="https://xuanhe95.github.io/categories/LeetCode/Easy/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="递归" scheme="https://xuanhe95.github.io/tags/%E9%80%92%E5%BD%92/"/>
     
   </entry>
   
