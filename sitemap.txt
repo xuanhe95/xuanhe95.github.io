@@ -1,3 +1,4 @@
+https://xuanhe95.github.io/2022/11/20/Math-33-Review/
 https://xuanhe95.github.io/2022/11/11/26-Remove-Duplicates-from-Sorted-Array/
 https://xuanhe95.github.io/2022/11/06/Recursive-Relation-LHRC-Honoi-Tower/
 https://xuanhe95.github.io/2022/10/03/1578-Minimum-Time-to-Make-Rope-Colorful/
@@ -355,6 +356,7 @@ https://xuanhe95.github.io/tags/%E6%A0%91%E5%BD%A2DP/
 https://xuanhe95.github.io/tags/Front-end/
 https://xuanhe95.github.io/tags/Unity/
 https://xuanhe95.github.io/tags/Blender/
+https://xuanhe95.github.io/tags/Linear-Algebra/
 https://xuanhe95.github.io/categories/LeetCode/
 https://xuanhe95.github.io/categories/LeetCode/Medium/
 https://xuanhe95.github.io/categories/LeetCode/Easy/
@@ -374,3 +376,4 @@ https://xuanhe95.github.io/categories/Drawing-Modelling/
 https://xuanhe95.github.io/categories/Drawing-Modelling/Blender/
 https://xuanhe95.github.io/categories/Course/
 https://xuanhe95.github.io/categories/Course/Math/
+https://xuanhe95.github.io/categories/Math/
