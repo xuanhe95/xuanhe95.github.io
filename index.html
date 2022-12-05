@@ -342,7 +342,7 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bin_tree_isom(r1, r2)&#123;</span><br><span class="line">        if(r1 == null &amp;&amp; r2 == null) return true</span><br><span class="line">        if (r1 == null &amp;&amp; r2 != null || r1 != null &amp;&amp; r2 == null) return false</span><br><span class="line">        lc_r1 = left child of r1</span><br><span class="line">        lc_r2 = right child of r2</span><br><span class="line">        rc_r1 = right child of r1</span><br><span class="line">        rc_r2 = right child of r2</span><br><span class="line">        if(bin_tree_isom(lc_r1, lc_r2) == True &amp;&amp; bin_tree_isom(rc_r1, rc_r2) == True)</span><br><span class="line">            return true</span><br><span class="line">        else</span><br><span class="line">            return false</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-11-20T21:41:00.000Z" title="2022/11/20 13:41:00">2022-11-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-11-25T01:58:59.410Z" title="2022/11/24 17:58:59">2022-11-24</time></span><span class="level-item"><a class="link-muted" href="/categories/Math/">Math</a></span><span class="level-item">8 minutes read (About 1227 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/11/20/Math-33-Review/">Math 33 Review</a></h1><div class="content"><h3 id="Homework-1"><a href="#Homework-1" class="headerlink" title="Homework 1:"></a>Homework 1:</h3><ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-11-20T21:41:00.000Z" title="2022/11/20 13:41:00">2022-11-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-12-05T18:56:25.504Z" title="2022/12/5 10:56:25">2022-12-05</time></span><span class="level-item"><a class="link-muted" href="/categories/Math/">Math</a></span><span class="level-item">8 minutes read (About 1244 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/11/20/Math-33-Review/">Math 33 Review</a></h1><div class="content"><h3 id="Homework-1"><a href="#Homework-1" class="headerlink" title="Homework 1:"></a>Homework 1:</h3><ul>
 <li><strong>增广矩阵 Augmented matrix：</strong><ul>
 <li>sovling system equations</li>
 </ul>
@@ -479,6 +479,7 @@
 <li><p><strong>正交 orthogonal：</strong></p>
 <ul>
 <li>矩阵A是否正交判断：<strong>A<sup>T</sup> &#x3D; A<sup>-1</sup></strong></li>
+<li>正交矩阵的行列式永远等于+-1</li>
 </ul>
 </li>
 <li><p><strong>标准正交基 Orthonormal：</strong></p>
@@ -490,7 +491,7 @@
 <li><p><strong>正交投影 Orthogonal Projection：</strong></p>
 <ul>
 <li>正交投影公式：</li>
-<li>注意投影的两个基向量必须正交</li>
+<li><strong>注意：</strong>投影的两个基向量必须是标准正交基</li>
 <li><strong>proj<sub>span{u, v}</sub><sup>w</sup> &#x3D; proj<sub>u</sub><sup>w</sup> + proj<sub>v</sub><sup>w</sup></strong></li>
 <li><strong>proj<sub>v</sub><sup>w</sup> &#x3D; [(u · v)&#x2F;(v · v)]v</strong></li>
 </ul>
