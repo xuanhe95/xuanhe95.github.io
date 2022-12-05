@@ -342,7 +342,7 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bin_tree_isom(r1, r2)&#123;</span><br><span class="line">        if(r1 == null &amp;&amp; r2 == null) return true</span><br><span class="line">        if (r1 == null &amp;&amp; r2 != null || r1 != null &amp;&amp; r2 == null) return false</span><br><span class="line">        lc_r1 = left child of r1</span><br><span class="line">        lc_r2 = right child of r2</span><br><span class="line">        rc_r1 = right child of r1</span><br><span class="line">        rc_r2 = right child of r2</span><br><span class="line">        if(bin_tree_isom(lc_r1, lc_r2) == True &amp;&amp; bin_tree_isom(rc_r1, rc_r2) == True)</span><br><span class="line">            return true</span><br><span class="line">        else</span><br><span class="line">            return false</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-11-20T21:41:00.000Z" title="2022/11/20 13:41:00">2022-11-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-12-05T18:56:25.504Z" title="2022/12/5 10:56:25">2022-12-05</time></span><span class="level-item"><a class="link-muted" href="/categories/Math/">Math</a></span><span class="level-item">8 minutes read (About 1244 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/11/20/Math-33-Review/">Math 33 Review</a></h1><div class="content"><h3 id="Homework-1"><a href="#Homework-1" class="headerlink" title="Homework 1:"></a>Homework 1:</h3><ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-11-20T21:41:00.000Z" title="2022/11/20 13:41:00">2022-11-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-12-05T19:48:22.274Z" title="2022/12/5 11:48:22">2022-12-05</time></span><span class="level-item"><a class="link-muted" href="/categories/Math/">Math</a></span><span class="level-item">10 minutes read (About 1514 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/11/20/Math-33-Review/">Math 33 Review</a></h1><div class="content"><h3 id="Homework-1"><a href="#Homework-1" class="headerlink" title="Homework 1:"></a>Homework 1:</h3><ul>
 <li><strong>增广矩阵 Augmented matrix：</strong><ul>
 <li>sovling system equations</li>
 </ul>
@@ -465,7 +465,7 @@
 <li><strong>B &#x3D; S<sup>-1</sup>TS</strong>（以B为基的坐标系的变换矩阵）</li>
 <li>find the matrix of the linear transformation defined by T(v) &#x3D; w with respect to the basis {b1, b2, … bn}</li>
 <li>将bn带入T()，得到变化后的wn</li>
-<li>分解wn为aw1 + bw2 + … + nwn</li>
+<li>分解w<sub>n</sub>为aw<sub>1</sub> + bw<sub>2</sub> + … + nw<sub>n</sub></li>
 <li>将factors的解组成一个新的col向量</li>
 <li>B-matrix &#x3D; [col1, col2, … coln]</li>
 </ul>
@@ -571,6 +571,34 @@
 <ul>
 <li>将基向量变换到对应的顶点坐标，得到变换矩阵T</li>
 <li>计算|det(T)|</li>
+</ul>
+</li>
+</ul>
+<h3 id="Homework-9"><a href="#Homework-9" class="headerlink" title="Homework 9:"></a>Homework 9:</h3><ul>
+<li><strong>特征基 eigenbasis</strong>:<ul>
+<li>由矩阵的特征向量组成的一组基</li>
+<li>解出特征值，得到特征向量，带入值，组成基</li>
+</ul>
+</li>
+<li><strong>特征空间 eigenspace</strong><ul>
+<li>特征空间的维度决定了是否能找到矩阵的特征基，只有特征空间的维度等于矩阵的维度，才能找到特征基。</li>
+</ul>
+</li>
+<li><strong>对角化</strong><ul>
+<li>对角化的本质是将当前矩阵M的基变更为其特征基</li>
+<li>以特征基作为矩阵新的基，新的基可以组成变换矩阵S</li>
+<li>将当前基向量v与矩阵M进行乘法，得到变换后的向量位置</li>
+<li>将向量分解为特征基的加和w</li>
+<li>将factors的解组成一个新的col向量</li>
+<li>B-matrix &#x3D; [col1, col2, … coln]</li>
+<li>对角化矩阵<strong>M &#x3D; SM’S<sup>-1</sup></strong>,（该操作是相似变换矩阵的逆运算）</li>
+<li>对角化矩阵的对角线是特征值</li>
+</ul>
+</li>
+<li><strong>矩阵乘方</strong><ul>
+<li>先将矩阵M对角化为M’</li>
+<li>计算M’的乘方，直接将对角线上的数值乘方</li>
+<li>M &#x3D; SM’S</li>
 </ul>
 </li>
 </ul>
