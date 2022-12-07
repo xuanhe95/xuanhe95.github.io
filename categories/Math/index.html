@@ -342,7 +342,7 @@
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">bin_tree_isom(r1, r2)&#123;</span><br><span class="line">        if(r1 == null &amp;&amp; r2 == null) return true</span><br><span class="line">        if (r1 == null &amp;&amp; r2 != null || r1 != null &amp;&amp; r2 == null) return false</span><br><span class="line">        lc_r1 = left child of r1</span><br><span class="line">        lc_r2 = right child of r2</span><br><span class="line">        rc_r1 = right child of r1</span><br><span class="line">        rc_r2 = right child of r2</span><br><span class="line">        if(bin_tree_isom(lc_r1, lc_r2) == True &amp;&amp; bin_tree_isom(rc_r1, rc_r2) == True)</span><br><span class="line">            return true</span><br><span class="line">        else</span><br><span class="line">            return false</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-11-20T21:41:00.000Z" title="2022/11/20 13:41:00">2022-11-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-12-05T19:48:22.274Z" title="2022/12/5 11:48:22">2022-12-05</time></span><span class="level-item"><a class="link-muted" href="/categories/Math/">Math</a></span><span class="level-item">10 minutes read (About 1514 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/11/20/Math-33-Review/">Math 33 Review</a></h1><div class="content"><h3 id="Homework-1"><a href="#Homework-1" class="headerlink" title="Homework 1:"></a>Homework 1:</h3><ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item">Posted&nbsp;<time dateTime="2022-11-20T21:41:00.000Z" title="2022/11/20 13:41:00">2022-11-20</time></span><span class="level-item">Updated&nbsp;<time dateTime="2022-12-05T20:59:30.160Z" title="2022/12/5 12:59:30">2022-12-05</time></span><span class="level-item"><a class="link-muted" href="/categories/Math/">Math</a></span><span class="level-item">10 minutes read (About 1514 words)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2022/11/20/Math-33-Review/">Math 33 Review</a></h1><div class="content"><h3 id="Homework-1"><a href="#Homework-1" class="headerlink" title="Homework 1:"></a>Homework 1:</h3><ul>
 <li><strong>增广矩阵 Augmented matrix：</strong><ul>
 <li>sovling system equations</li>
 </ul>
@@ -587,7 +587,7 @@
 <li><strong>对角化</strong><ul>
 <li>对角化的本质是将当前矩阵M的基变更为其特征基</li>
 <li>以特征基作为矩阵新的基，新的基可以组成变换矩阵S</li>
-<li>将当前基向量v与矩阵M进行乘法，得到变换后的向量位置</li>
+<li>将特征基向量v与矩阵M进行乘法，得到变换后的向量位置</li>
 <li>将向量分解为特征基的加和w</li>
 <li>将factors的解组成一个新的col向量</li>
 <li>B-matrix &#x3D; [col1, col2, … coln]</li>
