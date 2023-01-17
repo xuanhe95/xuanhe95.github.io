@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2023-01-17T22:52:25.844Z</updated>
+  <updated>2023-01-17T23:23:56.502Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -21,15 +21,14 @@
     <link href="https://xuanhe95.github.io/2023/01/17/Emacs-Commands/"/>
     <id>https://xuanhe95.github.io/2023/01/17/Emacs-Commands/</id>
     <published>2023-01-17T22:45:36.000Z</published>
-    <updated>2023-01-17T22:52:25.844Z</updated>
+    <updated>2023-01-17T23:23:56.502Z</updated>
     
-    <content type="html"><![CDATA[<p>Emacs</p><table><thead><tr><th>Command</th><th>English</th><th>中文</th></tr></thead><tbody><tr><td>C-x C-f</td><td>New&#x2F;Open file</td><td>新建&#x2F;打开</td></tr><tr><td>C-x C-w</td><td>Save as</td><td>另存为</td></tr><tr><td>C-x C-c</td><td>Exit</td><td>退出</td></tr><tr><td>C-x C-s</td><td>Save</td><td>保存</td></tr><tr><td>C-s</td><td>Search next</td><td>向下搜索</td></tr><tr><td>C-r</td><td>Search last</td><td>向上搜索</td></tr><tr><td>C-a</td><td>Start of the line</td><td>行首</td></tr><tr><td>C-e</td><td>End of the line</td><td>行末</td></tr><tr><td>C-p</td><td>Last line</td><td>上一行</td></tr><tr><td>C-n</td><td>Next line</td><td>下一行</td></tr><tr><td>C-k</td><td>Delete line</td><td>删除整行</td></tr></tbody></table><p>M-dDelete word删除单词</p><p>M-g gMove to x line移动到某行</p><p>C-&#x2F;Undo撤销</p><p>C-vNext screen下一屏<br>M-vLast screen上一屏<br>C-M-sSearch regex正则表达式搜索</p><p>C-@Mark选中<br>C-wCut剪切<br>M-wCopy复制<br>C-yPaste粘贴</p><p>M-!Shell ModeShell模式<br>M-x shellShell ModeShell模式（交互式）</p><p>M-x replace-string<br>M-x open-dribble-file</p>]]></content>
+    <content type="html"><![CDATA[<table><thead><tr><th>Command</th><th>English</th><th>中文</th></tr></thead><tbody><tr><td>C-x C-f</td><td>New&#x2F;Open file</td><td>新建&#x2F;打开</td></tr><tr><td>C-x C-w</td><td>Save as</td><td>另存为</td></tr><tr><td>C-x C-c</td><td>Exit</td><td>退出</td></tr><tr><td>C-x C-s</td><td>Save</td><td>保存</td></tr><tr><td>C-s</td><td>Search next</td><td>向下搜索</td></tr><tr><td>C-r</td><td>Search last</td><td>向上搜索</td></tr><tr><td>C-a</td><td>Start of the line</td><td>行首</td></tr><tr><td>C-e</td><td>End of the line</td><td>行末</td></tr><tr><td>C-p</td><td>Last line</td><td>上一行</td></tr><tr><td>C-n</td><td>Next line</td><td>下一行</td></tr><tr><td>C-d</td><td>Delete cursor</td><td>删除光标下字符</td></tr><tr><td>C-k</td><td>Delete line</td><td>删除整行</td></tr><tr><td>M-d</td><td>Delete word</td><td>删除单词</td></tr><tr><td>M-g g</td><td>Move to x line</td><td>移动到某行</td></tr><tr><td>C-&#x2F;</td><td>Undo</td><td>撤销</td></tr><tr><td>C-v</td><td>Next screen</td><td>下一屏</td></tr><tr><td>M-v</td><td>Last screen</td><td>上一屏</td></tr><tr><td>C-M-s</td><td>Search regex</td><td>正则表达式搜索</td></tr><tr><td>C-@</td><td>Mark</td><td>选中</td></tr><tr><td>C-w</td><td>Cut</td><td>剪切</td></tr><tr><td>M-w</td><td>Copy</td><td>复制</td></tr><tr><td>C-y</td><td>Paste</td><td>粘贴</td></tr><tr><td>M-!</td><td>Shell Mode</td><td>Shell模式</td></tr><tr><td>M-x shell</td><td>Shell Mode</td><td>Shell模式（交互式）</td></tr></tbody></table>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Emacs&lt;/p&gt;
-&lt;table&gt;
+    <summary type="html">&lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
 &lt;th&gt;Command&lt;/th&gt;
@@ -39,7 +38,8 @@
 &lt;/thead&gt;
 &lt;tbody&gt;&lt;tr&gt;
 &lt;td&gt;C-x C-f&lt;/td&gt;
-&lt;td&gt;New&amp;#x2F;Ope</summary>
+&lt;td&gt;New&amp;#x2F;Open file&lt;/td&gt;
+&lt;</summary>
       
     
     
