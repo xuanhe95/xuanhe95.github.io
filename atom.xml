@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2022-12-05T06:55:59.693Z</updated>
+  <updated>2023-01-17T22:45:36.856Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Emacs Commands</title>
+    <link href="https://xuanhe95.github.io/2023/01/17/Emacs-Commands/"/>
+    <id>https://xuanhe95.github.io/2023/01/17/Emacs-Commands/</id>
+    <published>2023-01-17T22:45:36.000Z</published>
+    <updated>2023-01-17T22:45:36.856Z</updated>
+    
+    <content type="html"><![CDATA[<p>Emacs</p><p>C-x C-fNew&#x2F;Open file新建&#x2F;打开<br>C-x C-wSave as另存为<br>C-x C-cExit退出<br>C-x C-sSave保存<br>C-sSearch next向下搜索<br>C-rSearch last向上搜索<br>C-aStart of the line行首<br>C-eEnd of the line行末<br>C-pLast line上一行<br>C-nNext line下一行</p><p>C-dDelete cursor删除光标下字符<br>C-kDelete line删除整行<br>M-dDelete word删除单词</p><p>M-g gMove to x line移动到某行</p><p>C-&#x2F;Undo撤销</p><p>C-vNext screen下一屏<br>M-vLast screen上一屏<br>C-M-sSearch regex正则表达式搜索</p><p>C-@Mark选中<br>C-wCut剪切<br>M-wCopy复制<br>C-yPaste粘贴</p><p>M-!Shell ModeShell模式<br>M-x shellShell ModeShell模式（交互式）</p><p>M-x replace-string<br>M-x open-dribble-file</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;Emacs&lt;/p&gt;
+&lt;p&gt;C-x C-f	New&amp;#x2F;Open file	新建&amp;#x2F;打开&lt;br&gt;C-x C-w	Save as		另存为&lt;br&gt;C-x C-c	Exit			退出&lt;br&gt;C-x C-s	Save			保存&lt;br&gt;C-s		Search next	</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="https://xuanhe95.github.io/categories/Linux/"/>
+    
+    
+    <category term="Linux" scheme="https://xuanhe95.github.io/tags/Linux/"/>
+    
+  </entry>
   
   <entry>
     <title>MATH61 Review</title>
@@ -586,37 +611,6 @@
     <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     <category term="Matrix" scheme="https://xuanhe95.github.io/tags/Matrix/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>363. Max Sum of Rectangle No Larger Than K</title>
-    <link href="https://xuanhe95.github.io/2022/08/27/363-Max-Sum-of-Rectangle-No-Larger-Than-K/"/>
-    <id>https://xuanhe95.github.io/2022/08/27/363-Max-Sum-of-Rectangle-No-Larger-Than-K/</id>
-    <published>2022-08-27T09:17:36.000Z</published>
-    <updated>2022-08-27T09:17:55.023Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given an <code>m x n</code> matrix <code>matrix</code> and an integer <code>k</code>, return <em>the max sum of a rectangle in the matrix such that its sum is no larger than</em> <code>k</code>.</p><p>It is <strong>guaranteed</strong> that there will be a rectangle with a sum no larger than <code>k</code>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>前缀和，计算矩阵中每个位置对应的方形的和。<br>遍历方形的两个对角线上的点。<br>其面积等于大块加小块的面积减去两个长方形的面积。<br>如果面积有小于k的，则记录其最大值并返回。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxSumSubmatrix</span><span class="params">(<span class="type">int</span>[][] matrix, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">x</span> <span class="operator">=</span> matrix.length, y = matrix[<span class="number">0</span>].length, max = Integer.MIN_VALUE;</span><br><span class="line">        <span class="type">int</span>[][] sum = <span class="keyword">new</span> <span class="title class_">int</span>[x+<span class="number">1</span>][y+<span class="number">1</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt;= x; i++)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">total</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">1</span>; j &lt;= y; j++)&#123;</span><br><span class="line">                total += matrix[i-<span class="number">1</span>][j-<span class="number">1</span>];</span><br><span class="line">                sum[i][j] = sum[i-<span class="number">1</span>][j] + total;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"> </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt;= x; i++)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">j</span> <span class="operator">=</span> <span class="number">0</span>; j &lt;= y; j++)&#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> i + <span class="number">1</span>; m &lt;= x; m++)&#123;</span><br><span class="line">                    <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">n</span> <span class="operator">=</span> j + <span class="number">1</span>; n &lt;= y; n++)&#123;</span><br><span class="line">                        <span class="type">int</span> <span class="variable">area</span> <span class="operator">=</span> sum[m][n] + sum[i][j] - sum[m][j] - sum[i][n];</span><br><span class="line">                        <span class="keyword">if</span>(area &lt;= k) max = Math.max(max, area);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Given an &lt;code&gt;m x n&lt;/code&gt; matri</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Hard" scheme="https://xuanhe95.github.io/categories/LeetCode/Hard/"/>
-    
-    <category term="复习" scheme="https://xuanhe95.github.io/categories/LeetCode/Hard/%E5%A4%8D%E4%B9%A0/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="前缀和" scheme="https://xuanhe95.github.io/tags/%E5%89%8D%E7%BC%80%E5%92%8C/"/>
     
   </entry>
   
