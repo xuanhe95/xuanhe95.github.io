@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2023-01-17T23:23:56.502Z</updated>
+  <updated>2023-03-01T00:33:00.980Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Yunggh Project</title>
+    <link href="https://xuanhe95.github.io/2023/02/28/Yunggh-Project/"/>
+    <id>https://xuanhe95.github.io/2023/02/28/Yunggh-Project/</id>
+    <published>2023-03-01T00:33:00.000Z</published>
+    <updated>2023-03-01T00:33:00.980Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Quadrilateral-Grids"><a href="#Quadrilateral-Grids" class="headerlink" title="Quadrilateral Grids"></a>Quadrilateral Grids</h1><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/QuadGrids.gif" alt="Quadrilateral Grids Generation"></p><h1 id="Polar-Convexity"><a href="#Polar-Convexity" class="headerlink" title="Polar Convexity"></a>Polar Convexity</h1><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Polar.gif" alt="Polar Convexity Generation"></p><h1 id="Straight-Skeleton-amp-Erosion"><a href="#Straight-Skeleton-amp-Erosion" class="headerlink" title="Straight Skeleton &amp;  Erosion"></a>Straight Skeleton &amp;  Erosion</h1><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Skeleton.png" alt="Straight Sekeleton Generation"><br><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Erosion.png" alt="Erosion Generation"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;Quadrilateral-Grids&quot;&gt;&lt;a href=&quot;#Quadrilateral-Grids&quot; class=&quot;headerlink&quot; title=&quot;Quadrilateral Grids&quot;&gt;&lt;/a&gt;Quadrilateral Grids&lt;/h1&gt;&lt;p&gt;&lt;i</summary>
+      
+    
+    
+    
+    <category term="Grasshopper" scheme="https://xuanhe95.github.io/categories/Grasshopper/"/>
+    
+    
+    <category term="Grasshopper" scheme="https://xuanhe95.github.io/tags/Grasshopper/"/>
+    
+  </entry>
   
   <entry>
     <title>Emacs Commands</title>
@@ -592,35 +616,6 @@
     <category term="数据结构" scheme="https://xuanhe95.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
     <category term="DFS" scheme="https://xuanhe95.github.io/tags/DFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1329. Sort the Matrix Diagonally</title>
-    <link href="https://xuanhe95.github.io/2022/08/27/1329-Sort-the-Matrix-Diagonally/"/>
-    <id>https://xuanhe95.github.io/2022/08/27/1329-Sort-the-Matrix-Diagonally/</id>
-    <published>2022-08-28T04:33:28.000Z</published>
-    <updated>2022-08-28T04:33:45.218Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>A <strong>matrix diagonal</strong> is a diagonal line of cells starting from some cell in either the topmost row or leftmost column and going in the bottom-right direction until reaching the matrix’s end. For example, the <strong>matrix diagonal</strong> starting from <code>mat[2][0]</code>, where <code>mat</code> is a <code>6 x 3</code> matrix, includes cells <code>mat[2][0]</code>, <code>mat[3][1]</code>, and <code>mat[4][2]</code>.</p><p>Given an <code>m x n</code> matrix <code>mat</code> of integers, sort each <strong>matrix diagonal</strong> in ascending order and return <em>the resulting matrix</em>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>分别遍历数组的两条边。<br>按对角线顺序进行遍历，用列表记录访问过的数字。<br>排序列表后按对角线填入原数组。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[][] diagonalSort(<span class="type">int</span>[][] mat) &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">m</span> <span class="operator">=</span> mat.length, n = mat[<span class="number">0</span>].length;</span><br><span class="line">        List&lt;Integer&gt; arr = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> <span class="number">0</span>; t &lt; m; t++)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> t, j = <span class="number">0</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(i &lt; m &amp;&amp; j &lt; n)&#123;</span><br><span class="line">                arr.add(mat[i][j]);</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            Collections.sort(arr);</span><br><span class="line">            </span><br><span class="line">            i = t;</span><br><span class="line">            j = <span class="number">0</span>;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(i &lt; m &amp;&amp; j &lt; n)&#123;</span><br><span class="line">                mat[i][j] = arr.get(j);</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            arr.clear();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">t</span> <span class="operator">=</span> <span class="number">1</span>; t &lt; n; t++)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>, j = t;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(i &lt; m &amp;&amp; j &lt; n)&#123;</span><br><span class="line">                arr.add(mat[i][j]);</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            Collections.sort(arr);</span><br><span class="line">            </span><br><span class="line">            i = <span class="number">0</span>;</span><br><span class="line">            j = t;</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">while</span>(i &lt; m &amp;&amp; j &lt; n)&#123;</span><br><span class="line">                mat[i][j] = arr.get(i);</span><br><span class="line">                i++;</span><br><span class="line">                j++;</span><br><span class="line">            &#125;</span><br><span class="line">            arr.clear();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> mat;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;A &lt;strong&gt;matrix diagonal&lt;/strong</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="Matrix" scheme="https://xuanhe95.github.io/tags/Matrix/"/>
     
   </entry>
   
