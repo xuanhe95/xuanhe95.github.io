@@ -11688,8 +11688,8 @@ figure.highlight .section {
     width: 1972px;
   }
   .is-1-column .container {
-    max-width: 960px;
-    width: 960px;
+    max-width: 1972px;
+    width: 1972px;
   }
 }
 @media screen and (min-width: 769px), print {
