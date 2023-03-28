@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xuanhe95.github.io/2022/11/20/Math-33-Review/</loc>
+    
+    <lastmod>2023-03-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanhe95.github.io/2022/12/04/MATH61-Review/</loc>
     
     <lastmod>2023-03-28</lastmod>
@@ -41,15 +50,6 @@
     <loc>https://xuanhe95.github.io/2023/01/17/Emacs-Commands/</loc>
     
     <lastmod>2023-01-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanhe95.github.io/2022/11/20/Math-33-Review/</loc>
-    
-    <lastmod>2022-12-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
