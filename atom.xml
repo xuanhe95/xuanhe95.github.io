@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2023-03-30T09:04:24.898Z</updated>
+  <updated>2023-03-30T22:46:23.877Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Digital Fabrication</title>
+    <link href="https://xuanhe95.github.io/2023/03/30/Digital-Fabrication/"/>
+    <id>https://xuanhe95.github.io/2023/03/30/Digital-Fabrication/</id>
+    <published>2023-03-30T22:46:23.000Z</published>
+    <updated>2023-03-30T22:46:23.877Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Mobius_1.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Mobius_1.png&quot;&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>UCLA Summer Tech Seminar</title>
@@ -570,37 +591,6 @@
     <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     <category term="BFS" scheme="https://xuanhe95.github.io/tags/BFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>967. Numbers With Same Consecutive Differences</title>
-    <link href="https://xuanhe95.github.io/2022/09/02/967-Numbers-With-Same-Consecutive-Differences/"/>
-    <id>https://xuanhe95.github.io/2022/09/02/967-Numbers-With-Same-Consecutive-Differences/</id>
-    <published>2022-09-03T02:45:38.000Z</published>
-    <updated>2022-09-03T02:46:04.439Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Return all <strong>non-negative</strong> integers of length <code>n</code> such that the absolute difference between every two consecutive digits is <code>k</code>.</p><p>Note that <strong>every</strong> number in the answer <strong>must not</strong> have leading zeros. For example, <code>01</code> has one leading zero and is invalid.</p><p>You may return the answer in <strong>any order</strong>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>回溯，每次传入上一个数字和剩余的位数。<br>全局变量sum记录加和。<br>DFS搜索，每次计算下一位的可行数字并递归。<br>用回溯维护sum的值。<br>如果剩余位数为1，则将当前的sum加入结果，并清零sum。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    List&lt;Integer&gt; res;</span><br><span class="line">    <span class="type">int</span> sum;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span>[] numsSameConsecDiff(<span class="type">int</span> n, <span class="type">int</span> k) &#123;</span><br><span class="line">        res = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">1</span>; i &lt; <span class="number">10</span>; i++)&#123;</span><br><span class="line">            sum = <span class="number">0</span>;</span><br><span class="line">            dfs(i, n, k);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="type">int</span>[] ret = <span class="keyword">new</span> <span class="title class_">int</span>[res.size()];</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; res.size(); i++)&#123;</span><br><span class="line">            ret[i] = res.get(i);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">void</span> <span class="title function_">dfs</span><span class="params">(<span class="type">int</span> prev, <span class="type">int</span> n, <span class="type">int</span> k)</span>&#123;</span><br><span class="line">        sum += prev;</span><br><span class="line">        <span class="keyword">if</span>(n == <span class="number">1</span>)&#123;</span><br><span class="line">            res.add(sum);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(k == <span class="number">0</span>)&#123;</span><br><span class="line">            sum *= <span class="number">10</span>;</span><br><span class="line">            dfs(prev + k, n-<span class="number">1</span>, k);</span><br><span class="line">            sum /= <span class="number">10</span>;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(prev + k &lt; <span class="number">10</span>)&#123;</span><br><span class="line">            sum *= <span class="number">10</span>;</span><br><span class="line">            dfs(prev + k, n-<span class="number">1</span>, k);</span><br><span class="line">            sum /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(prev &gt;= k)&#123;</span><br><span class="line">            sum *= <span class="number">10</span>;</span><br><span class="line">            dfs(prev - k, n-<span class="number">1</span>, k);</span><br><span class="line">            sum /= <span class="number">10</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Return all &lt;strong&gt;non-negative&lt;/</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="Backtracking" scheme="https://xuanhe95.github.io/tags/Backtracking/"/>
-    
-    <category term="DFS" scheme="https://xuanhe95.github.io/tags/DFS/"/>
     
   </entry>
   
