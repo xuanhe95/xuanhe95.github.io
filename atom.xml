@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2023-03-31T04:51:55.029Z</updated>
+  <updated>2023-04-01T00:43:27.483Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>UCLA Fall: Augmented Reality Behavior</title>
+    <link href="https://xuanhe95.github.io/2023/03/31/UCLA-Fall-Augmented-Reality-Behavior/"/>
+    <id>https://xuanhe95.github.io/2023/03/31/UCLA-Fall-Augmented-Reality-Behavior/</id>
+    <published>2023-04-01T00:43:27.000Z</published>
+    <updated>2023-04-01T00:43:27.483Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="AUGMENTED-REALITY-BEHAVIOR"><a href="#AUGMENTED-REALITY-BEHAVIOR" class="headerlink" title="AUGMENTED REALITY BEHAVIOR"></a>AUGMENTED REALITY BEHAVIOR</h1><h3 id="CATALOG-DESCRIPTION"><a href="#CATALOG-DESCRIPTION" class="headerlink" title="CATALOG DESCRIPTION"></a>CATALOG DESCRIPTION</h3><p>In-depth research phase, with focus on a number of different special topics in architecture and urban design. In Progress grading.</p><h3 id="COURSE-DESCRIPTION"><a href="#COURSE-DESCRIPTION" class="headerlink" title="COURSE DESCRIPTION"></a>COURSE DESCRIPTION</h3><p>This past fall, Anyone Corporation (most notable for their journal Log) presented an exhibit titled Model Behavior. The director of Anyone Corporation, Cynthia Davidson said that “Models, whether physical or digital, are intrinsic to architecture. Just as other fields, such as science, mathematics, politics, and economics use models to visualize, reflect, and predict behaviors, so do architectural models…Model Behavior interrogates how architectural models elicit and project social behaviors. Objects on view represent a multitude of disciplines ranging from toys and scientific models to traditional physical architectural models.”1 Among model types investigated is augmented reality (AR), which is represented by wa.k studio’s 4 Square House model. The AR portion of the model allows users to change light and season, use a camera clipping plane to cut an angled section, as well as view the house’s inhabitants: a tree and animated agent.</p><h3 id="COURSE-OBJECTIVES"><a href="#COURSE-OBJECTIVES" class="headerlink" title="COURSE OBJECTIVES"></a>COURSE OBJECTIVES</h3><p>To experiment and investigate modeling potentials offered by augmented reality. To think independently and critically. To gain insight into the interplay between digital and physical.</p><ol><li>Develop competency in Unity3d using C#.</li><li>Understand game development concepts.</li><li>Utilize Augmented Reality packages to deploy apps to mobile devices.</li><li>Critically and creatively engage with new technology.</li><li>Theorize AR models through written and visual means.</li></ol>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;AUGMENTED-REALITY-BEHAVIOR&quot;&gt;&lt;a href=&quot;#AUGMENTED-REALITY-BEHAVIOR&quot; class=&quot;headerlink&quot; title=&quot;AUGMENTED REALITY BEHAVIOR&quot;&gt;&lt;/a&gt;AUGMENTE</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Digital Fabrication</title>
@@ -557,39 +577,6 @@
     <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     <category term="Binary Tree" scheme="https://xuanhe95.github.io/tags/Binary-Tree/"/>
-    
-    <category term="DFS" scheme="https://xuanhe95.github.io/tags/DFS/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>814. Binary Tree Pruning</title>
-    <link href="https://xuanhe95.github.io/2022/09/06/814-Binary-Tree-Pruning/"/>
-    <id>https://xuanhe95.github.io/2022/09/06/814-Binary-Tree-Pruning/</id>
-    <published>2022-09-06T07:02:45.000Z</published>
-    <updated>2022-09-06T08:40:51.778Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>Given the <code>root</code> of a binary tree, return <em>the same tree where every subtree (of the given tree) not containing a <em><code>1</code></em> has been removed</em>.</p><p>A subtree of a node <code>node</code> is <code>node</code> plus every node that is a descendant of <code>node</code>.</p></blockquote><h3 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h3><p>DFS搜索，首先递归两个子节点。<br>在搜索时如果节点为0且两个子节点均为null，则返回null。否则返回节点本身。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> TreeNode <span class="title function_">pruneTree</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        root.left = pruneTree(root.left);</span><br><span class="line">        root.right = pruneTree(root.right);</span><br><span class="line">        <span class="keyword">if</span>(root.left == <span class="literal">null</span> &amp;&amp; root.right == <span class="literal">null</span> &amp;&amp; root.val == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h3><p>DFS搜索，返回子节点和自己中是否包含1。<br>如果节点为null，则返回false。<br>如果自己为1，则返回true。<br>否则返回两个子节点中是否有true。</p><p>BFS搜索，根据每个节点的子节点是否包含1来决定左右子节点是否保存。<br>如果没有1，则将对应的子节点修改为null。</p><h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * public class TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode left;</span></span><br><span class="line"><span class="comment"> *     TreeNode right;</span></span><br><span class="line"><span class="comment"> *     TreeNode() &#123;&#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val) &#123; this.val = val; &#125;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int val, TreeNode left, TreeNode right) &#123;</span></span><br><span class="line"><span class="comment"> *         this.val = val;</span></span><br><span class="line"><span class="comment"> *         this.left = left;</span></span><br><span class="line"><span class="comment"> *         this.right = right;</span></span><br><span class="line"><span class="comment"> *     &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> TreeNode <span class="title function_">pruneTree</span><span class="params">(TreeNode root)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(!hasOne(root)) <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">        Queue&lt;TreeNode&gt; q = <span class="keyword">new</span> <span class="title class_">LinkedList</span>&lt;&gt;();</span><br><span class="line">        q.add(root);</span><br><span class="line">        <span class="keyword">while</span>(!q.isEmpty())&#123;</span><br><span class="line">            <span class="type">TreeNode</span> <span class="variable">curr</span> <span class="operator">=</span> q.poll();</span><br><span class="line">            <span class="keyword">if</span>(hasOne(curr.left)) q.add(curr.left);</span><br><span class="line">            <span class="keyword">else</span> curr.left = <span class="literal">null</span>;</span><br><span class="line">            <span class="keyword">if</span>(hasOne(curr.right)) q.add(curr.right);</span><br><span class="line">            <span class="keyword">else</span> curr.right = <span class="literal">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">private</span> <span class="type">boolean</span> <span class="title function_">hasOne</span><span class="params">(TreeNode root)</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(root == <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(root.val == <span class="number">1</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">return</span> hasOne(root.left) || hasOne(root.right);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;Given the &lt;code&gt;root&lt;/code&gt; of a </summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="Binary Tree" scheme="https://xuanhe95.github.io/tags/Binary-Tree/"/>
-    
-    <category term="BFS" scheme="https://xuanhe95.github.io/tags/BFS/"/>
     
     <category term="DFS" scheme="https://xuanhe95.github.io/tags/DFS/"/>
     
