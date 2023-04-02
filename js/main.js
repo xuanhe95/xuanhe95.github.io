@@ -18,8 +18,13 @@
         }
 
         $('.justified-gallery').justifiedGallery();
-        $('.justified-gallery').justifiedGallery({
+        $('.240').justifiedGallery({
             rowHeight : 240,
+            margins : 0,
+            lastRow : 'justify'
+        });
+        $('.portfolio').justifiedGallery({
+            rowHeight : 360,
             margins : 0,
             lastRow : 'justify'
         });
