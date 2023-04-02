@@ -17,7 +17,7 @@
         if ($('.justified-gallery > p > .gallery-item').length) {
             $('.justified-gallery > p > .gallery-item').unwrap();
         }
-        $('.justified-gallery').justifiedGallery());
+        $('.justified-gallery').justifiedGallery();
 
 
         $('#portfolio').justifiedGallery({
