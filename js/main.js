@@ -19,14 +19,9 @@
         }
         $('.justified-gallery').justifiedGallery();
 
-        $('#portfolio').justifiedGallery({
-            rowHeight : 720,
-            margins : 0,
-            lastRow : 'justify',
-        
-        });
 
-        $('#jf').justifiedGallery({
+
+        $('#jstf').justifiedGallery({
             rowHeight : 240,
             margins : 0,
             lastRow : 'justify',
