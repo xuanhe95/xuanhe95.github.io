@@ -16,7 +16,11 @@
         if ($('.justified-gallery > p > .gallery-item').length) {
             $('.justified-gallery > p > .gallery-item').unwrap();
         }
-
+        $('#portfolio').justifiedGallery({
+            rowHeight : 240,
+            margins : 0,
+            lastRow : 'justify'
+        });
         $('.justified-gallery').justifiedGallery();
         $('#portfolio').justifiedGallery({
             rowHeight : 240,
