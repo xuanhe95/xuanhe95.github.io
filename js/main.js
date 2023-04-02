@@ -140,7 +140,7 @@
 
 
 $('#portfolio').justifiedGallery({
-    rowHeight : 1080,
+    rowHeight : 720,
     margins : 0,
     lastRow : 'justify',
 
