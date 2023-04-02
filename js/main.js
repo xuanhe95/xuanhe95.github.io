@@ -25,6 +25,13 @@
             lastRow : 'justify',
         
         });
+
+        $('#jf').justifiedGallery({
+            rowHeight : 240,
+            margins : 0,
+            lastRow : 'justify',
+        
+        });
         
     }
 
