@@ -21,6 +21,13 @@
 
 
         $('#portfolio').justifiedGallery({
+            rowHeight : 360,
+            margins : 0,
+            lastRow : 'justify',
+        
+        });
+
+        $('#jf').justifiedGallery({
             rowHeight : 240,
             margins : 0,
             lastRow : 'justify',
@@ -144,13 +151,6 @@
     }
 
 
-
-    $('#portfolio').justifiedGallery({
-        rowHeight : 240,
-        margins : 0,
-        lastRow : 'justify',
-    
-    });
 
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
 
