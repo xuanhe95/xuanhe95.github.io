@@ -18,10 +18,6 @@
             $('.justified-gallery > p > .gallery-item').unwrap();
         }
         $('.justified-gallery').justifiedGallery();
-
-    
-
-
     }
 
     if (typeof moment === 'function') {
@@ -144,7 +140,7 @@
 
 
 $('#portfolio').justifiedGallery({
-    rowHeight : 720,
+    rowHeight : 1080,
     margins : 0,
     lastRow : 'justify',
 
