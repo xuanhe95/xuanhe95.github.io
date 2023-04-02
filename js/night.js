@@ -35,4 +35,13 @@
 
   findNightNav();
   isNight && applyNight(isNight);
+
+
+
+
+  $('#portfolio').justifiedGallery({
+    rowHeight : 240,
+    margins : 0,
+    lastRow : 'justify'
+  });
 }());
