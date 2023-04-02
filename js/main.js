@@ -158,3 +158,11 @@
     });
 
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
+
+
+$('#portfolio').justifiedGallery({
+    rowHeight : 240,
+    margins : 0,
+    lastRow : 'justify',
+
+});
