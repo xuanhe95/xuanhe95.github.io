@@ -1,5 +1,4 @@
 /* eslint-disable node/no-unsupported-features/node-builtins */
-
 (function($, moment, ClipboardJS, config) {
     $('.article img:not(".not-gallery-item")').each(function() {
         // wrap images with link and add caption if possible
@@ -19,7 +18,11 @@
         }
 
         $('.justified-gallery').justifiedGallery();
-
+        $('#portfolio').justifiedGallery({
+            rowHeight : 240,
+            margins : 0,
+            lastRow : 'justify'
+        });
 
     }
     if (typeof moment === 'function') {
@@ -122,8 +125,3 @@
     }
 
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
-$('#portfolio').justifiedGallery({
-    rowHeight : 240,
-    margins : 0,
-    lastRow : 'justify',
-});
