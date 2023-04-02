@@ -138,7 +138,7 @@
 
 
     $('#portfolio').justifiedGallery({
-        rowHeight : 360,
+        rowHeight : 720,
         margins : 0,
         lastRow : 'justify',
     
