@@ -18,7 +18,7 @@
         }
 
         $('.justified-gallery').justifiedGallery();
-        $('#portfolio').justifiedGallery({
+        $('.justified-gallery').justifiedGallery({
             rowHeight : 240,
             margins : 0,
             lastRow : 'justify'
@@ -123,11 +123,5 @@
         $mask.on('click', toggleToc);
         $('.navbar-main .catalogue').on('click', toggleToc);
     }
-
-    $('#portfolio').justifiedGallery({
-        rowHeight : 240,
-        margins : 0,
-        lastRow : 'justify'
-    });
 
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
