@@ -23,6 +23,16 @@
             margins : 0,
             lastRow : 'justify'
         });
+        $('.120').justifiedGallery({
+            rowHeight : 120,
+            margins : 0,
+            lastRow : 'justify'
+        });
+        $('.90').justifiedGallery({
+            rowHeight : 90,
+            margins : 0,
+            lastRow : 'justify'
+        });
         $('.portfolio').justifiedGallery({
             rowHeight : 360,
             margins : 0,
