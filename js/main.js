@@ -21,12 +21,6 @@
         $('.justified-gallery').justifiedGallery();
 
 
-        $('#portfolio').justifiedGallery({
-            rowHeight : 240,
-            margins : 0,
-            lastRow : 'justify',
-        
-        });
     }
     if (typeof moment === 'function') {
         $('.article-meta time').each(function() {
@@ -126,12 +120,7 @@
         $mask.on('click', toggleToc);
         $('.navbar-main .catalogue').on('click', toggleToc);
     }
-    $('#portfolio').justifiedGallery({
-        rowHeight : 240,
-        margins : 0,
-        lastRow : 'justify',
-    
-    });
+
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
 $('#portfolio').justifiedGallery({
     rowHeight : 240,
