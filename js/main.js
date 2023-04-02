@@ -18,17 +18,14 @@
             $('.justified-gallery > p > .gallery-item').unwrap();
         }
         $('.justified-gallery').justifiedGallery();
-
-
-
-        $('#portfolio').justifiedGallery({
-            rowHeight : 240,
-            margins : 0,
-            lastRow : 'justify',
-        
-        });
-        
     }
+
+    $('#portfolio').justifiedGallery({
+        rowHeight : 240,
+        margins : 0,
+        lastRow : 'justify',
+    
+    });
 
     if (typeof moment === 'function') {
         $('.article-meta time').each(function() {
