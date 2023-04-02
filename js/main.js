@@ -1,4 +1,5 @@
 /* eslint-disable node/no-unsupported-features/node-builtins */
+
 (function($, moment, ClipboardJS, config) {
     $('.article img:not(".not-gallery-item")').each(function() {
         // wrap images with link and add caption if possible
@@ -9,7 +10,6 @@
             }
         }
     });
-
     if (typeof $.fn.lightGallery === 'function') {
         $('.article').lightGallery({ selector: '.gallery-item' });
     }
@@ -17,21 +17,27 @@
         if ($('.justified-gallery > p > .gallery-item').length) {
             $('.justified-gallery > p > .gallery-item').unwrap();
         }
-        $('.justified-gallery').justifiedGallery();
-    }
 
+        $('.justified-gallery').justifiedGallery();
+
+
+        $('#portfolio').justifiedGallery({
+            rowHeight : 240,
+            margins : 0,
+            lastRow : 'justify',
+        
+        });
+    }
     if (typeof moment === 'function') {
         $('.article-meta time').each(function() {
             $(this).text(moment($(this).attr('datetime')).fromNow());
         });
     }
-
     $('.article > .content > table').each(function() {
         if ($(this).width() > $(this).parent().width()) {
             $(this).wrap('<div class="table-overflow"></div>');
         }
     });
-
     function adjustNavbar() {
         const navbarWidth = $('.navbar-main .navbar-start').outerWidth() + $('.navbar-main .navbar-end').outerWidth();
         if ($(document).outerWidth() < navbarWidth) {
@@ -42,23 +48,19 @@
     }
     adjustNavbar();
     $(window).resize(adjustNavbar);
-
     function toggleFold(codeBlock, isFolded) {
         const $toggle = $(codeBlock).find('.fold i');
         !isFolded ? $(codeBlock).removeClass('folded') : $(codeBlock).addClass('folded');
         !isFolded ? $toggle.removeClass('fa-angle-right') : $toggle.removeClass('fa-angle-down');
         !isFolded ? $toggle.addClass('fa-angle-down') : $toggle.addClass('fa-angle-right');
     }
-
     function createFoldButton(fold) {
         return '<span class="fold">' + (fold === 'unfolded' ? '<i class="fas fa-angle-down"></i>' : '<i class="fas fa-angle-right"></i>') + '</span>';
     }
-
     $('figure.highlight table').wrap('<div class="highlight-body">');
     if (typeof config !== 'undefined'
         && typeof config.article !== 'undefined'
         && typeof config.article.highlight !== 'undefined') {
-
         $('figure.highlight').addClass('hljs');
         $('figure.highlight .code .line span').each(function() {
             const classes = $(this).attr('class').split(/\s+/);
@@ -67,11 +69,8 @@
                 $(this).removeClass(classes[0]);
             }
         });
-
-
         const clipboard = config.article.highlight.clipboard;
         const fold = config.article.highlight.fold.trim();
-
         $('figure.highlight').each(function() {
             if ($(this).find('figcaption').length) {
                 $(this).find('figcaption').addClass('level is-mobile');
@@ -85,7 +84,6 @@
                 }
             }
         });
-
         if (typeof ClipboardJS !== 'undefined' && clipboard) {
             $('figure.highlight').each(function() {
                 const id = 'code-' + Date.now() + (Math.random() * 1000 | 0);
@@ -95,7 +93,6 @@
             });
             new ClipboardJS('.highlight .copy'); // eslint-disable-line no-new
         }
-
         if (fold) {
             $('figure.highlight').each(function() {
                 if ($(this).find('figcaption').find('span').length > 0) {
@@ -110,39 +107,34 @@
                 $(this).find('figcaption div.level-left').prepend(createFoldButton(fold));
                 toggleFold(this, fold === 'folded');
             });
-
             $('figure.highlight figcaption .fold').click(function() {
                 const $code = $(this).closest('figure.highlight');
                 toggleFold($code.eq(0), !$code.hasClass('folded'));
             });
         }
     }
-
     const $toc = $('#toc');
     if ($toc.length > 0) {
         const $mask = $('<div>');
         $mask.attr('id', 'toc-mask');
-
         $('body').append($mask);
-
         function toggleToc() { // eslint-disable-line no-inner-declarations
             $toc.toggleClass('is-active');
             $mask.toggleClass('is-active');
         }
-
         $toc.on('click', toggleToc);
         $mask.on('click', toggleToc);
         $('.navbar-main .catalogue').on('click', toggleToc);
     }
-
-
-
+    $('#portfolio').justifiedGallery({
+        rowHeight : 240,
+        margins : 0,
+        lastRow : 'justify',
+    
+    });
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
-
-
 $('#portfolio').justifiedGallery({
     rowHeight : 240,
     margins : 0,
     lastRow : 'justify',
-
 });
