@@ -22,32 +22,37 @@
             rowHeight : 240,
             margins : 0,
             lastRow : 'nojustify',
-            justifyThreshold : 0.75
+            justifyThreshold : 0.75,
+            waitThumbnailsLoad : true
         });
         $('.180').justifiedGallery({
             rowHeight : 180,
             margins : 0,
             lastRow : 'nojustify',
-            justifyThreshold : 0.75
+            justifyThreshold : 0.75,
+            waitThumbnailsLoad : true
         });
         $('.120').justifiedGallery({
             rowHeight : 120,
             margins : 0,
             lastRow : 'nojustify',
-            justifyThreshold : 0.75
+            justifyThreshold : 0.75,
+            waitThumbnailsLoad : true
         });
         $('.90').justifiedGallery({
             rowHeight : 90,
             margins : 0,
             lastRow : 'nojustify',
-            justifyThreshold : 0.75
+            justifyThreshold : 0.75,
+            waitThumbnailsLoad : true
         });
 
         $('.portfolio').justifiedGallery({
             rowHeight : 360,
             margins : 0,
             lastRow : 'nojustify',
-            justifyThreshold : 0.75
+            justifyThreshold : 0.75,
+            waitThumbnailsLoad : true
         });
 
     }
