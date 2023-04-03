@@ -47,6 +47,26 @@
             waitThumbnailsLoad : true
         });
 
+
+        $('.180jf').justifiedGallery({
+            rowHeight : 180,
+            margins : 0,
+            lastRow : 'justify',
+            justifyThreshold : 0.75,
+            waitThumbnailsLoad : true
+        });
+
+        
+        $('.120jf').justifiedGallery({
+            rowHeight : 120,
+            margins : 0,
+            lastRow : 'justify',
+            justifyThreshold : 0.75,
+            waitThumbnailsLoad : true
+        });
+
+
+
         $('.portfolio').justifiedGallery({
             rowHeight : 360,
             margins : 0,
