@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2023-04-03T02:43:34.728Z</updated>
+  <updated>2023-04-03T04:21:17.403Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Augment Reality</title>
+    <link href="https://xuanhe95.github.io/2023/04/02/Augment-Reality/"/>
+    <id>https://xuanhe95.github.io/2023/04/02/Augment-Reality/</id>
+    <published>2023-04-03T04:21:17.000Z</published>
+    <updated>2023-04-03T04:21:17.403Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_1.gif">https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_1.gif</a></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_1.gif&quot;&gt;https://raw.githubuse</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Unreal World Building</title>
@@ -43,12 +63,12 @@
     <link href="https://xuanhe95.github.io/2023/03/31/UCLA-Fall-Augmented-Reality-Behavior/"/>
     <id>https://xuanhe95.github.io/2023/03/31/UCLA-Fall-Augmented-Reality-Behavior/</id>
     <published>2023-04-01T00:43:27.000Z</published>
-    <updated>2023-04-03T01:47:41.939Z</updated>
+    <updated>2023-04-03T04:21:31.873Z</updated>
     
-    <content type="html"><![CDATA[<div class="240" class="justified-gallery"><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Summer_VR_Demo.gif"></p></div><span id="more"></span><h2 id="Course-Description"><a href="#Course-Description" class="headerlink" title="Course Description"></a>Course Description</h2><p>This past fall, Anyone Corporation (most notable for their journal Log) presented an exhibit titled Model Behavior. The director of Anyone Corporation, Cynthia Davidson said that “Models, whether physical or digital, are intrinsic to architecture. Just as other fields, such as science, mathematics, politics, and economics use models to visualize, reflect, and predict behaviors, so do architectural models…Model Behavior interrogates how architectural models elicit and project social behaviors. Objects on view represent a multitude of disciplines ranging from toys and scientific models to traditional physical architectural models.”1 Among model types investigated is augmented reality (AR), which is represented by wa.k studio’s 4 Square House model. The AR portion of the model allows users to change light and season, use a camera clipping plane to cut an angled section, as well as view the house’s inhabitants: a tree and animated agent.</p><h2 id="Course-Objectives"><a href="#Course-Objectives" class="headerlink" title="Course Objectives"></a>Course Objectives</h2><p>To experiment and investigate modeling potentials offered by augmented reality. To think independently and critically. To gain insight into the interplay between digital and physical.</p><ol><li>Develop competency in Unity3d using C#.</li><li>Understand game development concepts.</li><li>Utilize Augmented Reality packages to deploy apps to mobile devices.</li><li>Critically and creatively engage with new technology.</li><li>Theorize AR models through written and visual means.</li></ol><div style="padding:75% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/nr_ct76s0Ew" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Aayushi_Xuanhe_Zhiyang_Group_Video_Final.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>]]></content>
+    <content type="html"><![CDATA[<div class="120" class="justified-gallery"><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Summer_VR_Demo.gif"></p></div><span id="more"></span><h2 id="Course-Description"><a href="#Course-Description" class="headerlink" title="Course Description"></a>Course Description</h2><p>This past fall, Anyone Corporation (most notable for their journal Log) presented an exhibit titled Model Behavior. The director of Anyone Corporation, Cynthia Davidson said that “Models, whether physical or digital, are intrinsic to architecture. Just as other fields, such as science, mathematics, politics, and economics use models to visualize, reflect, and predict behaviors, so do architectural models…Model Behavior interrogates how architectural models elicit and project social behaviors. Objects on view represent a multitude of disciplines ranging from toys and scientific models to traditional physical architectural models.”1 Among model types investigated is augmented reality (AR), which is represented by wa.k studio’s 4 Square House model. The AR portion of the model allows users to change light and season, use a camera clipping plane to cut an angled section, as well as view the house’s inhabitants: a tree and animated agent.</p><h2 id="Course-Objectives"><a href="#Course-Objectives" class="headerlink" title="Course Objectives"></a>Course Objectives</h2><p>To experiment and investigate modeling potentials offered by augmented reality. To think independently and critically. To gain insight into the interplay between digital and physical.</p><ol><li>Develop competency in Unity3d using C#.</li><li>Understand game development concepts.</li><li>Utilize Augmented Reality packages to deploy apps to mobile devices.</li><li>Critically and creatively engage with new technology.</li><li>Theorize AR models through written and visual means.</li></ol><div style="padding:75% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/nr_ct76s0Ew" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Aayushi_Xuanhe_Zhiyang_Group_Video_Final.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>]]></content>
     
     
-    <summary type="html">&lt;div class=&quot;240&quot; class=&quot;justified-gallery&quot;&gt;
+    <summary type="html">&lt;div class=&quot;120&quot; class=&quot;justified-gallery&quot;&gt;
 
 &lt;p&gt;&lt;img src=&quot;https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Summer_VR_Demo.gif&quot;&gt;&lt;/p&gt;
 &lt;/div&gt;</summary>
@@ -531,39 +551,6 @@
     <category term="Eureka!" scheme="https://xuanhe95.github.io/tags/Eureka/"/>
     
     <category term="双参数" scheme="https://xuanhe95.github.io/tags/%E5%8F%8C%E5%8F%82%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>1996. The Number of Weak Characters in the Game</title>
-    <link href="https://xuanhe95.github.io/2022/09/11/1996-The-Number-of-Weak-Characters-in-the-Game/"/>
-    <id>https://xuanhe95.github.io/2022/09/11/1996-The-Number-of-Weak-Characters-in-the-Game/</id>
-    <published>2022-09-11T20:06:48.000Z</published>
-    <updated>2022-09-11T20:09:24.422Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are playing a game that contains multiple characters, and each of the characters has <strong>two</strong> main properties: <strong>attack</strong> and <strong>defense</strong>. You are given a 2D integer array <code>properties</code> where <code>properties[i] = [attack&lt;sub&gt;i&lt;/sub&gt;, defense&lt;sub&gt;i&lt;/sub&gt;]</code> represents the properties of the <code>i&lt;sup&gt;th&lt;/sup&gt;</code> character in the game.</p><p>A character is said to be <strong>weak</strong> if any other character has <strong>both</strong> attack and defense levels <strong>strictly greater</strong> than this character’s attack and defense levels. More formally, a character <code>i</code> is said to be <strong>weak</strong> if there exists another character <code>j</code> where <code>attack&lt;sub&gt;j&lt;/sub&gt;&lt;span&gt; &lt;/span&gt;&gt; attack&lt;sub&gt;i&lt;/sub&gt;</code> and <code>defense&lt;sub&gt;j&lt;/sub&gt;&lt;span&gt; &lt;/span&gt;&gt; defense&lt;sub&gt;i&lt;/sub&gt;</code>.</p><p>Return <em>the number of <strong>weak</strong> characters</em>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>本题与<a href="https://xuanhe95.github.io/2022/05/25/354-Russian-Doll-Envelopes/">354. Russian Doll Envelopes</a>相近。</p><p>首先对数组进行排序，根据角色的attack数值<strong>降序</strong>排序，如果两者的attack数值相等，则根据两者的defence<strong>升序</strong>排序。</p><p>记录一个遍历过的最大defence数值maxDefence，遍历数组，如果当前maxDef大于角色的防御值，则此时当前遍历角色的attack与defence均严格小于上一个计算的角色，因此count加一。<br>否则更新maxDef。</p><p>*由于attack是降序的，因此可以确定遍历时下一组数组的attack一定更弱。（由于相同attack的角色是根据defence升序排列，因此记录maxDef时会逐个更新maxDef的值。）</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">numberOfWeakCharacters</span><span class="params">(<span class="type">int</span>[][] properties)</span> &#123;</span><br><span class="line">        <span class="type">int</span> <span class="variable">count</span> <span class="operator">=</span> <span class="number">0</span>, maxDef = Integer.MIN_VALUE;</span><br><span class="line">            </span><br><span class="line">        Arrays.sort(properties, <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;<span class="type">int</span>[]&gt;()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span>[] b)</span>&#123;</span><br><span class="line">                <span class="keyword">if</span>(a[<span class="number">0</span>] == b[<span class="number">0</span>]) <span class="keyword">return</span> a[<span class="number">1</span>] - b[<span class="number">1</span>];</span><br><span class="line">                <span class="keyword">return</span> b[<span class="number">0</span>] - a[<span class="number">0</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span>[] character : properties)&#123;</span><br><span class="line">            <span class="keyword">if</span>(maxDef &gt; character[<span class="number">1</span>]) count++;</span><br><span class="line">            <span class="keyword">else</span> maxDef = character[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> count;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
-&lt;p&gt;You are playing a game that conta</summary>
-      
-    
-    
-    
-    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
-    
-    <category term="Medium" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/"/>
-    
-    <category term="复习" scheme="https://xuanhe95.github.io/categories/LeetCode/Medium/%E5%A4%8D%E4%B9%A0/"/>
-    
-    
-    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
-    
-    <category term="Sort" scheme="https://xuanhe95.github.io/tags/Sort/"/>
-    
-    <category term="双参量" scheme="https://xuanhe95.github.io/tags/%E5%8F%8C%E5%8F%82%E9%87%8F/"/>
     
   </entry>
   
