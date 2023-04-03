@@ -23,28 +23,28 @@
             margins : 0,
             lastRow : 'nojustify',
             justifyThreshold : 0.75,
-            waitThumbnailsLoad : true
+            waitThumbnailsLoad : false
         });
         $('.180').justifiedGallery({
             rowHeight : 180,
             margins : 0,
             lastRow : 'nojustify',
             justifyThreshold : 0.75,
-            waitThumbnailsLoad : true
+            waitThumbnailsLoad : false
         });
         $('.120').justifiedGallery({
             rowHeight : 120,
             margins : 0,
             lastRow : 'nojustify',
             justifyThreshold : 0.75,
-            waitThumbnailsLoad : true
+            waitThumbnailsLoad : false
         });
         $('.90').justifiedGallery({
             rowHeight : 90,
             margins : 0,
             lastRow : 'nojustify',
             justifyThreshold : 0.75,
-            waitThumbnailsLoad : true
+            waitThumbnailsLoad : false
         });
 
 
@@ -53,7 +53,7 @@
             margins : 0,
             lastRow : 'justify',
             justifyThreshold : 0.75,
-            waitThumbnailsLoad : true
+            waitThumbnailsLoad : false
         });
 
         
@@ -62,7 +62,7 @@
             margins : 0,
             lastRow : 'justify',
             justifyThreshold : 0.75,
-            waitThumbnailsLoad : true
+            waitThumbnailsLoad : false
         });
 
 
@@ -72,7 +72,7 @@
             margins : 0,
             lastRow : 'nojustify',
             justifyThreshold : 0.75,
-            waitThumbnailsLoad : true
+            waitThumbnailsLoad : false
         });
 
     }
