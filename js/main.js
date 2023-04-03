@@ -21,32 +21,32 @@
         $('.240').justifiedGallery({
             rowHeight : 240,
             margins : 0,
-            lastRow : 'justify',
+            lastRow : 'nojustify',
             justifyThreshold : 0.75
         });
         $('.180').justifiedGallery({
             rowHeight : 180,
             margins : 0,
-            lastRow : 'justify',
+            lastRow : 'nojustify',
             justifyThreshold : 0.75
         });
         $('.120').justifiedGallery({
             rowHeight : 120,
             margins : 0,
-            lastRow : 'justify',
+            lastRow : 'nojustify',
             justifyThreshold : 0.75
         });
         $('.90').justifiedGallery({
             rowHeight : 90,
             margins : 0,
-            lastRow : 'justify',
+            lastRow : 'nojustify',
             justifyThreshold : 0.75
         });
 
         $('.portfolio').justifiedGallery({
             rowHeight : 360,
             margins : 0,
-            lastRow : 'justify',
+            lastRow : 'nojustify',
             justifyThreshold : 0.75
         });
 
