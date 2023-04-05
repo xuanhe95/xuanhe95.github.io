@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2023-04-05T03:42:44.162Z</updated>
+  <updated>2023-04-05T03:48:52.620Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://xuanhe95.github.io/2023/04/02/Augment-Reality/"/>
     <id>https://xuanhe95.github.io/2023/04/02/Augment-Reality/</id>
     <published>2023-04-03T04:21:17.000Z</published>
-    <updated>2023-04-05T03:42:44.162Z</updated>
+    <updated>2023-04-05T03:48:52.620Z</updated>
     
     <content type="html"><![CDATA[<div class="120" class="justified-gallery"><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_1.png"></p><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_1.gif"><br><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_3.jpg"></p><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_QR.jpg"></p></div><h2 id="Augment-Reality"><a href="#Augment-Reality" class="headerlink" title="Augment Reality"></a>Augment Reality</h2><p>Augmented reality (AR) technology can be a valuable tool for architects during the design process, and my work demonstrates how AR can be used to enhance the design process. By combining models in Blender and using AI and prompts to generate images, we were able to select appropriate images and model them in Rhino, creating physical models using 3D printing.</p><p>To showcase these models, I developed an AR application in Unity and C# that uses QR code recognition to locate the model and display a virtual version in the app. With this AR technology, clients can swipe left and right or up and down in the app to replace different parts of the model with different materials, providing a visual representation of various material combinations. Additionally, clicking on the screen generates random agents that navigate through the model, providing an interactive experience between the architect and the building.</p><span id="more"></span><div class="120" class="justified-gallery"><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_AI_1.png" alt="Original Combined Team Work"><br><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_AI_2.png" alt="AI Genereated Model"><br><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_AI_3.png" alt="AI Genereated Model"><br><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_AI_4.png" alt="AI Genereated Model"><br><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Winter_DigitalFabrication_AI_5.png" alt="AI Genereated Model"></p></div><p>This AR technology allows architects to visualize and manipulate digital models in real-world environments, providing a more intuitive and immersive experience compared to traditional 2D or 3D modeling. By superimposing digital models onto physical spaces, architects can see how the design fits into the surrounding environment, allowing them to make more informed design decisions and identify potential issues before construction begins.</p><p>Furthermore, AR technology can facilitate collaboration among architects, clients, and other stakeholders. By allowing stakeholders to see and interact with the design in real-time, AR technology provides valuable feedback and allows for more efficient communication and decision-making.</p><p>In summary, my work using AR technology shows the potential for this technology to transform the way architects design and communicate their ideas, leading to more efficient and effective design processes and ultimately better-built environments.</p>]]></content>
     
@@ -48,7 +48,7 @@
     <link href="https://xuanhe95.github.io/2023/04/02/Unreal-World-Building/"/>
     <id>https://xuanhe95.github.io/2023/04/02/Unreal-World-Building/</id>
     <published>2023-04-02T23:28:43.000Z</published>
-    <updated>2023-04-05T03:46:55.053Z</updated>
+    <updated>2023-04-05T03:49:04.488Z</updated>
     
     <content type="html"><![CDATA[<div class="240" class="justified-gallery"><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Summer_Room_Demo.gif" alt="Future Room"></p></div><h2 id="Unreal-Engine-5-0"><a href="#Unreal-Engine-5-0" class="headerlink" title="Unreal Engine 5.0"></a>Unreal Engine 5.0</h2><p>Using the Unreal Engine 5.0, we can create highly immersive and detailed virtual worlds with stunning graphics and realistic physics. With the ability to render and generate animations, we can bring virtual worlds to life, creating engaging and interactive experiences for a wide range of applications, from video games to architectural visualizations.</p><div class="120" class="justified-gallery"><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Fall_Unreal_FutureWorld_1_Reduced.gif" alt="Space Settlement in the Future"><br><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Fall_Unreal_FutureWorld_AI_1_Reduced.gif" alt="Space Settlement in the Future"></p></div><span id="more"></span><div class="120" class="justified-gallery"><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Fall_Unreal_FutureWorld_2_Reduced.gif" alt="Game Designers in the Future"></p><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Fall_Unreal_FutureWorld_AI_2_Reduced.gif" alt="Game Designers in the Future"></p></div><div class="120" class="justified-gallery"><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Fall_Unreal_FutureWorld_3_Reduced.gif" alt="Space Exploration in the Future"></p><p><img src="https://raw.githubusercontent.com/xuanhe95/xuanhe95.github.io/main/images/Fall_Unreal_FutureWorld_AI_3_Reduced.gif" alt="Space Exploration in the Future"></p></div><h2 id="AI-Style-Migration"><a href="#AI-Style-Migration" class="headerlink" title="AI Style Migration"></a>AI Style Migration</h2><p>AI video style migration offers exciting new possibilities for world building and animation. By using AI algorithms to migrate the style of one video to another, architects can quickly and easily create unique and visually striking animations with a fraction of the time and effort it would take with traditional animation methods.</p><p>The combination of the Unreal engine and AI video style migration provides a powerful toolset for creatives looking to push the boundaries of world building and animation. From immersive video games to stunning architectural visualizations, this powerful combination offers endless possibilities for creatives looking to create innovative and engaging virtual experiences.</p><div style="padding:75% 0 0 0;position:relative;"><iframe src="https://www.youtube.com/embed/pX9bR9gL9aM" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Aayushi_Xuanhe_Zhiyang_Group_Video_Final.mp4"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>]]></content>
     
@@ -173,11 +173,11 @@
     <category term="Blender" scheme="https://xuanhe95.github.io/categories/Course/Blender/"/>
     
     
+    <category term="works" scheme="https://xuanhe95.github.io/tags/works/"/>
+    
     <category term="Unity" scheme="https://xuanhe95.github.io/tags/Unity/"/>
     
     <category term="Blender" scheme="https://xuanhe95.github.io/tags/Blender/"/>
-    
-    <category term="works" scheme="https://xuanhe95.github.io/tags/works/"/>
     
   </entry>
   
@@ -214,9 +214,9 @@
     <category term="Grasshopper" scheme="https://xuanhe95.github.io/categories/Grasshopper/"/>
     
     
-    <category term="Grasshopper" scheme="https://xuanhe95.github.io/tags/Grasshopper/"/>
-    
     <category term="works" scheme="https://xuanhe95.github.io/tags/works/"/>
+    
+    <category term="Grasshopper" scheme="https://xuanhe95.github.io/tags/Grasshopper/"/>
     
   </entry>
   
