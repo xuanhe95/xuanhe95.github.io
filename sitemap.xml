@@ -2,6 +2,24 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xuanhe95.github.io/2023/03/30/Artifical-Intelligence-in-Mapping/</loc>
+    
+    <lastmod>2023-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanhe95.github.io/2023/03/27/Blender-Modeling-&-Rendering/</loc>
+    
+    <lastmod>2023-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanhe95.github.io/about.html</loc>
     
     <lastmod>2023-04-05</lastmod>
@@ -38,25 +56,7 @@
   </url>
   
   <url>
-    <loc>https://xuanhe95.github.io/2023/03/30/Artifical-Intelligence-in-Mapping/</loc>
-    
-    <lastmod>2023-04-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xuanhe95.github.io/2023/02/28/Yunggh-Project/</loc>
-    
-    <lastmod>2023-04-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanhe95.github.io/2023/03/27/Blender-Modeling-&-Rendering/</loc>
     
     <lastmod>2023-04-05</lastmod>
     
@@ -3186,13 +3186,6 @@
   
   <url>
     <loc>https://xuanhe95.github.io/tags/Grasshopper/</loc>
-    <lastmod>2023-04-05</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanhe95.github.io/tags/Works/</loc>
     <lastmod>2023-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
