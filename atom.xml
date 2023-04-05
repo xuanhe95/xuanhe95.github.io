@@ -6,7 +6,7 @@
   <link href="https://xuanhe95.github.io/atom.xml" rel="self"/>
   
   <link href="https://xuanhe95.github.io/"/>
-  <updated>2023-04-05T03:53:26.205Z</updated>
+  <updated>2023-04-05T03:52:35.498Z</updated>
   <id>https://xuanhe95.github.io/</id>
   
   <author>
@@ -15,29 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>test2</title>
-    <link href="https://xuanhe95.github.io/2023/04/04/test2/"/>
-    <id>https://xuanhe95.github.io/2023/04/04/test2/</id>
-    <published>2023-04-05T03:53:26.000Z</published>
-    <updated>2023-04-05T03:53:26.205Z</updated>
-    
-    <content type="html"><![CDATA[<p>33</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;33&lt;/p&gt;
-</summary>
-      
-    
-    
-    
-    
-    <category term="works" scheme="https://xuanhe95.github.io/tags/works/"/>
-    
-  </entry>
   
   <entry>
     <title>Augment Reality</title>
@@ -574,6 +551,41 @@
     <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
     
     <category term="位运算" scheme="https://xuanhe95.github.io/tags/%E4%BD%8D%E8%BF%90%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>1383. Maximum Performance of a Team</title>
+    <link href="https://xuanhe95.github.io/2022/09/11/1383-Maximum-Performance-of-a-Team/"/>
+    <id>https://xuanhe95.github.io/2022/09/11/1383-Maximum-Performance-of-a-Team/</id>
+    <published>2022-09-11T20:40:33.000Z</published>
+    <updated>2022-09-11T20:40:50.021Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Question"><a href="#Question" class="headerlink" title="Question"></a>Question</h3><blockquote><p>You are given two integers <code>n</code> and <code>k</code> and two integer arrays <code>speed</code> and <code>efficiency</code> both of length <code>n</code>. There are <code>n</code> engineers numbered from <code>1</code> to <code>n</code>. <code>speed[i]</code> and <code>efficiency[i]</code> represent the speed and efficiency of the <code>i&lt;sup&gt;th&lt;/sup&gt;</code> engineer respectively.</p><p>Choose <strong>at most</strong> <code>k</code> different engineers out of the <code>n</code> engineers to form a team with the maximum <strong>performance</strong>.</p><p>The performance of a team is the sum of their engineers’ speeds multiplied by the minimum efficiency among their engineers.</p><p>Return <em>the maximum performance of this team</em>. Since the answer can be a huge number, return it <strong>modulo</strong> <code>10&lt;sup&gt;9&lt;/sup&gt;&lt;span&gt; &lt;/span&gt;+ 7</code>.</p></blockquote><h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>排序，将所有工程师根据其效率降序排列。</p><p>此时遍历时后一个工程师的效率一定小于等于前一个工程师。</p><p>因此，此时遍历到每一个工程师，其前面所有的工程师的efficiency均大于等于其本身。<br>维护一个所有选取工程师的总速度ttSpd，每次计算并更新max的值。<br>用最小堆来维护选取的工程师速度，如果优先级队列的尺寸超过k-1，则poll掉队列内最低的速度。</p><h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">maxPerformance</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span>[] speed, <span class="type">int</span>[] efficiency, <span class="type">int</span> k)</span> &#123;</span><br><span class="line">        <span class="keyword">final</span> <span class="type">int</span> <span class="variable">mod</span> <span class="operator">=</span> (<span class="type">int</span>) Math.pow(<span class="number">10</span>, <span class="number">9</span>) + <span class="number">7</span>;</span><br><span class="line">        <span class="type">int</span>[][] engineer = <span class="keyword">new</span> <span class="title class_">int</span>[n][<span class="number">2</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            engineer[i][<span class="number">0</span>] = speed[i];</span><br><span class="line">            engineer[i][<span class="number">1</span>] = efficiency[i];</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        Arrays.sort(engineer, <span class="keyword">new</span> <span class="title class_">Comparator</span>&lt;<span class="type">int</span>[]&gt;()&#123;</span><br><span class="line">            <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">compare</span><span class="params">(<span class="type">int</span>[] a, <span class="type">int</span>[] b)</span>&#123;</span><br><span class="line">                <span class="keyword">return</span> b[<span class="number">1</span>] - a[<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;);</span><br><span class="line">        </span><br><span class="line">        <span class="type">long</span> <span class="variable">max</span> <span class="operator">=</span> <span class="number">0</span>, ttSpd = <span class="number">0</span>;</span><br><span class="line">        </span><br><span class="line">        PriorityQueue&lt;Integer&gt; pq = <span class="keyword">new</span> <span class="title class_">PriorityQueue</span>&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i &lt; n; i++)&#123;</span><br><span class="line">            <span class="type">int</span> <span class="variable">s</span> <span class="operator">=</span> engineer[i][<span class="number">0</span>], e = engineer[i][<span class="number">1</span>];</span><br><span class="line">            ttSpd += s;</span><br><span class="line">            max = Math.max(max, ttSpd * e);</span><br><span class="line">            pq.add(s);</span><br><span class="line">            <span class="keyword">if</span>(pq.size() == k) ttSpd -= pq.poll();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> (<span class="type">int</span>) (max % mod);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;Question&quot;&gt;&lt;a href=&quot;#Question&quot; class=&quot;headerlink&quot; title=&quot;Question&quot;&gt;&lt;/a&gt;Question&lt;/h3&gt;&lt;blockquote&gt;
+&lt;p&gt;You are given two integers &lt;code&gt;</summary>
+      
+    
+    
+    
+    <category term="LeetCode" scheme="https://xuanhe95.github.io/categories/LeetCode/"/>
+    
+    <category term="Hard" scheme="https://xuanhe95.github.io/categories/LeetCode/Hard/"/>
+    
+    <category term="复习" scheme="https://xuanhe95.github.io/categories/LeetCode/Hard/%E5%A4%8D%E4%B9%A0/"/>
+    
+    
+    <category term="每日一题" scheme="https://xuanhe95.github.io/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/"/>
+    
+    <category term="Sort" scheme="https://xuanhe95.github.io/tags/Sort/"/>
+    
+    <category term="Eureka!" scheme="https://xuanhe95.github.io/tags/Eureka/"/>
+    
+    <category term="双参数" scheme="https://xuanhe95.github.io/tags/%E5%8F%8C%E5%8F%82%E6%95%B0/"/>
     
   </entry>
   
