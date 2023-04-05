@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xuanhe95.github.io/2023/03/31/UCLA-Fall-Augmented-Reality-Behavior/</loc>
+    
+    <lastmod>2023-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xuanhe95.github.io/about.html</loc>
     
     <lastmod>2023-04-05</lastmod>
@@ -68,15 +77,6 @@
     <loc>https://xuanhe95.github.io/portfolio.html</loc>
     
     <lastmod>2023-04-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanhe95.github.io/2023/03/31/UCLA-Fall-Augmented-Reality-Behavior/</loc>
-    
-    <lastmod>2023-04-03</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
