@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xuanhe95.github.io/portfolio.html</loc>
+    <loc>https://xuanhe95.github.io/2023/04/02/Augment-Reality/</loc>
     
     <lastmod>2023-04-05</lastmod>
     
@@ -11,9 +11,18 @@
   </url>
   
   <url>
-    <loc>https://xuanhe95.github.io/2023/04/02/Augment-Reality/</loc>
+    <loc>https://xuanhe95.github.io/about.html</loc>
     
-    <lastmod>2023-04-04</lastmod>
+    <lastmod>2023-04-05</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanhe95.github.io/portfolio.html</loc>
+    
+    <lastmod>2023-04-05</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -68,15 +77,6 @@
     <loc>https://xuanhe95.github.io/2023/03/31/UCLA-Fall-Augmented-Reality-Behavior/</loc>
     
     <lastmod>2023-04-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xuanhe95.github.io/2023/01/31/About-Me/</loc>
-    
-    <lastmod>2023-03-31</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -3186,6 +3186,13 @@
   
   <url>
     <loc>https://xuanhe95.github.io/tags/Grasshopper/</loc>
+    <lastmod>2023-04-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://xuanhe95.github.io/tags/works/</loc>
     <lastmod>2023-04-05</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
