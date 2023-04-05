@@ -1,10 +1,10 @@
+https://xuanhe95.github.io/2023/03/27/Blender-Modeling-&-Rendering/
 https://xuanhe95.github.io/2023/03/31/UCLA-Fall-Augmented-Reality-Behavior/
 https://xuanhe95.github.io/about.html
 https://xuanhe95.github.io/2023/04/02/Augment-Reality/
 https://xuanhe95.github.io/2023/04/02/Unreal-World-Building/
 https://xuanhe95.github.io/2023/03/30/Digital-Fabrication/
 https://xuanhe95.github.io/2023/03/30/Artifical-Intelligence-in-Mapping/
-https://xuanhe95.github.io/2023/03/27/Blender-Modeling-&-Rendering/
 https://xuanhe95.github.io/2023/02/28/Yunggh-Project/
 https://xuanhe95.github.io/portfolio.html
 https://xuanhe95.github.io/2022/11/20/Math-33-Review/
@@ -364,7 +364,6 @@ https://xuanhe95.github.io/tags/Knapsack/
 https://xuanhe95.github.io/tags/Manacher/
 https://xuanhe95.github.io/tags/HashMap/
 https://xuanhe95.github.io/tags/%E6%A0%91%E5%BD%A2DP/
-https://xuanhe95.github.io/tags/works/
 https://xuanhe95.github.io/tags/Unity/
 https://xuanhe95.github.io/tags/Blender/
 https://xuanhe95.github.io/tags/Front-end/
