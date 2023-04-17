@@ -10281,43 +10281,8 @@ body > .section {
     background: rgba(0,0,0,0.24);
   }
 }
-@media screen and (max-width: 768px) {
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    border-radius: 3px;
-    background: rgba(0,0,0,0.06);
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background: rgba(0,0,0,0.12);
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0,0,0,0.24);
-  }
-}
-@media screen and (min-width: 769px), print {
-  ::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  ::-webkit-scrollbar-track {
-    border-radius: 3px;
-    background: rgba(0,0,0,0.06);
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-  }
-  ::-webkit-scrollbar-thumb {
-    border-radius: 3px;
-    background: rgba(0,0,0,0.12);
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-  }
-  ::-webkit-scrollbar-thumb:hover {
-    background: rgba(0,0,0,0.24);
-  }
+.title {
+  color: #f00;
 }
 .ml-0,
 .mx-0 {
@@ -10799,9 +10764,6 @@ body > .section {
 .card {
   overflow: visible;
   border-radius: 4px;
-}
-.card:hover {
-  box-shadow: 0 6px 15px rgba(0,0,0,0.15), 0 0 1px rgba(0,0,0,0.1);
 }
 .card + .card,
 .card + .column-right-shadow {
@@ -11378,6 +11340,9 @@ figure.highlight .section {
   min-width: inherit;
   border-radius: inherit;
 }
+figure.highlight.foldable div.level-left {
+  cursor: pointer;
+}
 .gist table tr:hover {
   background: transparent;
 }
@@ -11605,6 +11570,9 @@ figure.highlight .section {
   line-height: inherit;
 }
 .MathJax,
+.MathJax_Display,
+.MJXc-display,
+.MathJax_SVG_Display,
 .katex-display {
   overflow-x: auto;
   overflow-y: hidden;
@@ -11676,10 +11644,6 @@ figure.highlight .section {
   background-color: #276cda;
 }
 @media screen and (min-width: 1280px) {
-  .is-3-column .container {
-    max-width: 1152px;
-    width: 1152px;
-  }
   .is-1-column .container,
   .is-2-column .container {
     max-width: 960px;
@@ -11687,13 +11651,9 @@ figure.highlight .section {
   }
 }
 @media screen and (min-width: 1472px) {
-  .is-3-column .container {
-    max-width: 1552px;
-    width: 1552px;
-  }
   .is-2-column .container {
-    max-width: 1552px;
-    width: 1552px;
+    max-width: 1152px;
+    width: 1152px;
   }
   .is-1-column .container {
     max-width: 960px;
@@ -11720,15 +11680,6 @@ figure.highlight .section {
     padding: 1.5rem 1rem;
   }
 }
-#toc {
-  align-self: flex-start;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0.75rem;
-}
-.title {
-  color: #f00;
-}
 #universe {
   display: none;
 }
@@ -11739,12 +11690,11 @@ figure.highlight .section {
 body.night {
   background: #0e1225;
 }
-.night .highlight https:,
 .night .content code {
   color: #cbba7d;
 }
 .night #night-nav #night-icon:before {
-  content: '\f185';
+  content: '\f186';
 }
 .night .navbar-menu {
   background-color: inherit;

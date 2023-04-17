@@ -8,12 +8,11 @@
 body.night {
   background: #0e1225;
 }
-.night .highlight https:,
 .night .content code {
   color: #cbba7d;
 }
 .night #night-nav #night-icon:before {
-  content: '\f185';
+  content: '\f186';
 }
 .night .navbar-menu {
   background-color: inherit;
