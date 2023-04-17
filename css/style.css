@@ -10281,6 +10281,9 @@ body > .section {
     background: rgba(0,0,0,0.24);
   }
 }
+.title {
+  color: #f14668;
+}
 .ml-0,
 .mx-0 {
   margin-left: 0 !important;
